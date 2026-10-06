@@ -13,7 +13,8 @@
   <a href="FEATURES.md">Features</a> ·
   <a href="STORE.md">The store</a> ·
   <a href="COMMANDS.md">Commands</a> ·
-  <a href="#how-it-runs">How it runs</a>
+  <a href="#how-it-runs">How it runs</a> ·
+  <a href="#contact">Contact</a>
 </p>
 
 ---
@@ -190,6 +191,10 @@ starts and stops it, updates it, and rolls back to the version before.
   Discord from any device.
 
 ![The Launcher's Updates screen, with rollback](images/launcher-updates.png)
+
+## Contact
+
+Interested in SomniBot, or have a question? Message me on Discord: **@helloimoni**
 
 ---
 
