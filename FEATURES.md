@@ -6,6 +6,10 @@ The screenshots on this page come from a real SomniBot install with sample names
 
 - [Your brand, everywhere](#your-brand-everywhere)
 - [Setting up your server](#setting-up-your-server)
+- [Server settings and role appearance](#server-settings-and-role-appearance)
+- [Events and stages](#events-and-stages)
+- [Emoji, stickers and sounds](#emoji-stickers-and-sounds)
+- [Linked roles](#linked-roles)
 - [Member gate and verification](#member-gate-and-verification)
 - [Channel permissions](#channel-permissions)
 - [Welcome and goodbye](#welcome-and-goodbye)
@@ -38,8 +42,13 @@ and picture you give it. The **Branding** page sets:
 - the **"Powered by SomniBot"** footer credit, which you can switch off.
 
 A **live preview** shows your saved messages in your brand. The dashboard is for you and
-your team only: the bot's messages to members never mention it, and the customer portal
-is the only web page a member opens.
+your team only: the bot's messages to members never mention it. Members use the
+customer portal for purchases and a separate verification page for Linked roles.
+
+Discord message cards (Components V2) combine branded text, pictures, sections and
+buttons across store receipts, verification, moderation, community, economy and
+music messages. Saved classic message templates keep their format until edited;
+Discord's native polls use Discord's own voting interface.
 
 ## Setting up your server
 
@@ -59,7 +68,67 @@ is the only web page a member opens.
 Run it again any time to change the plan, or start over with an empty plan. Nothing
 changes in Discord until you deploy.
 
+The channel editor includes text, announcement, forum, media, voice and stage
+channels. Forum settings include tags, default reaction, layout, guidelines and
+post slowmode; voice settings include bitrate, region, video quality and member
+limits. Community and boost requirements are shown where needed. **Only these roles**
+lets you choose channel access using roles from your plan or existing Discord roles,
+such as Server Booster. Missing roles appear as Review problems before deployment.
+**Load a server template** imports a template into the plan; it changes nothing in
+Discord until you deploy. Sync and snapshots include these settings.
+
 ![Server setup](images/server-setup.png)
+
+## Server settings and role appearance
+
+**Server settings** controls the server's name and images, description, verification
+and media filtering, notifications, AFK channel and timeout, system messages, safety
+alerts, welcome screen, boost progress bar, Community, Discovery and widget. It
+reads Discord's current values, explains unavailable features and records reversible
+changes in **Admin changes**. The widget warns before exposing online members'
+names and pictures; vanity URLs are read-only here.
+
+Role appearance includes one emoji or a PNG/JPEG icon up to 256 KB, two-colour
+gradients and holographic colours. Icons need boost level 2; enhanced colours need
+boost level 3. Unavailable looks are explained while the rest of the role can still
+be applied. The saved plan, Sync and snapshots keep the role's icon and colours.
+
+**Give a role to members who wear this server's tag** adds or removes the chosen role
+as members change their tag. It only takes back roles the bot gave for that tag;
+roles assigned by hand stay in place. Default Member-tier permissions include
+Activities and external sounds, applied through a Server setup deploy.
+
+## Events and stages
+
+**Events** creates, edits, starts, ends and cancels Discord scheduled events in voice,
+on a stage or at an external location, with images, recurrence and interested counts.
+Starting a stage event opens the stage, with a notification choice; ending it closes
+the stage. Events made by hand in Discord are listed too and left alone unless you
+edit them. Giveaways and scheduled messages can also appear as Discord events.
+Automations can respond to an event starting or ending and a member marking interest.
+
+## Emoji, stickers and sounds
+
+**Emoji, stickers & sounds** uploads, renames and deletes the server's expressions,
+showing usage against Discord's limits. Deleting asks for confirmation and explains
+that it cannot be undone.
+
+## Linked roles
+
+The Launcher's **Linked Roles** check verifies the public verification address,
+registered member facts and Discord sign-in redirect. Until the setup is ready, the
+page shows what is missing and keeps new facts from being switched on.
+
+On **Linked roles**, choose which facts SomniBot shares: owning any or a specific
+product, an active licence, level, verification and days in the server. In Discord's
+**Server Settings → Roles → Links**, choose what each role requires, including its
+minimum level or days. Members link through Discord and sign in with their account;
+the bot refreshes their values as purchases, licences and membership change.
+
+The Launcher also checks **Install to a member's account**. This makes `/portal`,
+`/license`, `/privacy` and `/mydata` available in servers and private chats. A private
+server picker chooses which shared server an answer concerns when there is more
+than one. Every other command stays server-only.
 
 ## Member gate and verification
 
@@ -147,6 +216,13 @@ warns or punishes anyone.
 
 ![Auto-mod rules](images/automod.png)
 
+Staff can also use `/voice-mod` or a member's timeline to move, server-mute, deafen
+or disconnect someone in voice. Each action is recorded as a moderation case.
+
+Lockdown can **Also pause new DMs** until its displayed end time, for up to 24 hours.
+Unlock removes the pause that lockdown set, preserving any earlier pause that is
+still running.
+
 ## Levels and XP
 
 - **Message XP** (a random amount between your minimum and maximum, with a cooldown) and
@@ -194,7 +270,9 @@ income.
   requirements, a winner announcement and a congratulations DM. A prize can be a
   product from your store, licence keys included. Staff can start, end, reroll, pause,
   resume and list giveaways from Discord.
-- **Polls**: members make them with `/poll`.
+- **Polls**: members make them with `/poll`. **Use Discord's poll** uses Discord's
+  native voting interface, with a duration and multiple-answer choice; the dashboard
+  reads the final counts when the poll ends.
 - **Predictions**: members bet play money on what will happen, with `/predict`.
 
 ![Giveaways](images/giveaways.png)
@@ -237,7 +315,7 @@ Play from **YouTube, SoundCloud, Bandcamp, Twitch and Vimeo** in your voice chan
   level, an invite that qualifies), the store (purchase completed, order refunded,
   subscription activated, renewal failed, lapsed or expired, a new licence device),
   moderation (a warning, a case opened), messages and activity (messages, reactions,
-  buttons, voice channels), tickets and giveaways.
+  buttons, voice channels), tickets, giveaways and Discord events.
 - **Conditions**: roles, levels, channels, owning a product, message text, new or
   returning members, a time window or a specific user.
 - **Actions**: a message, DM or reply, giving or removing a role, reactions, deleting the
@@ -254,8 +332,9 @@ GitHub can send updates to.
 ## Channels and messages
 
 - **Scheduled messages**: a reminder, a rules link or a daily tip, on any schedule.
-- **Embed builder**: make embeds, then send them to any channel or use them in a
-  scheduled message.
+- **Embed builder**: make message cards with text, sections, pictures, galleries and
+  link buttons, then send them to a supported channel or use them in a scheduled
+  message. Saved classic embeds keep sending as before until you edit them.
 - **Temp channels**: a hub voice channel that gives each member who joins their own
   voice room, which they can lock, unlock or claim with `/voice`.
 - **Stats channels**: a live number, such as your member count, shown as a voice

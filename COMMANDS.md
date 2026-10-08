@@ -2,9 +2,10 @@
 
 [← Back to the overview](README.md) · [Features](FEATURES.md) · [The store](STORE.md)
 
-SomniBot has **92 slash commands** and **5 right-click commands**. Switching a feature
+SomniBot has **93 built-in slash commands** and **5 right-click commands**. Switching a feature
 off in the dashboard also hides its commands, and `/help` shows each member only the
-commands they can use.
+commands they can use. Each command name counts once; subcommands and server-specific
+custom commands are not added to this total.
 
 ## Getting started
 
@@ -28,6 +29,7 @@ commands they can use.
 | `/pardon` | Undo a case: lifts a timeout or ban and tells the member |
 | `/infractions` | Show a member's moderation cases |
 | `/purge` | Delete recent messages from this channel (logged in the moderation log) |
+| `/voice-mod` | Staff: move, server-mute/unmute, deafen/undeafen or disconnect a member in voice; each action records a moderation case |
 | `/appeal` | Ask the moderators to reconsider a warning, timeout, kick or ban |
 
 ## Real-money store
@@ -110,7 +112,7 @@ commands they can use.
 | Command | What it does |
 |---|---|
 | `/giveaway` | Manage giveaways: start, end, reroll, pause, resume, list |
-| `/poll` | Create and close polls |
+| `/poll` | Create and close polls, including Discord's own polls with a duration and multiple answers |
 | `/predict` | Bet play money on what will happen |
 | `/voice` | Control your temporary voice channel: lock, unlock, claim |
 
@@ -139,6 +141,14 @@ commands they can use.
 | `/privacy` | What the bot keeps about you, and how to get a copy or erase it |
 | `/mydata` | Export all your data from this server as a JSON file |
 | `/forgetme` | Erase or anonymize your account data from this server |
+
+## Commands on your own account
+
+After the Launcher's **Install to a member's account** check, install the app to your
+Discord account to use `/portal`, `/license`, `/privacy` and `/mydata` in servers,
+DMs with the bot and other private chats. Answers concern a server you belong to
+that the bot looks after; when there is more than one, a private server picker
+chooses which one. All other commands stay server-only.
 
 ## Right-click commands
 

@@ -61,6 +61,30 @@ test account.
 
 ![Server setup at the Verification step](images/server-setup.png)
 
+### More of Discord in one dashboard
+
+Plan forum, media and stage channels, choose access for specific roles and load a
+server template. Manage **Server settings**, role icons and gradients, **Events**,
+**Emoji, stickers & sounds**, voice moderation and Discord's own polls. The pages
+explain Community, boost and other Discord requirements before unavailable choices
+can be applied.
+
+**Linked roles** shares product ownership, active licences, verification, level and
+days in the server for requirements you choose in Discord. The Launcher checks the
+verification setup first. Members can also install the app to their own accounts for
+`/portal`, `/license`, `/privacy` and `/mydata` in servers and private chats.
+
+Branded Discord message cards (Components V2) combine text, pictures and controls.
+See [all features](FEATURES.md) and the [command list](COMMANDS.md).
+
+![Linked roles: what members can prove, such as owning one specific product](images/linked-roles.png)
+
+![Events: voice, stage and external events listed in Discord](images/events.png)
+
+![Emoji, stickers & sounds: upload, rename and delete, with the slots left](images/expressions.png)
+
+![Server settings: the server's name, pictures, safety settings and welcome screen](images/server-settings.png)
+
 ### A member gate that lets the right people in
 
 New members get an Unverified role the moment they join and can only open the rules,
