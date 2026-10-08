@@ -206,6 +206,8 @@ starts and stops it, updates it, and rolls back to the version before.
   Checks, the download, the backup and database changes happen before anything running
   is touched. If the new version doesn't pass its health check, the Launcher switches
   back on its own.
+- **One-click updates.** Sign in with GitHub once and the Launcher lists each new
+  version of SomniBot, installs it with one click, and keeps itself up to date too.
 - **Your data, portable.** Export everything (every table and every uploaded file) to
   one file, and import it on another machine or database.
 - **Your database, your choice.** A Supabase project, your own Supabase, or a database
