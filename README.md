@@ -5,7 +5,7 @@
 <h1 align="center">SomniBot for Discord</h1>
 
 <p align="center">
-  <b>One Discord bot for your whole server: member gate, moderation, levels, a coin economy, giveaways, tickets, music, automations, and a real-money store with licence keys and a customer portal.</b><br>
+  <b>One Discord bot for your whole server: member gate, moderation, levels, a coin economy, giveaways, tickets, music, automations, and a real-money store with Discord-based licensing for programs and a customer portal.</b><br>
   All of it is run from one web dashboard, under your own bot's name and brand.
 </p>
 
@@ -41,7 +41,9 @@
   the bot, with an undo button that says what it will put back.
 - **It never surprises you.** The bot never makes a role or channel nobody asked for.
   Big changes are previewed before anything happens in Discord, and SomniBot saves a
-  snapshot of every role, channel and permission before each big change it makes.
+  snapshot of every role, channel and permission before each big change it makes. It
+  also stops before opening a staff-only channel to members, because they would see
+  every earlier message in it, and asks you to choose first.
 - **Real money and play money never mix.** The coin economy is a game. No store product
   gives coins, coins can't be turned into real money, and a role someone paid for never
   earns coin income.
@@ -69,10 +71,10 @@ server template. Manage **Server settings**, role icons and gradients, **Events*
 explain Community, boost and other Discord requirements before unavailable choices
 can be applied.
 
-**Linked roles** shares product ownership, active licences, verification, level and
-days in the server for requirements you choose in Discord. The Launcher checks the
-verification setup first. Members can also install the app to their own accounts for
-`/portal`, `/license`, `/privacy` and `/mydata` in servers and private chats.
+**Linked roles** shares product ownership, an active program licence, verification,
+level and days in the server for requirements you choose in Discord. The Launcher
+checks the verification setup first. Members can also install the app to their own
+accounts for `/portal`, `/privacy` and `/mydata` in servers and private chats.
 
 Branded Discord message cards (Components V2) combine text, pictures and controls.
 See [all features](FEATURES.md) and the [command list](COMMANDS.md).
@@ -138,18 +140,25 @@ can be products from your store.
 
 Ticket panels with buttons or a dropdown, private threads, intake questions, ticket
 types, claim buttons, reminders, auto-close, feedback and transcripts. When a buyer opens
-a ticket, staff see their orders and licences right there, and can resend a key or
-start a refund from Discord.
+a ticket, staff see their orders, the PCs they activated your programs on and their
+open requests right there, and can reset PCs, start a refund or remove access from
+Discord.
 
 ![Ticket panels](images/tickets.png)
 
 ### A real-money store inside Discord
 
-Sell digital products from `/store`: licence keys, downloadable files, roles and
-channels, service tickets, subscriptions and free products. Buyers pay through **your
-own PayPal**, or **your own way** (crypto, Cash App, a bank transfer) and you confirm
-the payment. Every product passes a Sandbox test purchase before it can go on sale.
-Buyers get a branded customer portal for their licences, downloads and orders.
+Sell digital products from `/store`: programs that check the buyer's Discord account,
+downloadable files, roles and channels, service tickets, subscriptions and free
+products. Buyers pay through **your own PayPal**, or **your own way** (crypto, Cash App,
+a bank transfer) and you confirm the payment. Every product passes a Sandbox test
+purchase before it can go on sale. Buyers get a branded customer portal for their
+programs, downloads and orders.
+
+Selling a program? **Discord is the licence.** The program signs the buyer in with
+Discord and checks their role in your server every time it starts, so a refund ends
+access, with no licence keys to hand out or lose. The dashboard's **SDK** page writes
+the instructions your developer, or an AI coding assistant, follows to add the check.
 
 ![The Store page](images/store.png)
 
@@ -209,6 +218,11 @@ starts and stops it, updates it, and rolls back to the version before.
 - **Updates in one step.** When a new version arrives, point the Launcher at its files
   and press **Update**: it checks every file, backs up the database and switches over,
   and the full guide comes with the Launcher, readable offline.
+- **No ports to manage.** Nothing in SomniBot uses a fixed port. The Launcher picks free
+  ones, and if another program takes one later it moves SomniBot to a free port by
+  itself and says so on Home. If your PC's Tailscale name changes, it follows the new
+  name, moves the public addresses and shows the new sign-in addresses to add in
+  Discord.
 - **Your data, portable.** Export everything (every table and every uploaded file) to
   one file, and import it on another machine or database.
 - **Your database, your choice.** A Supabase project, your own Supabase, or a database
