@@ -130,7 +130,7 @@ minimum level or days. Members link through Discord and sign in with their accou
 the bot refreshes their values as purchases, refunds and membership change.
 
 The Launcher also checks **Install to a member's account**. This makes `/portal`,
-`/privacy` and `/mydata` available in servers and private chats. A private
+`/privacy` and `/mydata` available in their DMs with the bot and in group chats. A private
 server picker chooses which shared server an answer concerns when there is more
 than one. Every other command stays server-only.
 

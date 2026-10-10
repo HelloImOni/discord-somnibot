@@ -74,7 +74,7 @@ can be applied.
 **Linked roles** shares product ownership, an active program licence, verification,
 level and days in the server for requirements you choose in Discord. The Launcher
 checks the verification setup first. Members can also install the app to their own
-accounts for `/portal`, `/privacy` and `/mydata` in servers and private chats.
+accounts for `/portal`, `/privacy` and `/mydata` in their DMs with the bot and in group chats.
 
 Branded Discord message cards (Components V2) combine text, pictures and controls.
 See [all features](FEATURES.md) and the [command list](COMMANDS.md).
