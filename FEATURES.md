@@ -41,6 +41,10 @@ and picture you give it. The **Branding** page sets:
   giveaway wins). Your own custom messages are never changed;
 - the **"Powered by SomniBot"** footer credit, which you can switch off.
 
+**Bot presence**, in Settings, sets the messages shown under the bot's name in Discord;
+they rotate with your member count, how long the bot has been online and the song
+playing.
+
 A **live preview** shows your saved messages in your brand. The dashboard is for you and
 your team only: the bot's messages to members never mention it. Members use the
 customer portal for purchases and a separate verification page for Linked roles.
@@ -120,13 +124,13 @@ registered member facts and Discord sign-in redirect. Until the setup is ready, 
 page shows what is missing and keeps new facts from being switched on.
 
 On **Linked roles**, choose which facts SomniBot shares: owning any or a specific
-product, an active licence, level, verification and days in the server. In Discord's
+product, an active program licence, level, verification and days in the server. In Discord's
 **Server Settings → Roles → Links**, choose what each role requires, including its
 minimum level or days. Members link through Discord and sign in with their account;
-the bot refreshes their values as purchases, licences and membership change.
+the bot refreshes their values as purchases, refunds and membership change.
 
 The Launcher also checks **Install to a member's account**. This makes `/portal`,
-`/license`, `/privacy` and `/mydata` available in servers and private chats. A private
+`/privacy` and `/mydata` available in their DMs with the bot and in group chats. A private
 server picker chooses which shared server an answer concerns when there is more
 than one. Every other command stays server-only.
 
@@ -170,6 +174,9 @@ normal. Nothing changes until you preview and confirm, and every change can be u
   button in the verification channel.
 - **See the server as a role**: pick one or more roles and see, channel by channel, what
   someone holding them can do, with a fix for anything that doesn't match.
+- **Staff-only history stays private.** Opening a channel only staff could read would
+  show members every earlier message in it, so SomniBot refuses, names the channel and
+  asks you to choose: make a new channel for members, or go ahead.
 
 ## Welcome and goodbye
 
@@ -268,8 +275,8 @@ income.
 
 - **Giveaways** with an entry button, any number of winners, optional role and level
   requirements, a winner announcement and a congratulations DM. A prize can be a
-  product from your store, licence keys included. Staff can start, end, reroll, pause,
-  resume and list giveaways from Discord.
+  product from your store, delivered as an order like any purchase. Staff can start,
+  end, reroll, pause, resume and list giveaways from Discord.
 - **Polls**: members make them with `/poll`. **Use Discord's poll** uses Discord's
   native voting interface, with a duration and multiple-answer choice; the dashboard
   reads the final counts when the poll ends.
@@ -288,9 +295,9 @@ income.
 - **Transcripts**: one web page with the whole conversation and its files, with an
   optional copy for the member.
 - **Buyer context**: when the member has bought from your store, staff see their orders,
-  active licences (the last four characters only) and open portal requests, and can
-  **resend a key**, **start a refund** or **remove access** from inside the ticket. A
-  refund requested by staff goes to the owner to approve.
+  the PCs they activated your programs on and open portal requests, and can **reset
+  PCs**, **start a refund** or **remove access** from inside the ticket. A refund
+  requested by staff goes to the owner to approve.
 
 ![Ticket panels](images/tickets.png)
 
@@ -313,7 +320,7 @@ Play from **YouTube, SoundCloud, Bandcamp, Twitch and Vimeo** in your voice chan
 
 - **Triggers**: members (joins, verified, leaves, roles gained or lost, reaching a
   level, an invite that qualifies), the store (purchase completed, order refunded,
-  subscription activated, renewal failed, lapsed or expired, a new licence device),
+  subscription activated, renewal failed, lapsed or expired),
   moderation (a warning, a case opened), messages and activity (messages, reactions,
   buttons, voice channels), tickets, giveaways and Discord events.
 - **Conditions**: roles, levels, channels, owning a product, message text, new or
@@ -339,6 +346,8 @@ GitHub can send updates to.
   voice room, which they can lock, unlock or claim with `/voice`.
 - **Stats channels**: a live number, such as your member count, shown as a voice
   channel's name.
+- **Emoji picker**: wherever an emoji is chosen, one picker offers this server's own
+  emoji and the standard ones.
 - **Reaction roles**: members give themselves roles with reactions or buttons.
 
 ## Staying in control
@@ -370,7 +379,8 @@ GitHub can send updates to.
 When something needs you (music stopped, a lost permission, a channel that's gone, the
 bot can't do something it was asked to, the member gate needs a choice), SomniBot sends
 you an **owner alert**, by DM or in a channel members can't read. Store alerts have
-their own page and channel.
+their own page and channel. The first time the bot starts, it also sends you one DM
+with your next steps.
 
 The **Daily digest** sends one message a day, at the time and timezone you choose, to
 your DMs or a staff channel. It covers new members, sales, tickets, requests, failed
@@ -385,7 +395,7 @@ Give other people access to the dashboard with **dashboard roles**. No role is b
 start from a template (**Admin**, **Moderator**, **Finance**, **Support**) or an empty
 role, then choose each permission. Permissions cover server settings, moderation,
 tickets, automations, roles and channels, editing products, running the store, handling
-orders, customers and licence keys, analytics, the audit log, Diagnostics, incidents,
+orders, customers (program PCs included), analytics, the audit log, Diagnostics, incidents,
 fraud, failed actions, undo, the team page and the coin economy.
 
 - A team member sees only the pages their permissions cover. A save that would also
@@ -410,8 +420,8 @@ Members manage their own data in Discord:
 - `/forgetme` erases or anonymizes their data after they confirm, and lists first what is
   erased and what is kept.
 
-You choose how long records are kept, from 30 days to 10 years. Orders, payments and
-licence keys are kept as your sales records.
+You choose how long records are kept, from 30 days to 10 years. Orders and payments are
+kept as your sales records.
 
 ---
 

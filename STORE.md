@@ -27,10 +27,14 @@ A store that sells only free products and products paid by hand needs no PayPal 
 
 ## What you can sell
 
-- **Licence keys**, with devices per key, check-in and offline periods, key rotation,
-  and an optional rule that the key only works for members of your server. Your program
-  can also unlock with the buyer's **Discord account** instead of a key, or either one.
-  SomniBot stores a hash of each key, not the key itself.
+- **Programs that check the buyer's Discord account.** Discord is the licence. Every
+  time your program starts, it signs the buyer in with Discord and checks that they are
+  in your server and hold the product's role, so a refund, a chargeback or a lapsed
+  subscription ends access at the next start. Each buyer activates each PC once, in the
+  customer portal. You choose how many PCs one buyer may use and how long an activation
+  lasts. A PC that is already activated keeps running if your store is briefly
+  offline. Only you and the staff you allow can free a buyer's PCs (**Reset PCs**).
+  There are no licence keys to hand out, rotate or lose.
 - **Downloadable files**. Buyers download from the customer portal with a private link
   that works once, and only while they own the product. **PDFs, images and text files
   get a watermark made for each buyer.** Publish a **new version** with release notes,
@@ -41,8 +45,8 @@ A store that sells only free products and products paid by hand needs no PayPal 
 - **Game items** given with a purchase.
 - **Subscriptions**: plans billed every so many days, weeks, months or years, with free
   trials, through PayPal.
-- An optional **access period** (for example 30 days), after which roles, channels and
-  the key stop working.
+- An optional **access period** (for example 30 days), after which roles and channels,
+  and with them access to a program, stop working.
 
 ![The New product editor](images/store-new-product.png)
 
@@ -52,6 +56,10 @@ Members open `/store`, see the products on sale, and press **Buy** (or **Claim**
 free product). Coupons: buyers press **Use a code**, see privately what it takes off,
 then buy; the bot checks every rule again at that moment.
 
+With **Gifting** on, a **Gift** button lets a buyer pick another member of the server
+to give a product to (not for products you take payment for by hand). With **Announce
+purchases** on, the bot posts "someone just bought..." in a channel you choose.
+
 Everyone who owns something can get your **Customer role**, and loses it when they no
 longer own anything. Use it for customer-only channels.
 
@@ -59,7 +67,8 @@ longer own anything. Use it for customer-only channels.
 
 Every product passes a **Sandbox check** before it can go on sale. You make a test
 purchase with test money (or claim it, or mark a by-hand order paid), check what arrived
-(the receipt DM, the roles, each file, the key), take it back, and SomniBot reads the
+(the receipt DM, the roles, each file, or your program signed in with the Discord
+account that bought it), take it back, and SomniBot reads the
 real records to confirm every step happened. Change a product's price, roles, files or
 delivery later and it needs a new test.
 
@@ -71,8 +80,9 @@ the customer portal and receipts say so.
 Each store has its own customer portal, in your brand, opened with `/portal` and signed
 in with Discord. Buyers find:
 
-- **Licences**: their keys, a new key if your rotation policy allows it, and their
-  devices;
+- **Licences**: the programs they bought and the PCs they activated them on, with how
+  to activate a new one. Buyers can see their PCs but not remove them, so when they run
+  out they ask you to reset them;
 - **Downloads**: their files, new versions marked as new;
 - **Orders**: their order history, payment instructions for orders paid by hand,
   cancelling a subscription (if you allow it), and **Request a refund** or **Contact the
@@ -85,8 +95,8 @@ A request never moves money by itself: it reaches you at once and you decide.
 - **Orders** lists every order with where it came from (a purchase, a giveaway prize, a
   free claim, an automation, or paid by hand), with filters for delivery problems,
   disputes, refunds and more.
-- **Refund** asks PayPal to refund the order. Access and keys are removed only once
-  PayPal has completed the refund, and it never issues a second refund. Or choose to
+- **Refund** asks PayPal to refund the order. Access is removed only once PayPal has
+  completed the refund, and it never issues a second refund. Or choose to
   remove access first and refund in PayPal yourself.
 - **Refund & Cancel** on a subscription cancels it at PayPal so it can never bill again,
   refunds its latest payment and removes access.
@@ -100,20 +110,23 @@ A request never moves money by itself: it reaches you at once and you decide.
 - **Money alerts**: every sale, refund, dispute, failed delivery, fraud signal and payment
   to confirm, sent to you in Discord, and whether each one reached you. Urgent ones always
   reach your DMs.
-- **Customers**: each buyer's timeline (commerce, support and moderation) and their portal
-  sign-ins, which you can revoke.
+- **Customers**: each buyer's timeline (commerce, support and moderation), their portal
+  sign-ins, which you can revoke, and the PCs they activated your programs on, with
+  **Reset PCs**.
 - **Requests**: refund and help requests from the portal.
-- **Licensing**: how each product is delivered, licence health, and **Look up a key**
-  with its devices and sessions, to pause, activate or revoke.
-- **Fraud controls**: suspicious purchases and licence use SomniBot noticed, and the rules
-  it uses to notice them.
+- **Fraud controls**: suspicious purchases SomniBot noticed, and the rules it uses to
+  notice them.
 - **Analytics**: how your products sell.
 - **Promotions**: coupon codes for a percentage or a fixed amount off one-time products,
   with minimum purchase, maximum uses, start and end dates, and first-purchase-only.
 - **Discord store**: link premium roles you sell through Discord's own store to your
   server.
-- **SDK**: writes the instructions a developer, or an AI coding assistant, follows to add
-  licence checks to your software.
+- **SDK**: describe your program and SomniBot writes the instructions a developer, or an
+  AI coding assistant, follows to add the Discord check to the program you already have:
+  four files covering the Discord sign-in, the role check, PC activation and every
+  message the program shows. The program asks Discord itself; your store is only asked
+  to activate a PC and whether it is still allowed. Nothing on that page changes your
+  store.
 
 ---
 
