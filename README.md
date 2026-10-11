@@ -23,7 +23,7 @@
 
 > This repository is a showcase. It describes what SomniBot does and contains no code,
 > downloads or install files. The screenshots come from a real SomniBot install on a
-> test server, with **sample names**: the server, members and products have been renamed.
+> test server, with test data and sample product names.
 
 ## Why SomniBot
 
