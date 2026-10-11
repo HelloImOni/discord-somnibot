@@ -2,7 +2,7 @@
 
 [← Back to the overview](README.md) · [Features](FEATURES.md) · [The store](STORE.md)
 
-SomniBot has **92 built-in slash commands** and **5 right-click commands**. Switching a feature
+SomniBot has **92 built-in slash commands** and **8 right-click commands**. Switching a feature
 off in the dashboard also hides its commands, and `/help` shows each member only the
 commands they can use. Each command name counts once; subcommands and server-specific
 custom commands are not added to this total.
@@ -166,6 +166,9 @@ chooses which one. All other commands stay server-only.
 | **Warn User** | Staff: warn a member |
 | **Create Ticket** | Open a ticket from a message |
 | **Report Message** | Report a message, with a reason only the staff team sees |
+| **Translate** | Read a message in your own language (only you see it) |
+| **Draft a reply** | Staff, in a ticket: the assistant drafts a reply you can post or edit |
+| **Translate my reply** | Staff, in a ticket: post your reply in the member's language |
 
 Server owners can also add their own slash commands with **Custom commands** on the
 dashboard.

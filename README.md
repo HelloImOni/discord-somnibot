@@ -143,8 +143,10 @@ get a real answer: your rules, how to get a role, what a feature pays, when your
 event is. It answers from your server as that member sees it (its channels, roles,
 switched-on features, the rules and info your team posted, your events and your own
 written answers), never names a channel they can't open, and says plainly when it
-doesn't know, with a ticket button so a person can take over. You bring a free key from
-Cloudflare or Groq (or any compatible AI service); the Launcher walks you through it.
+doesn't know, with a ticket button so a person can take over. It also briefs your staff on
+new tickets, drafts replies, summarises transcripts, translates, and explains your own setup
+to you. You bring a free key from Google, Cloudflare or Groq (or any compatible AI service);
+the Launcher walks you through it.
 
 ### Tickets with buyer context
 

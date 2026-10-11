@@ -300,11 +300,22 @@ income.
 - When it doesn't know, it says so and offers a **ticket**. Orders, payments and refunds
   go to the customer portal or a person, never a guess.
 - In tickets it can **suggest an answer**; **I still need a person** calls your staff.
+- **For your staff**: a short **brief** on every new ticket's staff alert (what the member
+  needs and what the assistant already told them), **Draft a reply** in any ticket (post it
+  or edit it first), a **summary** at the top of every transcript, and **translation** both
+  ways when a member writes in another language.
+- **For you**: **Ask about your setup** explains your own server in plain words ("why can't
+  new members see #general?") with a link to the page that changes it; questions it
+  couldn't answer come with a **drafted answer** you approve in one click; the daily digest
+  starts with **what matters today**.
+- **For members**: **Translate** any message into their own language, and a **personal
+  welcome** pointing to what they picked when they joined.
+- Turn each of these on or off on its own.
 - Give it a **name, a personality and a voice** (professional, friendly or playful).
 - **Try it** in the dashboard as any kind of member, and see the questions it couldn't
   answer so you can write your own answer.
-- It runs on **your own free key** from Cloudflare Workers AI or Groq, or any
-  OpenAI-compatible service. The Launcher walks you through making the key and checks
+- It runs on **your own free key** from Google AI Studio (the most room), Cloudflare Workers
+  AI or Groq, or any OpenAI-compatible service. The Launcher walks you through making the key and checks
   it; the question and the server information used to answer it are sent to that
   service.
 
