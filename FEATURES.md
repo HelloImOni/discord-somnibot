@@ -138,7 +138,8 @@ than one. Every other command stays server-only.
 
 New members get the **Unverified** role when they join and can open only the rules,
 verification and support channels. When they finish your steps they get the **Verified**
-role and the rest of the server. You choose the steps:
+role and the rest of the server. While they wait they can still ask for help: `/ask`,
+`/help` and their own tickets work in the support channel. You choose the steps:
 
 - the rules step: SomniBot's **I accept** button, Discord's Rules Screening, or a role
   members pick;
@@ -284,6 +285,29 @@ income.
 
 ![Giveaways](images/giveaways.png)
 
+## The assistant
+
+- Members ask in plain words: **`/ask`**, a **mention** of the bot, or a **help channel**
+  where each question gets its own thread and follow-ups keep the conversation.
+- It answers from your server **as the asking member sees it**: channels and what they
+  can do there, roles and how each one is given, the features you switched on with their
+  real numbers, the **rules and info your team posted**, pinned messages, your
+  onboarding questions and scheduled events.
+- **Your own answers come first**: write the answer to a common question once and the
+  assistant uses your wording.
+- It **never names a channel the member can't open**, and in a public reply it only
+  mentions what everyone reading can see.
+- When it doesn't know, it says so and offers a **ticket**. Orders, payments and refunds
+  go to the customer portal or a person, never a guess.
+- In tickets it can **suggest an answer**; **I still need a person** calls your staff.
+- Give it a **name, a personality and a voice** (professional, friendly or playful).
+- **Try it** in the dashboard as any kind of member, and see the questions it couldn't
+  answer so you can write your own answer.
+- It runs on **your own free key** from Cloudflare Workers AI or Groq, or any
+  OpenAI-compatible service. The Launcher walks you through making the key and checks
+  it; the question and the server information used to answer it are sent to that
+  service.
+
 ## Tickets
 
 - **Panels** with buttons or a dropdown. Each ticket opens as a **private thread**.
@@ -303,7 +327,7 @@ income.
 
 ## Music
 
-Play from **YouTube, SoundCloud, Bandcamp, Twitch and Vimeo** in your voice channels.
+Play from **YouTube, SoundCloud, Bandcamp and Twitch** in your voice channels.
 
 - A **DJ role**. Anyone in the bot's voice channel can add songs and skip their own;
   skipping someone else's song needs a vote from the people listening.

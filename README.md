@@ -136,6 +136,16 @@ can be products from your store.
 
 ![Giveaways](images/giveaways.png)
 
+### An assistant that knows your server
+
+Members ask in plain words, with `/ask`, by mentioning the bot or in a help channel, and
+get a real answer: your rules, how to get a role, what a feature pays, when your next
+event is. It answers from your server as that member sees it (its channels, roles,
+switched-on features, the rules and info your team posted, your events and your own
+written answers), never names a channel they can't open, and says plainly when it
+doesn't know, with a ticket button so a person can take over. You bring a free key from
+Cloudflare or Groq (or any compatible AI service); the Launcher walks you through it.
+
 ### Tickets with buyer context
 
 Ticket panels with buttons or a dropdown, private threads, intake questions, ticket
@@ -174,8 +184,8 @@ messages and DMs, roles, threads, tickets, granting a product and moderation.
 
 ### Music
 
-Music in your voice channels from YouTube, SoundCloud, Bandcamp, Twitch and Vimeo, with
-a DJ role, vote-to-skip, queue limits, audio filters and auto-leave.
+Music in your voice channels from YouTube, SoundCloud, Bandcamp and Twitch, with a DJ
+role, vote-to-skip, queue limits, audio filters and auto-leave.
 
 ![Music](images/music.png)
 
@@ -215,9 +225,10 @@ starts and stops it, updates it, and rolls back to the version before.
   Checks, the download, the backup and database changes happen before anything running
   is touched. If the new version doesn't pass its health check, the Launcher switches
   back on its own.
-- **Updates in one step.** When a new version arrives, point the Launcher at its files
-  and press **Update**: it checks every file, backs up the database and switches over,
-  and the full guide comes with the Launcher, readable offline.
+- **Updates in one step.** When you're sent a new version, put its files in one folder and
+  press **Use update files from this PC** on the Updates page: the Launcher checks every
+  file, backs up the database and switches over. The full guide comes with the Launcher,
+  readable offline.
 - **No ports to manage.** Nothing in SomniBot uses a fixed port. The Launcher picks free
   ones, and if another program takes one later it moves SomniBot to a free port by
   itself and says so on Home. If your PC's Tailscale name changes, it follows the new
