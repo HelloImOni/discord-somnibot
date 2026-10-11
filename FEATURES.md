@@ -81,7 +81,7 @@ such as Server Booster. Missing roles appear as Review problems before deploymen
 **Load a server template** imports a template into the plan; it changes nothing in
 Discord until you deploy. Sync and snapshots include these settings.
 
-![Server setup](images/server-setup.png)
+![Server setup](images/server-setup.jpg)
 
 ## Server settings and role appearance
 
@@ -160,7 +160,7 @@ already in the server keep their access.
 **Nobody is let in by a timer.** Staff let someone in with `/verify`, or with **Verify** on
 the **Members** page.
 
-![The member gate](images/onboarding.png)
+![The member gate](images/onboarding.jpg)
 
 ## Channel permissions
 
@@ -214,7 +214,7 @@ on, or when they join if it's off.
 - **Invites**: who invites whom, how many joined, stayed or left, and pause, reopen,
   delete or make invites from the dashboard.
 
-![Moderation settings](images/moderation.png)
+![Moderation settings](images/moderation.jpg)
 
 **Auto-mod rules** filter words (exact, wildcard or a custom pattern), links, invites,
 spam and mass mentions. **Try a rule safely** checks a sample message against your saved
@@ -222,7 +222,7 @@ rules: nothing is sent and no case is recorded. A **Translator** rule rewrites w
 instead of blocking them: the rewritten message is posted as the member, and it never
 warns or punishes anyone.
 
-![Auto-mod rules](images/automod.png)
+![Auto-mod rules](images/automod.jpg)
 
 Staff can also use `/voice-mod` or a member's timeline to move, server-mute, deafen
 or disconnect someone in voice. Each action is recorded as a moderation case.
@@ -243,7 +243,7 @@ still running.
 - A server **leaderboard**. Members use `/rank` and `/leaderboard`; staff adjust XP with
   `/xp`.
 
-![Levels & XP](images/levels.png)
+![Levels & XP](images/levels.jpg)
 
 ## The coin economy
 
@@ -270,7 +270,7 @@ biggest bet per kind of game and a **daily loss limit**.
 is no way to turn coins into real money, and a role someone paid for never earns coin
 income.
 
-![The Economy page](images/economy.png)
+![The Economy page](images/economy.jpg)
 
 ## Giveaways, polls and predictions
 
@@ -283,7 +283,7 @@ income.
   reads the final counts when the poll ends.
 - **Predictions**: members bet play money on what will happen, with `/predict`.
 
-![Giveaways](images/giveaways.png)
+![Giveaways](images/giveaways.jpg)
 
 ## The assistant
 
@@ -295,22 +295,28 @@ income.
   onboarding questions and scheduled events.
 - **Your own answers come first**: write the answer to a common question once and the
   assistant uses your wording.
+- With Google, answers can use **more server detail and conversation history**;
+  providers with smaller allowances use a more compact view automatically.
 - It **never names a channel the member can't open**, and in a public reply it only
   mentions what everyone reading can see.
 - When it doesn't know, it says so and offers a **ticket**. Orders, payments and refunds
   go to the customer portal or a person, never a guess.
 - In tickets it can **suggest an answer**; **I still need a person** calls your staff.
-- **For your staff**: a short **brief** on every new ticket's staff alert (what the member
+- **For your staff**: a short **brief** on a new ticket's staff alert (what the member
   needs and what the assistant already told them), **Draft a reply** in any ticket (post it
-  or edit it first), a **summary** at the top of every transcript, and **translation** both
+  or edit it first), a **summary** at the top of the transcript, and **translation** both
   ways when a member writes in another language.
 - **For you**: **Ask about your setup** explains your own server in plain words ("why can't
   new members see #general?") with a link to the page that changes it; questions it
-  couldn't answer come with a **drafted answer** you approve in one click; the daily digest
+  couldn't answer can get a **drafted answer** you edit and save as your own answer, or
+  dismiss and bring back later; the daily digest
   starts with **what matters today**.
-- **For members**: **Translate** any message into their own language, and a **personal
-  welcome** pointing to what they picked when they joined.
-- Turn each of these on or off on its own.
+- **For members**: **Translate** a message into their own language in a reply only they
+  see, and a **personal welcome DM** based on eligible interest/onboarding roles. Your
+  welcome template stays as written; without eligible roles, the normal welcome is sent.
+- Turn the optional tasks on or off on their own, choose the staff language and see usage
+  by task. Member answers take priority; ordinary tickets, welcomes and digests still
+  work without generated text when the service is busy or unavailable.
 - Give it a **name, a personality and a voice** (professional, friendly or playful).
 - **Try it** in the dashboard as any kind of member, and see the questions it couldn't
   answer so you can write your own answer.
@@ -318,6 +324,8 @@ income.
   AI or Groq, or any OpenAI-compatible service. The Launcher walks you through making the key and checks
   it; the question and the server information used to answer it are sent to that
   service.
+
+![Optional assistant task controls](images/assistant-tasks.jpg)
 
 ## Tickets
 
@@ -334,7 +342,7 @@ income.
   PCs**, **start a refund** or **remove access** from inside the ticket. A refund
   requested by staff goes to the owner to approve.
 
-![Ticket panels](images/tickets.png)
+![Ticket panels](images/tickets.jpg)
 
 ## Music
 
@@ -347,7 +355,7 @@ Play from **YouTube, SoundCloud, Bandcamp and Twitch** in your voice channels.
 - Leaves an empty channel or an idle player on its own.
 - A **Music server and YouTube** check that says whether music is working.
 
-![Music](images/music.png)
+![Music](images/music.jpg)
 
 ## Automations
 
@@ -369,7 +377,7 @@ preview before they can be switched on (**Waiting for approval**). **Custom comm
 own slash commands, and **Webhook relays** gives you an address that a website, store or
 GitHub can send updates to.
 
-![Automations](images/automations.png)
+![Automations](images/automations.jpg)
 
 ## Channels and messages
 
@@ -407,7 +415,7 @@ GitHub can send updates to.
   filters and downloads.
 - Switching a feature off also hides its slash commands in Discord.
 
-![Members](images/members.png)
+![Members](images/members.jpg)
 
 ## Owner alerts and the daily digest
 
@@ -422,7 +430,7 @@ your DMs or a staff channel. It covers new members, sales, tickets, requests, fa
 actions, moderation, and bot and music health. You can preview the next one, and choose
 whether quiet days still get a short note.
 
-![Daily digest](images/digest.png)
+![Daily digest](images/digest.jpg)
 
 ## Your team
 
@@ -443,7 +451,7 @@ fraud, failed actions, undo, the team page and the coin economy.
   24 hours, 3 days or 7 days.
 - Team members sign in with their own Discord account, from any device.
 
-![Team](images/team.png)
+![Team](images/team.jpg)
 
 ## Privacy
 
@@ -453,7 +461,10 @@ Members manage their own data in Discord:
   record is kept, and how to reach you.
 - `/mydata` sends them a file of their data, once a day at most (you can switch it off).
 - `/forgetme` erases or anonymizes their data after they confirm, and lists first what is
-  erased and what is kept.
+  erased and what is kept. Moderation history stays: completed records lose the member's
+  ID and name, while an active warning, timeout or ban keeps its ID until it is over.
+  Saved ticket transcripts and messages already posted in Discord stay until deleted
+  by the owner or staff.
 
 You choose how long records are kept, from 30 days to 10 years. Orders and payments are
 kept as your sales records.

@@ -19,7 +19,7 @@
 
 ---
 
-![The SomniBot dashboard Home page](images/home.png)
+![The SomniBot dashboard Home page](images/home.jpg)
 
 > This repository is a showcase. It describes what SomniBot does and contains no code,
 > downloads or install files. The screenshots come from a real SomniBot install on a
@@ -61,7 +61,7 @@ Discord. The deploy is safe by default: it only touches roles and channels Somni
 and keeps everything you made yourself. A last step lists exactly what to check with a
 test account.
 
-![Server setup at the Verification step](images/server-setup.png)
+![Server setup at the Verification step](images/server-setup.jpg)
 
 ### More of Discord in one dashboard
 
@@ -79,13 +79,13 @@ accounts for `/portal`, `/privacy` and `/mydata` in their DMs with the bot and i
 Branded Discord message cards (Components V2) combine text, pictures and controls.
 See [all features](FEATURES.md) and the [command list](COMMANDS.md).
 
-![Linked roles: what members can prove, such as owning one specific product](images/linked-roles.png)
+![Linked roles: what members can prove, such as owning a product](images/linked-roles.jpg)
 
-![Events: voice, stage and external events listed in Discord](images/events.png)
+![Events: voice, stage and external events listed in Discord](images/events.jpg)
 
-![Emoji, stickers & sounds: upload, rename and delete, with the slots left](images/expressions.png)
+![Emoji, stickers & sounds: upload, rename and delete, with the slots left](images/expressions.jpg)
 
-![Server settings: the server's name, pictures, safety settings and welcome screen](images/server-settings.png)
+![Server settings: the server's name, pictures, safety settings and welcome screen](images/server-settings.jpg)
 
 ### A member gate that lets the right people in
 
@@ -99,7 +99,7 @@ Every channel gets a purpose (staff-only, 18+, read-only, normal chat), and **Se
 server as a role** shows, channel by channel, what someone holding any set of roles can
 do, with a fix for anything that doesn't match.
 
-![The member gate on the Onboarding page](images/onboarding.png)
+![The member gate on the Onboarding page](images/onboarding.jpg)
 
 ### Moderation, auto-mod and one-click lockdown
 
@@ -108,20 +108,20 @@ message logging, anti-raid and a starboard. **Lockdown** stops members posting, 
 and speaking everywhere at once during a raid, and **Unlock** puts every channel back
 exactly as it was, even after a restart.
 
-![Moderation settings with Lockdown](images/moderation.png)
+![Moderation settings with Lockdown](images/moderation.jpg)
 
 Auto-mod rules filter words, links, invites, spam and mass mentions, and **Try a rule
 safely** tests a sample message without acting on it. A **Translator** rule rewrites
 words instead of blocking them, and never punishes anyone.
 
-![Auto-mod rules](images/automod.png)
+![Auto-mod rules](images/automod.jpg)
 
 ### Levels, a full coin economy and giveaways
 
 Message and voice XP, level rewards (roles, coins or items), XP multipliers, rank cards
 and leaderboards.
 
-![Levels & XP](images/levels.png)
+![Levels & XP](images/levels.jpg)
 
 A whole play-money game: daily, weekly and monthly rewards, work and crime, banks and
 robbing, role income, a game shop, a member-to-member market, crafting, farming,
@@ -129,12 +129,12 @@ fishing, hunting, digging and mining, adventures, heists, pets, quests, achievem
 trivia, lotteries, predictions and casino-style games. The games pay back about 95% of
 what is bet over time, and you can cap bets and daily losses.
 
-![The Economy page](images/economy.png)
+![The Economy page](images/economy.jpg)
 
 Giveaways with a button to enter, optional role and level requirements, and prizes that
 can be products from your store.
 
-![Giveaways](images/giveaways.png)
+![Giveaways](images/giveaways.jpg)
 
 ### An assistant that knows your server
 
@@ -148,6 +148,8 @@ new tickets, drafts replies, summarises transcripts, translates, and explains yo
 to you. You bring a free key from Google, Cloudflare or Groq (or any compatible AI service);
 the Launcher walks you through it.
 
+![Assistant settings and provider status](images/assistant.jpg)
+
 ### Tickets with buyer context
 
 Ticket panels with buttons or a dropdown, private threads, intake questions, ticket
@@ -156,7 +158,7 @@ a ticket, staff see their orders, the PCs they activated your programs on and th
 open requests right there, and can reset PCs, start a refund or remove access from
 Discord.
 
-![Ticket panels](images/tickets.png)
+![Ticket panels](images/tickets.jpg)
 
 ### A real-money store inside Discord
 
@@ -172,7 +174,7 @@ Discord and checks their role in your server every time it starts, so a refund e
 access, with no licence keys to hand out or lose. The dashboard's **SDK** page writes
 the instructions your developer, or an AI coding assistant, follows to add the check.
 
-![The Store page](images/store.png)
+![The Store page](images/store.jpg)
 
 Read the full tour in **[STORE.md](STORE.md)**.
 
@@ -182,14 +184,14 @@ Read the full tour in **[STORE.md](STORE.md)**.
 the store, moderation, messages and activity, tickets and giveaways; actions include
 messages and DMs, roles, threads, tickets, granting a product and moderation.
 
-![Automations](images/automations.png)
+![Automations](images/automations.jpg)
 
 ### Music
 
 Music in your voice channels from YouTube, SoundCloud, Bandcamp and Twitch, with a DJ
 role, vote-to-skip, queue limits, audio filters and auto-leave.
 
-![Music](images/music.png)
+![Music](images/music.jpg)
 
 ### Your morning briefing
 
@@ -197,7 +199,7 @@ The **Daily digest** sends you one message a day about everything since the last
 new members, sales, tickets, requests, failed actions, moderation, bot and music health,
 and anything that needs you. Urgent alerts and money alerts still reach you at once.
 
-![Daily digest](images/digest.png)
+![Daily digest](images/digest.jpg)
 
 ### Every member's story in one place
 
@@ -205,11 +207,11 @@ and anything that needs you. Urgent alerts and money alerts still reach you at o
 their timeline: joins and leaves, the member gate, role changes the bot made, purchases,
 refunds, tickets, moderation cases and appeals, and level-ups.
 
-![Members](images/members.png)
+![Members](images/members.jpg)
 
 ### Your team
 
-![Team](images/team.png)
+![Team](images/team.jpg)
 
 See everything in **[FEATURES.md](FEATURES.md)**, and every command in
 **[COMMANDS.md](COMMANDS.md)**.
@@ -221,7 +223,7 @@ in your own database. The **SomniBot Launcher** (Windows and Linux) installs it,
 checks everything it needs from Discord, the database, your web address and PayPal,
 starts and stops it, updates it, and rolls back to the version before.
 
-![The SomniBot Launcher Home screen](images/launcher-home.png)
+![The SomniBot Launcher Home screen](images/launcher-home.jpg)
 
 - **Safe updates.** Before every install and update the Launcher backs up the database.
   Checks, the download, the backup and database changes happen before anything running
@@ -244,7 +246,7 @@ starts and stops it, updates it, and rolls back to the version before.
   with Tailscale Funnel, or you use your own domain. You and your team sign in with
   Discord from any device.
 
-![The Launcher's Updates screen, with rollback](images/launcher-updates.png)
+![The Launcher's installed version and available updates](images/launcher-updates.jpg)
 
 ## Contact
 
