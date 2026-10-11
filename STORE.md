@@ -9,7 +9,7 @@ can't buy store products, and store products never give coins.
 The screenshots on this page come from a real SomniBot install with sample product
 names.
 
-![The Store page](images/store.png)
+![The Store page](images/store.jpg)
 
 ## How buyers pay
 
@@ -48,7 +48,7 @@ A store that sells only free products and products paid by hand needs no PayPal 
 - An optional **access period** (for example 30 days), after which roles and channels,
   and with them access to a program, stop working.
 
-![The New product editor](images/store-new-product.png)
+![The New product editor](images/store-new-product.jpg)
 
 ## Buying, inside Discord
 
