@@ -5,7 +5,7 @@
 <h1 align="center">SomniBot for Discord</h1>
 
 <p align="center">
-  <b>One Discord bot for your whole server: member gate, moderation, levels, a coin economy, giveaways, tickets, music, automations, and a real-money store with Discord-based licensing for programs and a customer portal.</b><br>
+  <b>One Discord bot for your whole server: member gate, moderation with anti-nuke protection, automatic server snapshots, levels, a coin economy, giveaways, tickets, an assistant that answers your members, music, automations, and a real-money store with Discord-based licensing for programs and a customer portal.</b><br>
   All of it is run from one web dashboard, under your own bot's name and brand.
 </p>
 
@@ -22,8 +22,8 @@
 ![The SomniBot dashboard Home page](images/home.jpg)
 
 > This repository is a showcase. It describes what SomniBot does and contains no code,
-> downloads or install files. The screenshots come from a real SomniBot install on a
-> test server, with test data and sample product names.
+> downloads or install files. The screenshots come from a real SomniBot install, with
+> sample data and sample product names.
 
 ## Why SomniBot
 
@@ -41,9 +41,14 @@
   the bot, with an undo button that says what it will put back.
 - **It never surprises you.** The bot never makes a role or channel nobody asked for.
   Big changes are previewed before anything happens in Discord, and SomniBot saves a
-  snapshot of every role, channel and permission before each big change it makes. It
-  also stops before opening a staff-only channel to members, because they would see
-  every earlier message in it, and asks you to choose first.
+  snapshot of your server before each big change it makes. It also stops before opening
+  a staff-only channel to members, because they would see every earlier message in it,
+  and asks you to choose first.
+- **Ready for a bad day.** Anti-nuke protection steps in when one account starts
+  wrecking the server. Automatic snapshots let you put your roles, channels and
+  settings back after a mistake. If the whole server is lost, SomniBot can rebuild it
+  in a new one. The bot also notices and fixes some of its own problems, and tells you
+  plainly about the rest.
 - **Real money and play money never mix.** The coin economy is a game. No store product
   gives coins, coins can't be turned into real money, and a role someone paid for never
   earns coin income.
@@ -116,6 +121,41 @@ words instead of blocking them, and never punishes anyone.
 
 ![Auto-mod rules](images/automod.jpg)
 
+### Protection when something goes wrong
+
+**Anti-nuke** is for the day an account goes wrong: a staff member's hijacked account, a
+bad bot, or a mistake. It is on from the start. The bot reads Discord's audit log as
+things happen and counts what each person does within a minute: channels or roles
+deleted, members banned or kicked, webhooks created, powerful permissions handed out,
+bots added, or the server name or vanity link changed. When someone passes the limit
+you set, the bot saves a snapshot, takes powerful permissions back off the roles they
+were given, deals with the person the way you chose (take away their powerful roles,
+add a 24 hour time out, kick them, or only tell you), and sends you one critical alert
+that points to the snapshot from before it started. You choose the limits, and the
+people and roles that are trusted. It never acts on the server owner or on the bot
+itself, and it can only act on someone whose top role is below the bot's: if not, the
+alert says exactly that.
+
+**Automatic server snapshots** keep saved copies of your roles, channels and
+permissions, plus the server's settings, emoji, stickers, soundboard sounds, bans and
+which roles each member has. SomniBot saves one before each big change, once a day by
+itself and shortly after roles or channels change, and saves nothing when nothing has
+changed. **Restore** shows you what would change before anything does. Roles, channels
+and permissions come back, and you choose whether to also give members back their
+roles, put the server's settings back, re-create missing emoji, stickers and sounds,
+and put back bans that were lifted. Reaction roles, ticket panels, level rewards, store
+roles and every other setting that used something re-created are pointed at the new
+one, and a restore can be undone from **Admin changes**.
+
+**Lost your server? Move SomniBot to a new one.** Make a new server, invite the bot and
+press one button. SomniBot builds the roles, channels, permissions and settings from a
+snapshot you choose, moves everything it remembers (levels and wallets, purchases and
+the store, tickets, automations) across, posts the ticket, role, rules and verify
+panels again and gives members their roles back the moment they rejoin. Messages in the
+old server, bans, other bots and webhooks, Community features, and anything that needs
+more boosts than the new server has can't be carried over, and SomniBot lists exactly
+what at the end. It also works as a copy when your old server still exists.
+
 ### Levels, a full coin economy and giveaways
 
 Message and voice XP, level rewards (roles, coins or items), XP multipliers, rank cards
@@ -140,10 +180,11 @@ can be products from your store.
 
 Members ask in plain words, with `/ask`, by mentioning the bot or in a help channel, and
 get a real answer: your rules, how to get a role, what a feature pays, when your next
-event is. It answers from your server as that member sees it (its channels, roles,
-switched-on features, the rules and info your team posted, your events and your own
-written answers), never names a channel they can't open, and says plainly when it
-doesn't know, with a ticket button so a person can take over. It also briefs your staff on
+event is. It answers from your server's own words as that member sees them: its
+channels and roles, the features you switched on, the rules and info posts your team
+wrote, pinned messages, your welcome screen and onboarding questions, your events and
+your own written answers. It never names a channel they can't open, and says plainly
+when it doesn't know, with a ticket button so a person can take over. It also briefs your staff on
 new tickets, drafts replies, summarises transcripts, translates, and explains your own setup
 to you. You bring a free key from Google, Cloudflare or Groq (or any compatible AI service);
 the Launcher walks you through it.
@@ -153,7 +194,9 @@ the Launcher walks you through it.
 ### Tickets with buyer context
 
 Ticket panels with buttons or a dropdown, private threads, intake questions, ticket
-types, claim buttons, reminders, auto-close, feedback and transcripts. When a buyer opens
+types, claim buttons, reminders, auto-close, feedback and transcripts. Staff are told
+when a member with an open ticket leaves the server, and the member is added back to
+the ticket if they return. When a buyer opens
 a ticket, staff see their orders, the PCs they activated your programs on and their
 open requests right there, and can reset PCs, start a refund or remove access from
 Discord.
@@ -167,7 +210,9 @@ downloadable files, roles and channels, service tickets, subscriptions and free
 products. Buyers pay through **your own PayPal**, or **your own way** (crypto, Cash App,
 a bank transfer) and you confirm the payment. Every product passes a Sandbox test
 purchase before it can go on sale. Buyers get a branded customer portal for their
-programs, downloads and orders.
+programs, downloads and orders. A buyer who left the server before delivery gets their
+order when they come back, and a PayPal dispute keeps access in place until PayPal
+actually takes the money back.
 
 Selling a program? **Discord is the licence.** The program signs the buyer in with
 Discord and checks their role in your server every time it starts, so a refund ends
@@ -225,6 +270,16 @@ starts and stops it, updates it, and rolls back to the version before.
 
 ![The SomniBot Launcher Home screen](images/launcher-home.jpg)
 
+- **Problems explained in plain words.** When something stops working, the Launcher
+  shows the real reason and what to do about it: your bot token was refused, the bot
+  can't reach Discord or the database, or it keeps stopping. At start the bot waits for
+  its database and retries Discord instead of giving up.
+- **It looks after itself.** Ticket, role and rules panels are posted again if someone
+  deletes them. If a channel that a setting uses is deleted, you get a plain alert, and
+  **Sync → Restore** brings the channel back in its old place and points every setting
+  at it. The bot watches its own role position and permissions, and tells you the
+  moment something it needs is taken away. Alerts close themselves when the problem is
+  fixed.
 - **Safe updates.** Before every install and update the Launcher backs up the database.
   Checks, the download, the backup and database changes happen before anything running
   is touched. If the new version doesn't pass its health check, the Launcher switches

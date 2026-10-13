@@ -101,8 +101,11 @@ A request never moves money by itself: it reaches you at once and you decide.
 - **Refund & Cancel** on a subscription cancels it at PayPal so it can never bill again,
   refunds its latest payment and removes access.
 - Refunds made directly in PayPal are handled the same way. A PayPal dispute marks the
-  order **Disputed** and alerts you.
+  order **Disputed** and alerts you, but the buyer keeps access until PayPal actually
+  takes the money back.
 - A failed delivery shows on its order, with **Retry delivery**.
+- A buyer who left the server before their order was delivered gets it when they come
+  back.
 - You can also refund from Discord, inside the buyer's ticket.
 
 ## Keeping track
