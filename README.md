@@ -196,7 +196,8 @@ your own written answers. It never names a channel they can't open, and says pla
 when it doesn't know, with a ticket button so a person can take over. It also briefs your staff on
 new tickets, drafts replies, summarises transcripts, translates, and explains your own setup
 to you. You bring a free key from Google, Cloudflare or Groq (or any compatible AI service);
-the Launcher walks you through it.
+the Launcher walks you through it. Its search runs on its own, so the bot stays responsive
+under heavy load.
 
 ![Assistant settings and provider status](images/assistant.jpg)
 
@@ -288,7 +289,8 @@ starts and stops it, updates it, and rolls back to the version before.
   **Sync → Restore** brings the channel back in its old place and points every setting
   at it. The bot watches its own role position and permissions, and tells you the
   moment something it needs is taken away. Alerts close themselves when the problem is
-  fixed.
+  fixed. **Check again** re-runs the checks on demand, including the PayPal comparison and
+  the deleted-channel checks.
 - **Safe updates.** Before every install and update the Launcher backs up the database.
   Checks, the download, the backup and database changes happen before anything running
   is touched. If the new version doesn't pass its health check, the Launcher switches
@@ -308,7 +310,9 @@ starts and stops it, updates it, and rolls back to the version before.
   Launcher's own settings and keys, so a new PC restores in one step.
 - **Warned before the disk fills.** The Launcher watches free space where SomniBot runs.
   Under 5 GB free, Home shows a warning and you get a desktop notice; under 1 GB the
-  warning turns red. A full disk stops the database, so you hear about it first.
+  warning turns red. A full disk stops the database, so you hear about it first. The
+  Launcher can start with Windows and keeps running in the tray when its window is closed,
+  so the disk watch and automatic backups keep working.
 - **Your database, your choice.** A Supabase project, your own Supabase, or a database
   the Launcher runs for you on the same machine.
 - **Reachable from anywhere.** The Launcher gives the dashboard a public web address
