@@ -207,6 +207,19 @@ on, or when they join if it's off.
   mode, and a **starboard**.
 - **Anti-raid**: watches for a flood of joins, acts, and can lift its raid bans
   afterwards.
+- **Anti-nuke** (owner only, on from the start): stops one person from wrecking the
+  server in seconds. The bot reads Discord's audit log as it happens and counts what each
+  person does within a minute: channels or roles deleted, members banned or kicked,
+  webhooks created, powerful permissions given to roles, bots added, and changes to the
+  server name or vanity link. Giving powerful permissions to @everyone is stopped at
+  once. You set every limit and the time window. When someone passes a limit, the bot
+  saves a snapshot, takes powerful permissions back off the roles they were given, acts
+  on the person as you chose (take away their powerful roles, the same plus a 24 hour
+  time out, kick them, or only tell you), sends you one critical alert that names the
+  snapshot from before it started, and records it in the change history. It never acts
+  on the server owner, on the bot itself, or on the people and roles you mark as
+  trusted. It can only act on someone whose top role is below the bot's, and when it
+  can't, the alert says so.
 - **Lockdown**: stops everyone with the Verified role posting, reacting, starting threads
   and speaking in every channel at once. Staff keep posting where their own roles allow,
   and the owner and Administrators are never locked. Optionally pause invites too.
@@ -341,6 +354,8 @@ income.
   the PCs they activated your programs on and open portal requests, and can **reset
   PCs**, **start a refund** or **remove access** from inside the ticket. A refund
   requested by staff goes to the owner to approve.
+- **Members who leave**: staff are told when a member with an open ticket leaves the
+  server, and the member is added back to the ticket if they return.
 
 ![Ticket panels](images/tickets.jpg)
 
@@ -401,8 +416,34 @@ GitHub can send updates to.
 - **Sync**: changes made directly in Discord, outside SomniBot, with **Restore SomniBot's
   version** or **Keep Discord's version**. It checks every few minutes and can put things
   back by itself.
-- **Snapshots**: saved copies of every role, channel and permission. SomniBot saves one
-  before each big change; restoring compares first and can be undone.
+- **Snapshots**: saved copies of every role, channel and permission, plus the server's
+  settings, emoji, stickers, soundboard sounds, bans and which roles each member has.
+  SomniBot saves one before each big change, once a day by itself (you can change how
+  often, or switch it off) and shortly after roles or channels change, and saves nothing
+  when nothing has changed. You can also save one yourself at any time. When something
+  looks like a mass change, the bot keeps the last good snapshot safe.
+- **Full restore**: **Restore** compares a snapshot with your server first, and nothing
+  changes until you confirm. Roles, channels and permissions come back. You choose, each
+  off until you turn it on, whether to also give members back their roles (it never
+  takes a role away from anyone), put the server's settings back, re-create missing
+  emoji, stickers and sounds (as many as the server has room for), put back bans that
+  were lifted, and remove what wasn't there when the snapshot was taken, which lists
+  exactly what it would delete and needs a second confirmation. Reaction roles, ticket
+  panels, level rewards, store roles and every other setting that used something
+  re-created are pointed at the new one. A restore can be undone from **Admin changes**.
+- **Move SomniBot to a new server**: if your server is deleted or lost, make a new one,
+  invite the bot and press one button. SomniBot builds the roles, channels, permissions,
+  settings, emoji, stickers and sounds from a snapshot you choose, moves everything it
+  remembers (settings, levels and wallets, purchases and the store, tickets, automations)
+  to the new server, points every setting at the new roles and channels, and posts the
+  ticket, role, rules and verify panels again. Home shows how far it is, and if it
+  stops, it says what to do and carries on from where it stopped without building
+  anything twice. Members join the new server again and get their roles back the moment
+  they join. Messages in the old server, bans, other bots and webhooks, Community
+  features, and anything that needs more boosts than the new server has can't be carried
+  over, and a message at the end lists exactly what. Programs built for buyers to sign in
+  with Discord name the old server, so those need a new build. It also works to make a
+  copy while your old server still exists; nothing in the old one is changed.
 - **Members**: everyone, with a timeline per member (joins and leaves, the member gate,
   role changes the bot made, purchases, refunds, tickets, cases, appeals, level-ups and
   game money,
@@ -424,6 +465,21 @@ bot can't do something it was asked to, the member gate needs a choice), SomniBo
 you an **owner alert**, by DM or in a channel members can't read. Store alerts have
 their own page and channel. The first time the bot starts, it also sends you one DM
 with your next steps.
+
+SomniBot also looks after itself where it can:
+
+- The bot watches its own role position and permissions and tells you at once what
+  stopped working. Alerts close themselves when the problem is fixed.
+- If a channel that one of your settings uses is deleted, you get a plain alert.
+  **Sync → Restore** brings the channel back in its old place and points every setting
+  at it.
+- Ticket, role and rules panels are posted again if someone deletes them.
+- Staff are told when a member with an open ticket leaves, and the member is added back
+  when they return.
+- At start the bot waits for its database and retries Discord instead of giving up. If
+  something still stops it, the Launcher shows the real reason (your bot token was
+  refused, the bot can't reach Discord or the database, or it keeps stopping) and what
+  to do.
 
 The **Daily digest** sends one message a day, at the time and timezone you choose, to
 your DMs or a staff channel. It covers new members, sales, tickets, requests, failed
