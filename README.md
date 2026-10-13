@@ -66,6 +66,12 @@ Discord. The deploy is safe by default: it only touches roles and channels Somni
 and keeps everything you made yourself. A last step lists exactly what to check with a
 test account.
 
+On a server that already has its own channels and roles, you can also choose to remove
+the ones that aren't part of the new layout. It is off by default, and only the owner
+sees it. Turning it on lists exactly what would be deleted, SomniBot saves a copy of the
+server first, and a second confirmation is needed. Anything the layout uses, and anything
+Discord or SomniBot needs, is never removed.
+
 ![Server setup at the Verification step](images/server-setup.jpg)
 
 ### More of Discord in one dashboard
@@ -145,7 +151,9 @@ and permissions come back, and you choose whether to also give members back thei
 roles, put the server's settings back, re-create missing emoji, stickers and sounds,
 and put back bans that were lifted. Reaction roles, ticket panels, level rewards, store
 roles and every other setting that used something re-created are pointed at the new
-one, and a restore can be undone from **Admin changes**.
+one, and a restore can be undone from **Admin changes**. Any snapshot can also be
+downloaded to a file and restored from that file later, so you can keep a copy outside
+SomniBot.
 
 **Lost your server? Move SomniBot to a new one.** Make a new server, invite the bot and
 press one button. SomniBot builds the roles, channels, permissions and settings from a
@@ -159,7 +167,8 @@ what at the end. It also works as a copy when your old server still exists.
 ### Levels, a full coin economy and giveaways
 
 Message and voice XP, level rewards (roles, coins or items), XP multipliers, rank cards
-and leaderboards.
+and leaderboards. Voice XP is earned only for real activity: unmuted with someone else in
+the room, or streaming or on camera with company.
 
 ![Levels & XP](images/levels.jpg)
 
@@ -294,7 +303,12 @@ starts and stops it, updates it, and rolls back to the version before.
   name, moves the public addresses and shows the new sign-in addresses to add in
   Discord.
 - **Your data, portable.** Export everything (every table and every uploaded file) to
-  one file, and import it on another machine or database.
+  one file, and import it on another machine or database. Backups can be saved to this
+  PC, a USB stick or an external drive, on demand or automatically, and include the
+  Launcher's own settings and keys, so a new PC restores in one step.
+- **Warned before the disk fills.** The Launcher watches free space where SomniBot runs.
+  Under 5 GB free, Home shows a warning and you get a desktop notice; under 1 GB the
+  warning turns red. A full disk stops the database, so you hear about it first.
 - **Your database, your choice.** A Supabase project, your own Supabase, or a database
   the Launcher runs for you on the same machine.
 - **Reachable from anywhere.** The Launcher gives the dashboard a public web address
