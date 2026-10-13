@@ -72,6 +72,12 @@ Discord's native polls use Discord's own voting interface.
 Run it again any time to change the plan, or start over with an empty plan. Nothing
 changes in Discord until you deploy.
 
+On a server that already has its own channels and roles, **Remove the channels and roles
+that aren't part of this layout** (off by default, and only the owner sees it) deletes
+the rest. The review lists exactly what would go, SomniBot saves a copy of the server
+first, and a second confirmation is needed. Anything the layout uses, and anything
+Discord or SomniBot needs, is never removed.
+
 The channel editor includes text, announcement, forum, media, voice and stage
 channels. Forum settings include tags, default reaction, layout, guidelines and
 post slowmode; voice settings include bitrate, region, video quality and member
@@ -248,6 +254,8 @@ still running.
 
 - **Message XP** (a random amount between your minimum and maximum, with a cooldown) and
   **voice XP**.
+- **Voice XP only for real activity**: unmuted with someone else in the room, or streaming
+  or on camera with company.
 - Channels and roles that never earn XP.
 - **XP multipliers** for roles.
 - Your own **level curve**.
@@ -421,7 +429,9 @@ GitHub can send updates to.
   SomniBot saves one before each big change, once a day by itself (you can change how
   often, or switch it off) and shortly after roles or channels change, and saves nothing
   when nothing has changed. You can also save one yourself at any time. When something
-  looks like a mass change, the bot keeps the last good snapshot safe.
+  looks like a mass change, the bot keeps the last good snapshot safe. Any snapshot can be
+  **downloaded** to a file and **restored from a file** later; the file is checked before
+  it loads, and a preview shows what would change before anything does.
 - **Full restore**: **Restore** compares a snapshot with your server first, and nothing
   changes until you confirm. Roles, channels and permissions come back. You choose, each
   off until you turn it on, whether to also give members back their roles (it never
@@ -431,6 +441,9 @@ GitHub can send updates to.
   exactly what it would delete and needs a second confirmation. Reaction roles, ticket
   panels, level rewards, store roles and every other setting that used something
   re-created are pointed at the new one. A restore can be undone from **Admin changes**.
+- **Backups**: saved to this PC, a USB stick or an external drive, on demand or
+  automatically. A backup holds every snapshot with the rest of SomniBot's data, plus the
+  Launcher's own settings and keys, so a new PC restores in one step.
 - **Move SomniBot to a new server**: if your server is deleted or lost, make a new one,
   invite the bot and press one button. SomniBot builds the roles, channels, permissions,
   settings, emoji, stickers and sounds from a snapshot you choose, moves everything it
@@ -480,6 +493,8 @@ SomniBot also looks after itself where it can:
   something still stops it, the Launcher shows the real reason (your bot token was
   refused, the bot can't reach Discord or the database, or it keeps stopping) and what
   to do.
+- The Launcher warns when the computer's free disk space drops under 5 GB, and again under
+  1 GB, before a full disk can stop the database.
 
 The **Daily digest** sends one message a day, at the time and timezone you choose, to
 your DMs or a staff channel. It covers new members, sales, tickets, requests, failed
