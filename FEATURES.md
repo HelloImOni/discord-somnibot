@@ -483,6 +483,8 @@ SomniBot also looks after itself where it can:
 
 - The bot watches its own role position and permissions and tells you at once what
   stopped working. Alerts close themselves when the problem is fixed.
+- **Check again** re-runs the checks on demand, including the PayPal comparison and the
+  deleted-channel checks.
 - If a channel that one of your settings uses is deleted, you get a plain alert.
   **Sync → Restore** brings the channel back in its old place and points every setting
   at it.
@@ -493,8 +495,12 @@ SomniBot also looks after itself where it can:
   something still stops it, the Launcher shows the real reason (your bot token was
   refused, the bot can't reach Discord or the database, or it keeps stopping) and what
   to do.
+- The bot stays responsive under heavy load: the assistant's search runs in its own worker,
+  so it doesn't hold up the rest of the bot.
 - The Launcher warns when the computer's free disk space drops under 5 GB, and again under
-  1 GB, before a full disk can stop the database.
+  1 GB, before a full disk can stop the database. It can start with Windows and keeps
+  running in the tray when its window is closed, so the disk watch and automatic backups
+  keep working.
 
 The **Daily digest** sends one message a day, at the time and timezone you choose, to
 your DMs or a staff channel. It covers new members, sales, tickets, requests, failed
