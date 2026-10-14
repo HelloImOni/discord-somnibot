@@ -289,7 +289,8 @@ in your own database. You sign in and make the choices that are yours; the rest 
 setup is done for you. The **SomniBot Launcher** (Windows and Linux) installs it, along
 with Tailscale, Docker and any Linux parts it needs, checks everything it needs from
 Discord, the database, your web address and PayPal, starts and stops it, updates it, and
-rolls back to the version before.
+rolls back to the version before. Ubuntu and Debian owners get a normal `.deb`
+installer that brings everything it needs; the AppImage is for other Linux.
 
 ![The SomniBot Launcher Home screen](images/launcher-home.jpg)
 
