@@ -157,14 +157,15 @@ SomniBot.
 
 **Lost your server? Move SomniBot to a new one.** Make a new server, invite the bot and
 press one button. SomniBot builds the roles, channels, permissions and settings from a
-snapshot you choose, moves everything it remembers (levels and wallets, purchases and
+snapshot you choose, with channel and role order coming across exactly as shown, and moves everything it remembers (levels and wallets, purchases and
 the store, tickets, automations) across, posts the ticket, role, rules and verify
 panels again and gives members their roles back the moment they rejoin. Messages in the
 old server, bans, other bots and webhooks, Community features, and anything that needs
 more boosts than the new server has can't be carried over, and SomniBot lists exactly
 what at the end. It also works as a copy when your old server still exists. While the old
-server still exists, the bot invites every member to the new one by DM and posts an
-announcement in the old server (on by default). Members can also add the app to their
+server still exists, the bot invites every member to the new one by DM, and the invite
+names the server they already know. It also posts that invite in an announcement in the
+old server (on by default). Members can also add the app to their
 Discord account in one click from the verify panel, `/help` or `/privacy`, so a move can
 still reach them by DM if the server is ever deleted. A permanent "find us again" link on
 your own web address (`/join`) always leads to the current server and follows a move.

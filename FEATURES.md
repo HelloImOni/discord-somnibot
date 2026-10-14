@@ -446,7 +446,8 @@ GitHub can send updates to.
   Launcher's own settings and keys, so a new PC restores in one step.
 - **Move SomniBot to a new server**: if your server is deleted or lost, make a new one,
   invite the bot and press one button. SomniBot builds the roles, channels, permissions,
-  settings, emoji, stickers and sounds from a snapshot you choose, moves everything it
+  settings, emoji, stickers and sounds from a snapshot you choose, with channel and role
+  order coming across exactly as shown, and moves everything it
   remembers (settings, levels and wallets, purchases and the store, tickets, automations)
   to the new server, points every setting at the new roles and channels, and posts the
   ticket, role, rules and verify panels again. Home shows how far it is, and if it
@@ -456,8 +457,9 @@ GitHub can send updates to.
   features, and anything that needs more boosts than the new server has can't be carried
   over, and a message at the end lists exactly what. Programs built for buyers to sign in
   with Discord name the old server, so those need a new build. While the old server still
-  exists, the bot invites every member to the new one by DM and posts an announcement in
-  the old server (on by default). Members can also add the app to their Discord account in
+  exists, the bot invites every member to the new one by DM, and the invite names the
+  server they already know. It also posts that invite in an announcement in the old
+  server (on by default). Members can also add the app to their Discord account in
   one click from the verify panel, `/help` or `/privacy`, so a move can still reach them by
   DM if the server is ever deleted. A permanent "find us again" link on your own web address
   (`/join`) always leads to the current server and follows a move. It also works to make a
