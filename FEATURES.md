@@ -445,10 +445,11 @@ GitHub can send updates to.
   automatically. A backup holds every snapshot with the rest of SomniBot's data, plus the
   Launcher's own settings and keys, so a new PC restores in one step.
 - **Move SomniBot to a new server**: if your server is deleted or lost, make a new one,
-  invite the bot and press one button. The move copies your server as it is when the move
-  begins. SomniBot builds the roles, channels, permissions, settings, emoji, stickers and
-  sounds from a snapshot you choose, with channel and role order coming across exactly as
-  shown. Discord's default starter channels are not copied. It moves everything it
+  invite the bot and press one button. While the old server still exists, the move copies
+  it as it is at that moment. If it is gone, SomniBot builds the roles, channels,
+  permissions, settings, emoji, stickers and sounds from a snapshot you choose, with
+  channel and role order coming across exactly as shown. Discord's default starter
+  channels are not copied. It moves everything it
   remembers (settings, levels and wallets, purchases and the store, tickets, automations)
   to the new server, points every setting at the new roles and channels, and posts the
   ticket, role, rules and verify panels again. Home shows how far it is, and if it
