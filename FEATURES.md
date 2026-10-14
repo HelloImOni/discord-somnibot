@@ -455,8 +455,14 @@ GitHub can send updates to.
   they join. Messages in the old server, bans, other bots and webhooks, Community
   features, and anything that needs more boosts than the new server has can't be carried
   over, and a message at the end lists exactly what. Programs built for buyers to sign in
-  with Discord name the old server, so those need a new build. It also works to make a
-  copy while your old server still exists; nothing in the old one is changed.
+  with Discord name the old server, so those need a new build. While the old server still
+  exists, the bot invites every member to the new one by DM and posts an announcement in
+  the old server (on by default). Members can also add the app to their Discord account in
+  one click from the verify panel, `/help` or `/privacy`, so a move can still reach them by
+  DM if the server is ever deleted. A permanent "find us again" link on your own web address
+  (`/join`) always leads to the current server and follows a move. It also works to make a
+  copy while your old server still exists; apart from that announcement, nothing in the old
+  one is changed.
 - **Members**: everyone, with a timeline per member (joins and leaves, the member gate,
   role changes the bot made, purchases, refunds, tickets, cases, appeals, level-ups and
   game money,
