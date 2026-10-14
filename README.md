@@ -156,8 +156,9 @@ downloaded to a file and restored from that file later, so you can keep a copy o
 SomniBot.
 
 **Lost your server? Move SomniBot to a new one.** Make a new server, invite the bot and
-press one button. The move copies your server as it is when the move begins. SomniBot
-builds the roles, channels, permissions and settings from a snapshot you choose, with
+press one button. While the old server still exists, the move copies it as it is at that
+moment. If it is gone, SomniBot builds the roles, channels, permissions and settings
+from a snapshot you choose, with
 channel and role order coming across exactly as shown. Discord's default starter channels
 are not copied. It moves everything it remembers (levels and wallets, purchases and the
 store, tickets, automations) across, posts the ticket, role, rules and verify panels
