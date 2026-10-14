@@ -445,16 +445,18 @@ GitHub can send updates to.
   automatically. A backup holds every snapshot with the rest of SomniBot's data, plus the
   Launcher's own settings and keys, so a new PC restores in one step.
 - **Move SomniBot to a new server**: if your server is deleted or lost, make a new one,
-  invite the bot and press one button. SomniBot builds the roles, channels, permissions,
-  settings, emoji, stickers and sounds from a snapshot you choose, with channel and role
-  order coming across exactly as shown, and moves everything it
+  invite the bot and press one button. The move copies your server as it is when the move
+  begins. SomniBot builds the roles, channels, permissions, settings, emoji, stickers and
+  sounds from a snapshot you choose, with channel and role order coming across exactly as
+  shown. Discord's default starter channels are not copied. It moves everything it
   remembers (settings, levels and wallets, purchases and the store, tickets, automations)
   to the new server, points every setting at the new roles and channels, and posts the
   ticket, role, rules and verify panels again. Home shows how far it is, and if it
   stops, it says what to do and carries on from where it stopped without building
-  anything twice. Members join the new server again and get their roles back the moment
-  they join. Messages in the old server, bans, other bots and webhooks, Community
-  features, and anything that needs more boosts than the new server has can't be carried
+  anything twice. Members who join the new server get back the roles they held at the
+  moment of the move, and so do people already in it. Messages in the old server, bans,
+  other bots and webhooks, Community features, and anything that needs more boosts than
+  the new server has can't be carried
   over, and a message at the end lists exactly what. Programs built for buyers to sign in
   with Discord name the old server, so those need a new build. While the old server still
   exists, the bot invites every member to the new one by DM, and the invite names the
