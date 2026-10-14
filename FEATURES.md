@@ -65,7 +65,8 @@ Discord's native polls use Discord's own voting interface.
    members before verification, or staff only).
 4. **Review**: every change before it happens. By default it only changes roles and
    channels SomniBot made before, and keeps everything you made yourself.
-5. **Deploy**: the bot creates everything and the page follows its progress.
+5. **Deploy**: the bot creates everything, applies Discord's server settings, the AutoMod
+   spam and slur filters and Community, and the page follows its progress.
 6. **Verification**: exactly what to look at in Discord, ideally with a test account.
 7. **Go live**.
 
@@ -449,7 +450,8 @@ GitHub can send updates to.
   it as it is at that moment. If it is gone, SomniBot builds the roles, channels,
   permissions, settings, emoji, stickers and sounds from a snapshot you choose, with
   channel and role order coming across exactly as shown. Discord's default starter
-  channels are not copied. It moves everything it
+  channels are not copied, and before it deletes anything in the new server, the move
+  lists what and asks you first. It moves everything it
   remembers (settings, levels and wallets, purchases and the store, tickets, automations)
   to the new server, points every setting at the new roles and channels, and posts the
   ticket, role, rules and verify panels again. Home shows how far it is, and if it
@@ -500,6 +502,9 @@ SomniBot also looks after itself where it can:
   **Sync → Restore** brings the channel back in its old place and points every setting
   at it.
 - Ticket, role and rules panels are posted again if someone deletes them.
+- Common problems are repaired by SomniBot itself, such as a Discord switch it needs
+  being turned off or the public address breaking. Anything it can't fix comes with a
+  plain alert.
 - Staff are told when a member with an open ticket leaves, and the member is added back
   when they return.
 - At start the bot waits for its database and retries Discord instead of giving up. If
@@ -511,7 +516,9 @@ SomniBot also looks after itself where it can:
 - The Launcher warns when the computer's free disk space drops under 5 GB, and again under
   1 GB, before a full disk can stop the database. It can start with Windows and keeps
   running in the tray when its window is closed, so the disk watch and automatic backups
-  keep working.
+  keep working. It installs Tailscale, Docker and any Linux parts it needs by itself, keeps
+  the PC awake while SomniBot runs, and runs backups and updates by themselves, switching
+  back to the version before if a new one fails its health check.
 
 The **Daily digest** sends one message a day, at the time and timezone you choose, to
 your DMs or a staff channel. It covers new members, sales, tickets, requests, failed

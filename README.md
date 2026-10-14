@@ -62,7 +62,8 @@
 
 **Server setup** designs your roles (in Admin, Moderator, Member and Cosmetic tiers) and
 your categories and channels, shows every change before it happens, then creates them in
-Discord. The deploy is safe by default: it only touches roles and channels SomniBot made,
+Discord along with Discord's server settings, the AutoMod spam and slur filters and
+Community. The deploy is safe by default: it only touches roles and channels SomniBot made,
 and keeps everything you made yourself. A last step lists exactly what to check with a
 test account.
 
@@ -158,19 +159,20 @@ SomniBot.
 **Lost your server? Move SomniBot to a new one.** Make a new server, invite the bot and
 press one button. While the old server still exists, the move copies it as it is at that
 moment. If it is gone, SomniBot builds the roles, channels, permissions and settings
-from a snapshot you choose, with
-channel and role order coming across exactly as shown. Discord's default starter channels
-are not copied. It moves everything it remembers (levels and wallets, purchases and the
-store, tickets, automations) across, posts the ticket, role, rules and verify panels
-again and gives members back the roles they held at the moment of the move, including
-people already in the new server. Messages in the old server, bans, other bots and
-webhooks, Community features, and anything that needs more boosts than the new server
-has can't be carried over, and SomniBot lists exactly what at the end. It also works as a copy when your old server still exists. While the old
-server still exists, the bot invites every member to the new one by DM, and the invite
-names the server they already know. It also posts that invite in an announcement in the
-old server (on by default). Members can also add the app to their
-Discord account in one click from the verify panel, `/help` or `/privacy`, so a move can
-still reach them by DM if the server is ever deleted. A permanent "find us again" link on
+from a snapshot you choose, with channel and role order coming across exactly as shown.
+Discord's default starter channels are not copied, and before it deletes anything in the
+new server, the move lists what and asks you first. It moves everything it remembers
+(levels and wallets, purchases and the store, tickets, automations) across, posts the
+ticket, role, rules and verify panels again and gives members back the roles they held at
+the moment of the move, including people already in the new server. Messages in the old
+server, bans, other bots and webhooks, Community features, and anything that needs more
+boosts than the new server has can't be carried over, and SomniBot lists exactly what at
+the end. It also works as a copy when your old server still exists. While the old server
+still exists, the bot invites every member to the new one by DM, and the invite names the
+server they already know. It also posts that invite in an announcement in the old server
+(on by default). Members can also add the app to their Discord account in one click from
+the verify panel, `/help` or `/privacy`, so a move can still reach them by DM if the
+server is ever deleted. A permanent "find us again" link on
 your own web address (`/join`) always leads to the current server and follows a move.
 
 ### Levels, a full coin economy and giveaways
@@ -283,9 +285,11 @@ See everything in **[FEATURES.md](FEATURES.md)**, and every command in
 ## How it runs
 
 SomniBot is self-hosted: it runs on a server (VPS) or on your own PC, and your data stays
-in your own database. The **SomniBot Launcher** (Windows and Linux) installs it,
-checks everything it needs from Discord, the database, your web address and PayPal,
-starts and stops it, updates it, and rolls back to the version before.
+in your own database. You sign in and make the choices that are yours; the rest of the
+setup is done for you. The **SomniBot Launcher** (Windows and Linux) installs it, along
+with Tailscale, Docker and any Linux parts it needs, checks everything it needs from
+Discord, the database, your web address and PayPal, starts and stops it, updates it, and
+rolls back to the version before.
 
 ![The SomniBot Launcher Home screen](images/launcher-home.jpg)
 
@@ -299,15 +303,16 @@ starts and stops it, updates it, and rolls back to the version before.
   at it. The bot watches its own role position and permissions, and tells you the
   moment something it needs is taken away. Alerts close themselves when the problem is
   fixed. **Check again** re-runs the checks on demand, including the PayPal comparison and
-  the deleted-channel checks.
-- **Safe updates.** Before every install and update the Launcher backs up the database.
-  Checks, the download, the backup and database changes happen before anything running
-  is touched. If the new version doesn't pass its health check, the Launcher switches
-  back on its own.
-- **Updates in one step.** When you're sent a new version, put its files in one folder and
-  press **Use update files from this PC** on the Updates page: the Launcher checks every
-  file, backs up the database and switches over. The full guide comes with the Launcher,
-  readable offline.
+  the deleted-channel checks. SomniBot also repairs common problems by itself, such as a
+  Discord switch it needs being turned off or the public address breaking, and tells you
+  plainly about anything it can't fix.
+- **Backups and updates on their own.** The Launcher backs up the database before every
+  install and update, and backups run by themselves too. Updates install by themselves:
+  checks, the download, the backup and database changes all happen before anything running
+  is touched. If the new version doesn't pass its health check,
+  the Launcher switches back to the version before on its own. If you're sent a version
+  by hand, put its files in one folder and press **Use update files from this PC** on the
+  Updates page. The full guide comes with the Launcher, readable offline.
 - **No ports to manage.** Nothing in SomniBot uses a fixed port. The Launcher picks free
   ones, and if another program takes one later it moves SomniBot to a free port by
   itself and says so on Home. If your PC's Tailscale name changes, it follows the new
@@ -326,7 +331,8 @@ starts and stops it, updates it, and rolls back to the version before.
   the Launcher runs for you on the same machine.
 - **Reachable from anywhere.** The Launcher gives the dashboard a public web address
   with Tailscale Funnel, or you use your own domain. You and your team sign in with
-  Discord from any device.
+  Discord from any device. While SomniBot runs on your PC, the PC stays awake, so the bot
+  stays online.
 
 ![The Launcher's installed version and available updates](images/launcher-updates.jpg)
 
