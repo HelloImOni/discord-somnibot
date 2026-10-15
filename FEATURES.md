@@ -34,6 +34,9 @@ SomniBot is white-label. Members talk to the bot application you create, with th
 and picture you give it. The **Branding** page sets:
 
 - your **brand name**, used in the bot's messages, the store and the customer portal;
+- **the bot in your server**: its own name, profile picture, banner and About me in each
+  server, set separately from your other servers. SomniBot puts them back if Discord
+  drops them;
 - a **logo**, a **header image** and a **background** for the customer portal;
 - a **primary colour** and an **accent colour**. Errors, warnings and successes always
   stay red, amber and green, so members read them the same way in every server;
@@ -60,7 +63,8 @@ Discord's native polls use Discord's own voting interface.
 
 1. **Bot status**: checks the bot is in your server and ranked high enough.
 2. **Roles**: in four tiers (Admin, Moderator, Member and Cosmetic), with your names and
-   colours.
+   colours. Editing a role's colours is quicker: the editor opens right under that role.
+   Roles that already exist can be shown separately in the member list, or not.
 3. **Channels**: categories and channels, each with who can open it (verified members,
    members before verification, or staff only).
 4. **Review**: every change before it happens. By default it only changes roles and
@@ -85,8 +89,9 @@ post slowmode; voice settings include bitrate, region, video quality and member
 limits. Community and boost requirements are shown where needed. **Only these roles**
 lets you choose channel access using roles from your plan or existing Discord roles,
 such as Server Booster. Missing roles appear as Review problems before deployment.
-**Load a server template** imports a template into the plan; it changes nothing in
-Discord until you deploy. Sync and snapshots include these settings.
+Your edits to a channel are kept when you pick another one. **Load a server template**
+imports a template into the plan; it changes nothing in Discord until you deploy. Sync
+and snapshots include these settings.
 
 ![Server setup](images/server-setup.jpg)
 
@@ -410,7 +415,8 @@ GitHub can send updates to.
   link buttons, then send them to a supported channel or use them in a scheduled
   message. Saved classic embeds keep sending as before until you edit them.
 - **Temp channels**: a hub voice channel that gives each member who joins their own
-  voice room, which they can lock, unlock or claim with `/voice`.
+  voice room, which they can lock, unlock or claim with `/voice`. Each room only offers
+  the sound quality your server allows.
 - **Stats channels**: a live number, such as your member count, shown as a voice
   channel's name.
 - **Emoji picker**: wherever an emoji is chosen, one picker offers this server's own

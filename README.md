@@ -28,7 +28,8 @@
 ## Why SomniBot
 
 - **Your bot, your brand.** SomniBot is white-label. Members talk to the bot *you* create
-  in the Discord Developer Portal, with your name and picture. The bot's messages, the
+  in the Discord Developer Portal, with your name and picture, and you can give it its
+  own name, picture, banner and About me in each server. The bot's messages, the
   store and the customer portal use your brand name, logo, colours and voice. The only
   mention of SomniBot members see is a small "Powered by SomniBot" footer, and you can
   switch that off.
@@ -78,8 +79,9 @@ Discord or SomniBot needs, is never removed.
 ### More of Discord in one dashboard
 
 Plan forum, media and stage channels, choose access for specific roles and load a
-server template. Manage **Server settings**, role icons and gradients, **Events**,
-**Emoji, stickers & sounds**, voice moderation and Discord's own polls. The pages
+server template. Manage **Server settings**, role icons, gradients and colours, which
+roles show separately in the member list, **Events**, **Emoji, stickers & sounds**, voice
+moderation and Discord's own polls. The pages
 explain Community, boost and other Discord requirements before unavailable choices
 can be applied.
 
