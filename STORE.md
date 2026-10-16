@@ -20,6 +20,8 @@ names.
   privately, pay you, and add their transaction ID. You get a **Payment to confirm**
   alert, press **Mark paid**, and the bot delivers the order exactly as for a PayPal
   sale. Unpaid orders close on their own after the number of days you set.
+  If a buyer's transaction ID is also on another order, that order and its alert say so
+  and name the other order, so one payment can't quietly count twice.
 - **Free**: free products are claimed instead of bought, once per customer or
   repeatedly.
 
