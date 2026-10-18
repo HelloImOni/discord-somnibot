@@ -2,7 +2,7 @@
 
 [← Back to the overview](README.md) · [Features](FEATURES.md) · [The store](STORE.md)
 
-SomniBot has **92 built-in slash commands** and **8 right-click commands**. Switching a feature
+SomniBot has **95 built-in slash commands** and **8 right-click commands**. Switching a feature
 off in the dashboard also hides its commands, and `/help` shows each member only the
 commands they can use. Each command name counts once; subcommands and server-specific
 custom commands are not added to this total.
@@ -45,7 +45,7 @@ custom commands are not added to this total.
 | Command | What it does |
 |---|---|
 | `/ticket` | Close the ticket you're in |
-| `/ticket-staff` | Staff tools for the ticket you're in (claim, add, remove, transcript, buyer) |
+| `/ticket-staff` | Staff tools for the ticket you're in (claim, unclaim, reopen, add, remove, transcript, buyer) |
 
 ## Levels and profiles
 
@@ -111,7 +111,7 @@ custom commands are not added to this total.
 | `/scratch` | Scratch 9 symbols: 3 of a kind gives half your bet back, 4 pays 2×, 5 or more pays 4× |
 | `/guess` | Guess a number from 1 to 100: exact pays 25×, within 5 pays 5×, within 10 pays 2× |
 | `/rps` | Play rock, paper, scissors for play money |
-| `/highlow` | Guess if the next number is higher or lower (free) |
+| `/highlow` | See a number from 33 to 67, then call the next one (1 to 100) higher or lower: the odds set the pay, a tie loses |
 | `/trivia` | Start a trivia round |
 
 ## Community
@@ -120,7 +120,7 @@ custom commands are not added to this total.
 |---|---|
 | `/giveaway` | Manage giveaways (start, end, reroll, pause, resume, list) |
 | `/poll` | Create and manage polls (create, close) |
-| `/predict` | Bet play money on what will happen (create, bet, resolve) |
+| `/predict` | Bet play money on what will happen (create, bet, resolve, cancel) |
 | `/voice` | Control your temporary voice channel (lock, unlock, limit, name, permit, deny, ban, claim) |
 
 ## Music
@@ -137,7 +137,10 @@ custom commands are not added to this total.
 | `/loop` | Set loop mode |
 | `/shuffle` | Shuffle the songs coming up in the queue |
 | `/seek` | Jump to a point in the song that is playing |
-| `/remove` | Remove a song from the queue |
+| `/previous` | Play the song that played before this one again (DJs, or the member who asked for it) |
+| `/skipto` | Jump ahead to a song in the queue (your own songs at once; others need a listener vote) |
+| `/autoplay` | Keep playing related songs when the queue runs out (DJs only) |
+| `/remove` | Remove a song from the queue (your own, or any if you are a DJ) |
 | `/move` | Move a song you added to another place in the queue |
 | `/filter` | Change how the music sounds (DJs only) |
 

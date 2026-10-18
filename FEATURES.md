@@ -62,20 +62,27 @@ Discord's native polls use Discord's own voting interface.
 **Server setup** designs the roles and channels SomniBot looks after, in seven steps:
 
 1. **Bot status**: checks the bot is in your server and ranked high enough.
-2. **Roles**: in four tiers (Admin, Moderator, Member and Cosmetic), with your names and
-   colours. Editing a role's colours is quicker: the editor opens right under that role.
-   Roles that already exist can be shown separately in the member list, or not.
+2. **Roles**: in five tiers (Admin, Moderator, Support, Member and Cosmetic), with your
+   names and colours. Support is for staff who handle tickets and staff channels but have
+   no moderation powers. A **Tier** choice on each role moves it to another tier and keeps
+   its colour, icon and channel access. Editing a role's colours is quicker: the editor
+   opens right under that role. Roles that already exist can be shown separately in the
+   member list, or not.
 3. **Channels**: categories and channels, each with who can open it (verified members,
    members before verification, or staff only).
-4. **Review**: every change before it happens. By default it only changes roles and
-   channels SomniBot made before, and keeps everything you made yourself.
+4. **Review**: every change before it happens, including anything that would stop the
+   deploy, such as the bot's role not being high enough. By default it only changes roles
+   and channels SomniBot made before, and keeps everything you made yourself.
 5. **Deploy**: the bot creates everything, applies Discord's server settings, the AutoMod
    spam and slur filters and Community, and the page follows its progress.
 6. **Verification**: exactly what to look at in Discord, ideally with a test account.
 7. **Go live**.
 
-Run it again any time to change the plan, or start over with an empty plan. Nothing
-changes in Discord until you deploy.
+Run it again any time to change the plan, or start over with an empty plan. You can also
+export a plan to a file and import a layout, and duplicate a channel. Nothing changes in
+Discord until you deploy. The deploy says plainly that members without the layout's roles
+see no channels until the member gate is turned on, and **Go live** is offered right on
+the result, with the gate's roles and verification channel filled in from your plan.
 
 On a server that already has its own channels and roles, **Remove the channels and roles
 that aren't part of this layout** (off by default, and only the owner sees it) deletes
@@ -84,7 +91,7 @@ first, and a second confirmation is needed. Anything the layout uses, and anythi
 Discord or SomniBot needs, is never removed.
 
 The channel editor includes text, announcement, forum, media, voice and stage
-channels. Forum settings include tags, default reaction, layout, guidelines and
+channels (media channels are offered only where Discord allows them). Forum settings include tags, default reaction, layout, guidelines and
 post slowmode; voice settings include bitrate, region, video quality and member
 limits. Community and boost requirements are shown where needed. **Only these roles**
 lets you choose channel access using roles from your plan or existing Discord roles,
@@ -101,8 +108,10 @@ and snapshots include these settings.
 and media filtering, notifications, AFK channel and timeout, system messages, safety
 alerts, welcome screen, boost progress bar, Community, Discovery and widget. It
 reads Discord's current values, explains unavailable features and records reversible
-changes in **Admin changes**. The widget warns before exposing online members'
-names and pictures; vanity URLs are read-only here.
+changes in **Admin changes**. It also shows whether 2FA for moderator actions is on; only
+the server owner's own account can switch that, so it tells you where in Discord to do it.
+The widget warns before exposing online members' names and pictures; vanity URLs are
+read-only here.
 
 Role appearance includes one emoji or a PNG/JPEG icon up to 256 KB, two-colour
 gradients and holographic colours. Icons need boost level 2; enhanced colours need
@@ -202,7 +211,8 @@ normal. Nothing changes until you preview and confirm, and every change can be u
   server.
 
 The welcome runs once per member, when they get access: after the member gate if it's
-on, or when they join if it's off.
+on, or when they join if it's off. A member who leaves and rejoins over and over gets one
+welcome and one goodbye per 30 minutes, not one each time.
 
 ## Moderation
 
@@ -216,9 +226,12 @@ on, or when they join if it's off.
   them, and gives them back if the ban is pardoned. After a kick, purchases are kept and
   roles come back when they rejoin.
 - **Message logging** of edits and deletes, **auto-moderation** in Watch only or Enforce
-  mode, and a **starboard**.
-- **Anti-raid**: watches for a flood of joins, acts, and can lift its raid bans
-  afterwards.
+  mode, and a **starboard** (a deleted message's copy is taken down, and an edited one is
+  updated).
+- **Anti-raid** (off until you turn it on): watches for a flood of joins, acts, and can lift
+  its raid bans afterwards. It never removes the server owner, administrators, bots or
+  members who are already boosting. Before you turn it on, a box lists exactly who it
+  removes, and warns that a kicked booster loses the boost for good.
 - **Anti-nuke** (owner only, on from the start): stops one person from wrecking the
   server in seconds. The bot reads Discord's audit log as it happens and counts what each
   person does within a minute: channels or roles deleted, members banned or kicked,
@@ -242,7 +255,8 @@ on, or when they join if it's off.
 ![Moderation settings](images/moderation.jpg)
 
 **Auto-mod rules** filter words (exact, wildcard or a custom pattern), links, invites,
-spam and mass mentions. **Try a rule safely** checks a sample message against your saved
+spam and mass mentions. One burst of spam counts as one offence, not one warning per
+message, and a pattern that would match every message is refused when you save it. **Try a rule safely** checks a sample message against your saved
 rules: nothing is sent and no case is recorded. A **Translator** rule rewrites words
 instead of blocking them: the rewritten message is posted as the member, and it never
 warns or punishes anyone.
@@ -260,15 +274,18 @@ still running.
 
 - **Message XP** (a random amount between your minimum and maximum, with a cooldown) and
   **voice XP**.
-- **Voice XP only for real activity**: unmuted with someone else in the room, or streaming
-  or on camera with company.
-- Channels and roles that never earn XP.
+- **Voice XP only for real activity**: not muted or deafened, with someone else in the
+  room (streaming or camera makes no difference). Stage listeners earn nothing.
+- Channels and roles that never earn XP, threads included.
 - **XP multipliers** for roles.
-- Your own **level curve**.
+- Your own **level curve**. New servers start on a gentler one; servers that already have
+  a curve keep it.
 - **Level-up announcements** with a rank card in your colour.
 - **Level rewards**: a Discord role, coins or a game item at any level.
-- A server **leaderboard**. Members use `/rank` and `/leaderboard`; staff adjust XP with
-  `/xp`.
+- A server **leaderboard** that lists only members still in the server, with the same
+  place on `/rank`. Members use `/rank` and `/leaderboard`; staff adjust XP with `/xp`.
+  Lowering a member's XP takes back the level reward roles they no longer qualify for,
+  and raising it announces the level-up and hands out the rewards.
 
 ![Levels & XP](images/levels.jpg)
 
@@ -276,22 +293,34 @@ still running.
 
 A full play-money game, with its own pages for each part:
 
-- **Earning**: daily, weekly and monthly rewards with streak bonuses; `/work`, `/crime`,
-  `/beg` and `/search`; chat income; and **role income**, coins for holding a role.
+- **Earning**: daily, weekly and monthly rewards with streak bonuses that top out
+  after about 25 in a row; `/work`, `/crime`, `/beg` and `/search`; chat income; and **role
+  income**, coins for holding a role, collected with `/collect-income`.
 - **Banking**: wallet and bank, deposits and withdrawals, paying other members,
-  robbing, and passive mode.
-- **Gathering and making**: hunting, digging, mining, fishing, farming and crafting.
+  robbing, and passive mode. A robbery steals at most 10,000, and a failed crime or a
+  caught robber pays a fine from the wallet first, then the bank.
+- **Gathering and making**: hunting, digging, mining, fishing, farming and crafting. Tools
+  wear out, and a worn tool sells for less.
 - **Spending and trading**: a game shop with your own items, and a member-to-member
-  market.
-- **Playing**: story adventures, crew heists, pets that you feed, train and battle,
-  quests given at random each day and week, achievements with badges and rewards,
-  prestige, trivia, lotteries and predictions.
+  market. A market trade never costs less in fees than paying the same coins directly.
+  Selling never loses coins: if the payout wouldn't fit under your wallet and bank limits,
+  the sale is refused and nothing is sold.
+- **Playing**: story adventures where a risky choice costs health and pays more, so
+  healing items matter; crew heists, where a bigger crew improves the odds; pets that you
+  feed, train and battle, whose perks grow with their level and pause while the pet is
+  sick; a **pet egg** item that hatches a pet (a member who already has one feeds it
+  instead); quests given at random each day and week, only for the games you have on;
+  achievements with badges and rewards; prestige; trivia; lotteries and predictions.
 - **Games**: coinflip, slots, dice, blackjack, scratch cards, guess the number,
-  rock-paper-scissors and high-low.
+  rock-paper-scissors and high-low. Bets start at 10 coins. In `/highlow` the member sees
+  a first number (33 to 67), then presses Higher or Lower, and a right call pays by its
+  real odds (about 95% back over time). With no call in 60 seconds the bet is refunded,
+  and so is any open game after a restart.
 - **A tutorial** that teaches new members how to use the bot.
 
 Over time the games pay back about 95% of what is bet (heists about 95–96%). You set the
-biggest bet per kind of game and a **daily loss limit**.
+biggest bet per kind of game and a **daily loss limit**, which counts the net loss over the
+last 24 hours. XP items can be used 5 times in any 24 hours.
 
 **Coins are play money, kept apart from real money:** no store product gives coins, there
 is no way to turn coins into real money, and a role someone paid for never earns coin
@@ -303,12 +332,19 @@ income.
 
 - **Giveaways** with an entry button, any number of winners, optional role and level
   requirements, a winner announcement and a congratulations DM. A prize can be a
-  product from your store, delivered as an order like any purchase. Staff can start,
-  end, reroll, pause, resume and list giveaways from Discord.
+  product from your store, delivered as an order like any purchase. The draw only picks
+  people who are still in the server, aren't bots and still hold the required role.
+  Staff can start, end, reroll, pause, resume and list giveaways from Discord.
 - **Polls**: members make them with `/poll`. **Use Discord's poll** uses Discord's
   native voting interface, with a duration and multiple-answer choice; the dashboard
   reads the final counts when the poll ends.
-- **Predictions**: members bet play money on what will happen, with `/predict`.
+- **Predictions**: members bet play money on what will happen, with `/predict`. The creator
+  can set a time after which no more bets are taken, can't bet on their own prediction, and
+  can cancel it, which refunds every bet in full. The house keeps 5% of the winnings (never
+  of the stake), and you set the biggest bet.
+- **Lottery**: the winner gets 90% of the pot and the other 10% is burned.
+- **Trivia**: only the first three right answers in a round are paid, a member can win
+  only 600 coins a day from trivia, and streak bonuses top out after 10 in a row.
 
 ![Giveaways](images/giveaways.jpg)
 
@@ -347,6 +383,11 @@ income.
 - Give it a **name, a personality and a voice** (professional, friendly or playful).
 - **Try it** in the dashboard as any kind of member, and see the questions it couldn't
   answer so you can write your own answer.
+- **When the AI service has a bad moment**, the assistant waits when the service says how
+  long and asks again, and asks again after a server error. A server-wide limit of 40
+  questions a minute keeps one busy hour from using up your allowance. Questions that
+  failed because the service was down or not set up don't fill your list of unanswered
+  questions: one line tells you when the outage was and how many members were affected.
 - It runs on **your own free key** from Google AI Studio (the most room), Cloudflare Workers
   AI or Groq, or any OpenAI-compatible service. The Launcher walks you through making the key and checks
   it; the question and the server information used to answer it are sent to that
@@ -357,11 +398,22 @@ income.
 ## Tickets
 
 - **Panels** with buttons or a dropdown. Each ticket opens as a **private thread**.
-- **Ticket types**, each with its own category, manager role and opening message.
-- An **intake form** of up to five questions, asked before the ticket is created.
-- A **staff alert** for each new ticket, with **Join ticket** and **Claim** buttons.
-- Limits on open tickets per member, a reminder and auto-close after silence, and
-  **feedback** when a ticket closes.
+- **Ticket types**, each with its own category, manager role and opening message. A type
+  can be limited to the owner and administrators only, and its alert in the staff channel
+  then hides the member's answers and buyer details.
+- An **intake form** of up to five questions, asked before the ticket is created. Each
+  ticket type can have its own questions (for example, Order help asks for the order
+  number); a type without any uses the panel's form.
+- A **staff alert** for each new ticket, with **Join ticket** and **Claim** buttons. A
+  claimed ticket can be handed back with **Unclaim**, and a closed one reopened with
+  **Reopen** or `/ticket-staff reopen`.
+- **A ticket never goes unseen.** If nobody holds the staff role yet, the server owner and
+  administrators are added to the ticket, named in it and pinged in the staff alert.
+- Limits on open tickets per member (the limit is checked before the form opens, and a
+  member who opens and closes tickets too fast is asked to wait a few minutes), a reminder
+  and auto-close after silence, and **feedback** when a ticket closes. When the member
+  wrote last, they get no reminder and the ticket isn't auto-closed; the team gets a nudge
+  instead.
 - **Transcripts**: one web page with the whole conversation and its files, with an
   optional copy for the member.
 - **Buyer context**: when the member has bought from your store, staff see their orders,
@@ -380,7 +432,16 @@ Play from **YouTube, SoundCloud, Bandcamp and Twitch** in your voice channels.
 - A **DJ role**. Anyone in the bot's voice channel can add songs and skip their own;
   skipping someone else's song needs a vote from the people listening.
 - Music voice channels, starting volume, and limits on queue size and songs per member.
-- **Audio effects**, loop, shuffle, seek and moving songs in the queue.
+- **Audio effects**, loop, shuffle, seek and moving songs in the queue. Members can move
+  and remove the songs they added themselves.
+- **Autoplay** (off until you switch it on): when the queue runs out, the bot keeps
+  playing related songs, never repeats a recent one, and marks them "Picked by Autoplay".
+  `/autoplay` turns it on or off for the music that is playing.
+- **`/previous`** plays the song before this one again, and **`/skipto`** jumps ahead to a
+  song in the queue; passing over someone else's song needs the same listener vote as
+  `/skip`.
+- Songs that have already played no longer use up queue places, and the player keeps the
+  queue and the song after a restart. A finished song's card loses its buttons.
 - Leaves an empty channel or an idle player on its own.
 - A **Music server and YouTube** check that says whether music is working.
 
@@ -395,9 +456,12 @@ Play from **YouTube, SoundCloud, Bandcamp and Twitch** in your voice channels.
   subscription activated, renewal failed, lapsed or expired),
   moderation (a warning, a case opened), messages and activity (messages, reactions,
   buttons, voice channels), tickets, giveaways and Discord events.
-- **Conditions**: roles, levels, channels, owning a product, message text, new or
-  returning members, a time window or a specific user.
-- **Actions**: a message, DM or reply, giving or removing a role, reactions, deleting the
+- **Conditions**: roles, levels (including "just reached level N", which also catches a
+  jump over it), channels, owning a product, message text, new or returning members, a time
+  window or a specific user. A rule can be limited to once per member every so many
+  minutes, hours or days.
+- **Actions**: a message (in text, announcement and thread channels) or a DM or reply,
+  giving or removing a role, reactions, deleting the
   message, threads, waiting, granting a product, logging, creating a ticket, and banning,
   kicking or muting.
 
@@ -416,7 +480,8 @@ GitHub can send updates to.
   message. Saved classic embeds keep sending as before until you edit them.
 - **Temp channels**: a hub voice channel that gives each member who joins their own
   voice room, which they can lock, unlock or claim with `/voice`. Each room only offers
-  the sound quality your server allows.
+  the sound quality your server allows and copies the access rules of its category, so a
+  room in a members-only or 18+ category stays closed to everyone else.
 - **Stats channels**: a live number, such as your member count, shown as a voice
   channel's name.
 - **Emoji picker**: wherever an emoji is chosen, one picker offers this server's own
@@ -444,7 +509,7 @@ GitHub can send updates to.
   off until you turn it on, whether to also give members back their roles (it never
   takes a role away from anyone), put the server's settings back, re-create missing
   emoji, stickers and sounds (as many as the server has room for), put back bans that
-  were lifted, and remove what wasn't there when the snapshot was taken, which lists
+  were lifted (never for members staff pardoned since), and remove what wasn't there when the snapshot was taken, which lists
   exactly what it would delete and needs a second confirmation. Reaction roles, ticket
   panels, level rewards, store roles and every other setting that used something
   re-created are pointed at the new one. A restore can be undone from **Admin changes**.
@@ -517,14 +582,24 @@ SomniBot also looks after itself where it can:
   something still stops it, the Launcher shows the real reason (your bot token was
   refused, the bot can't reach Discord or the database, or it keeps stopping) and what
   to do.
+- While the bot starts its features after a restart, a member who uses one is told it is
+  still starting, not that it is broken.
 - The bot stays responsive under heavy load: the assistant's search runs in its own worker,
   so it doesn't hold up the rest of the bot.
 - The Launcher warns when the computer's free disk space drops under 5 GB, and again under
   1 GB, before a full disk can stop the database. It can start with Windows and keeps
   running in the tray when its window is closed, so the disk watch and automatic backups
   keep working. It installs Tailscale, Docker and any Linux parts it needs by itself, keeps
-  the PC awake while SomniBot runs, and runs backups and updates by themselves, switching
-  back to the version before if a new one fails its health check.
+  the PC awake while SomniBot runs, and runs backups and updates by themselves. It looks
+  for a new version about once an hour, retries a short failure (such as no internet for a
+  moment) at the next look, and switches back to the version before if a new one fails its
+  health check.
+- Every update keeps a copy of your database from just before it. **Settings → Backups**
+  lists these copies, and **Restore** puts one back after saving your current data first.
+  Backups are read back after they are saved, so a damaged one is caught at once. A
+  scheduled backup that falls due before Docker is ready after the PC starts waits
+  instead of failing.
+- While SomniBot is stopped, Home has a **Start** button in its status card.
 
 The **Daily digest** sends one message a day, at the time and timezone you choose, to
 your DMs or a staff channel. It covers new members, sales, tickets, requests, failed
