@@ -61,7 +61,7 @@
 
 ### Build your whole server in seven steps
 
-**Server setup** designs your roles (in Admin, Moderator, Member and Cosmetic tiers) and
+**Server setup** designs your roles (in Admin, Moderator, Support, Member and Cosmetic tiers) and
 your categories and channels, shows every change before it happens, then creates them in
 Discord along with Discord's server settings, the AutoMod spam and slur filters and
 Community. The deploy is safe by default: it only touches roles and channels SomniBot made,
@@ -79,9 +79,10 @@ Discord or SomniBot needs, is never removed.
 ### More of Discord in one dashboard
 
 Plan forum, media and stage channels, choose access for specific roles and load a
-server template. Manage **Server settings**, role icons, gradients and colours, which
-roles show separately in the member list, **Events**, **Emoji, stickers & sounds**, voice
-moderation and Discord's own polls. The pages
+server template. Manage **Server settings** (which also shows whether 2FA for moderator
+actions is on, and where you turn it on in Discord), role icons, gradients and colours,
+which roles show separately in the member list, **Events**, **Emoji, stickers & sounds**,
+voice moderation and Discord's own polls. The pages
 explain Community, boost and other Discord requirements before unavailable choices
 can be applied.
 
@@ -180,8 +181,8 @@ your own web address (`/join`) always leads to the current server and follows a 
 ### Levels, a full coin economy and giveaways
 
 Message and voice XP, level rewards (roles, coins or items), XP multipliers, rank cards
-and leaderboards. Voice XP is earned only for real activity: unmuted with someone else in
-the room, or streaming or on camera with company.
+and leaderboards. Voice XP is earned only for real activity: not muted or deafened, with
+someone else in the room. Lowering a member's XP takes their level reward roles back.
 
 ![Levels & XP](images/levels.jpg)
 
@@ -189,7 +190,9 @@ A whole play-money game: daily, weekly and monthly rewards, work and crime, bank
 robbing, role income, a game shop, a member-to-member market, crafting, farming,
 fishing, hunting, digging and mining, adventures, heists, pets, quests, achievements,
 trivia, lotteries, predictions and casino-style games. The games pay back about 95% of
-what is bet over time, and you can cap bets and daily losses.
+what is bet over time, and you can cap bets and daily losses. Lotteries pay the winner 90%
+of the pot and burn the rest, predictions can close at a set time or be cancelled with every
+bet refunded, and `/highlow` shows a number first and pays by the real odds.
 
 ![The Economy page](images/economy.jpg)
 
@@ -210,14 +213,18 @@ when it doesn't know, with a ticket button so a person can take over. It also br
 new tickets, drafts replies, summarises transcripts, translates, and explains your own setup
 to you. You bring a free key from Google, Cloudflare or Groq (or any compatible AI service);
 the Launcher walks you through it. Its search runs on its own, so the bot stays responsive
-under heavy load.
+under heavy load. When the AI service is busy or down, the assistant waits and asks again,
+and questions it could not answer because of an outage don't fill your list of unanswered
+questions: you see one line about the outage instead.
 
 ![Assistant settings and provider status](images/assistant.jpg)
 
 ### Tickets with buyer context
 
-Ticket panels with buttons or a dropdown, private threads, intake questions, ticket
-types, claim buttons, reminders, auto-close, feedback and transcripts. Staff are told
+Ticket panels with buttons or a dropdown, private threads, ticket types with their own
+intake questions, claim and unclaim buttons, reopening, reminders, auto-close, feedback and
+transcripts. If nobody holds a staff role yet, the server owner and administrators are
+brought into the ticket and told, so a ticket never goes unseen. Staff are told
 when a member with an open ticket leaves the server, and the member is added back to
 the ticket if they return. When a buyer opens
 a ticket, staff see their orders, the PCs they activated your programs on and their
@@ -230,7 +237,7 @@ Discord.
 
 Sell digital products from `/store`: programs that check the buyer's Discord account,
 downloadable files, roles and channels, service tickets, subscriptions and free
-products. Buyers pay through **your own PayPal**, or **your own way** (crypto, Cash App,
+products. A product can have a stock limit and a limit per member. Buyers pay through **your own PayPal**, or **your own way** (crypto, Cash App,
 a bank transfer) and you confirm the payment. Every product passes a Sandbox test
 purchase before it can go on sale. Buyers get a branded customer portal for their
 programs, downloads and orders. A buyer who left the server before delivery gets their
@@ -257,7 +264,9 @@ messages and DMs, roles, threads, tickets, granting a product and moderation.
 ### Music
 
 Music in your voice channels from YouTube, SoundCloud, Bandcamp and Twitch, with a DJ
-role, vote-to-skip, queue limits, audio filters and auto-leave.
+role, vote-to-skip, queue limits, audio filters and auto-leave. `/autoplay` keeps related
+songs coming when the queue runs out, `/previous` plays the last song again and `/skipto`
+jumps ahead.
 
 ![Music](images/music.jpg)
 
@@ -299,7 +308,8 @@ installer that brings everything it needs; the AppImage is for other Linux.
 - **Problems explained in plain words.** When something stops working, the Launcher
   shows the real reason and what to do about it: your bot token was refused, the bot
   can't reach Discord or the database, or it keeps stopping. At start the bot waits for
-  its database and retries Discord instead of giving up.
+  its database and retries Discord instead of giving up. While SomniBot is stopped, Home
+  has a **Start** button right in its status card.
 - **It looks after itself.** Ticket, role and rules panels are posted again if someone
   deletes them. If a channel that a setting uses is deleted, you get a plain alert, and
   **Sync → Restore** brings the channel back in its old place and points every setting
@@ -310,10 +320,14 @@ installer that brings everything it needs; the AppImage is for other Linux.
   Discord switch it needs being turned off or the public address breaking, and tells you
   plainly about anything it can't fix.
 - **Backups and updates on their own.** The Launcher backs up the database before every
-  install and update, and backups run by themselves too. Updates install by themselves:
-  checks, the download, the backup and database changes all happen before anything running
-  is touched. If the new version doesn't pass its health check,
-  the Launcher switches back to the version before on its own. If you're sent a version
+  install and update, and backups run by themselves too. It looks for a new version about
+  once an hour. Updates install by themselves: checks, the download, the backup and
+  database changes all happen before anything running is touched. If the new version
+  doesn't pass its health check, the Launcher switches back to the version before on its
+  own. A short failure, such as no internet for a moment, is tried again at the next look.
+  Every update keeps a copy of your database from just before it, and **Settings → Backups**
+  lists those copies with a **Restore** button for each. Saved backups are read back to
+  check they are good. If you're sent a version
   by hand, put its files in one folder and press **Use update files from this PC** on the
   Updates page. The full guide comes with the Launcher, readable offline.
 - **No ports to manage.** Nothing in SomniBot uses a fixed port. The Launcher picks free

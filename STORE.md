@@ -21,7 +21,10 @@ names.
   alert, press **Mark paid**, and the bot delivers the order exactly as for a PayPal
   sale. Unpaid orders close on their own after the number of days you set.
   If a buyer's transaction ID is also on another order, that order and its alert say so
-  and name the other order, so one payment can't quietly count twice.
+  and name the other order, so one payment can't quietly count twice. Write your payment
+  instructions once per product: `$PRICE` and `{order}` are filled in with each order's
+  own total (after any coupon) and order number. When you record a refund you made by
+  hand, the buyer gets a message about it too.
 - **Free**: free products are claimed instead of bought, once per customer or
   repeatedly.
 
@@ -49,6 +52,10 @@ A store that sells only free products and products paid by hand needs no PayPal 
   trials, through PayPal.
 - An optional **access period** (for example 30 days), after which roles and channels,
   and with them access to a program, stop working.
+- Optional **limits** on one-time products: how many can be sold in total, and how many
+  one member may buy. A buyer who hits a limit sees "Sold out" or "You already bought the
+  most allowed", and nobody is charged. A unit comes back if an order is refunded,
+  rejected or expires.
 
 ![The New product editor](images/store-new-product.jpg)
 
@@ -56,11 +63,16 @@ A store that sells only free products and products paid by hand needs no PayPal 
 
 Members open `/store`, see the products on sale, and press **Buy** (or **Claim** for a
 free product). Coupons: buyers press **Use a code**, see privately what it takes off,
-then buy; the bot checks every rule again at that moment.
+then buy; the bot checks every rule again at that moment. A buyer who already has an
+unpaid hand-paid order can add a code to it: the order is replaced by one at the new
+price, and the old one is closed.
 
 With **Gifting** on, a **Gift** button lets a buyer pick another member of the server
 to give a product to (not for products you take payment for by hand). With **Announce
-purchases** on, the bot posts "someone just bought..." in a channel you choose.
+purchases** on, the bot posts "someone just bought..." in a channel you choose. If
+that post can't be sent (the channel was deleted, or the bot lost permission to post
+there), you get one alert that says what to fix, and it closes itself once a post goes
+through.
 
 Everyone who owns something can get your **Customer role**, and loses it when they no
 longer own anything. Use it for customer-only channels.
@@ -123,7 +135,8 @@ A request never moves money by itself: it reaches you at once and you decide.
   notice them.
 - **Analytics**: how your products sell.
 - **Promotions**: coupon codes for a percentage or a fixed amount off one-time products,
-  with minimum purchase, maximum uses, start and end dates, and first-purchase-only.
+  with minimum purchase, maximum uses, start and end dates, and first-purchase-only (an
+  earlier order that was refunded or disputed still counts as a purchase).
 - **Discord store**: link premium roles you sell through Discord's own store to your
   server.
 - **SDK**: describe your program and SomniBot writes the instructions a developer, or an
