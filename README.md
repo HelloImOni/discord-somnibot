@@ -5,7 +5,7 @@
 <h1 align="center">SomniBot for Discord</h1>
 
 <p align="center">
-  <b>One Discord bot for your whole server: member gate, moderation with anti-nuke protection, automatic server snapshots, levels, a coin economy, giveaways, tickets, an assistant that answers your members, music, automations, and a real-money store with Discord-based licensing for programs and a customer portal.</b><br>
+  <b>One Discord bot for your whole server: member gate, moderation with anti-nuke protection, automatic server snapshots, levels, a coin economy with seasons, pets, clans and games, giveaways, tickets, an assistant that answers your members, music, automations, and a real-money store with Discord-based licensing for programs and a customer portal.</b><br>
   All of it is run from one web dashboard, under your own bot's name and brand.
 </p>
 
@@ -25,6 +25,37 @@
 > downloads or install files. The screenshots come from a real SomniBot install, with
 > sample data and sample product names.
 
+## What's new in 1.1.60
+
+**Current version: 1.1.60.** Highlights since the last showcase update:
+
+- **Seasons and battle passes.** Each season has its own pass with free and premium
+  tiers, quests, a daily login calendar and a badge, and four ready-made seasons come
+  with every server.
+- **A much bigger play-money world.** Pets that evolve and go on expeditions, clans with
+  a shared bank and wars, collectible cards, an RPG with classes and dungeons, fictional
+  stocks and crypto, houses and businesses, jobs, loans, auctions and more.
+- **Games to play together.** Multiplayer blackjack and Texas Hold'em, bingo, chess,
+  connect four, hangman, Wordle and more, a music quiz in voice, party adventures, crew
+  heists and a weekly boss raid for the whole server.
+- **Better tickets.** Priority, saved replies, moving a ticket to another type, first
+  response targets with reminders, and a stats page.
+- **Stronger moderation.** Moderator notes, case reasons that keep their history, CSV
+  downloads, moderator activity, more log channels, a panic button, a question or captcha
+  step on the member gate, and new auto-mod safety rules for scam links, attachments,
+  emoji, distorted text and your own patterns.
+- **Faster setup.** Eight ready-made starter layouts in Server setup, and a search box
+  (Ctrl K) that finds any page, setting, command, member or channel.
+- **More for communities.** Social feeds, free-game alerts, suggestions, confessions,
+  birthdays, utilities, tiered starboards, and music with lyrics, search, playlists and a
+  24/7 mode.
+- **Six languages**: English, Spanish, Portuguese, French, German and Russian.
+- **A broader store.** Optional Stripe payments, stock counts, subscription limits,
+  bundles, supporter tiers and richer analytics.
+- **Owner tools.** Weekly reports, alert routes, member insights and an owner handbook,
+  plus a Launcher with a Health page, encrypted settings in backups, an optional
+  Nextcloud copy and a support bundle you save yourself.
+
 ## Why SomniBot
 
 - **Your bot, your brand.** SomniBot is white-label. Members talk to the bot *you* create
@@ -33,9 +64,10 @@
   store and the customer portal use your brand name, logo, colours and voice. The only
   mention of SomniBot members see is a small "Powered by SomniBot" footer, and you can
   switch that off.
-- **One dashboard for everything.** More than 60 dashboard pages, grouped into Overview,
+- **One dashboard for everything.** About 90 dashboard pages, grouped into Overview,
   Real-money store, Server, Moderation, Community, Channels & messages, Coin economy,
-  Automation, Problems & history and System. A search box finds any page.
+  Automation, Problems & history and System. A search box (Ctrl K) finds any page,
+  setting, command, member or channel.
 - **You always know what happened.** After every save, a badge says what the running bot
   did with it: Saved, Applying…, Applied, Not applied (with the reason), or "Bot offline,
   applies when it starts". **Admin changes** lists changes made from the dashboard and by
@@ -59,7 +91,7 @@
 
 ## A tour
 
-### Build your whole server in seven steps
+### Build your whole server in seven steps (or start from a ready-made layout)
 
 **Server setup** designs your roles (in Admin, Moderator, Support, Member and Cosmetic tiers) and
 your categories and channels, shows every change before it happens, then creates them in
@@ -67,6 +99,10 @@ Discord along with Discord's server settings, the AutoMod spam and slur filters 
 Community. The deploy is safe by default: it only touches roles and channels SomniBot made,
 and keeps everything you made yourself. A last step lists exactly what to check with a
 test account.
+
+Not sure where to begin? Load one of eight **starter layouts** (Community, Gaming,
+Creator, Store, Support, Study, Roleplay or 18+ community) and change whatever you like
+before anything happens in Discord.
 
 On a server that already has its own channels and roles, you can also choose to remove
 the ones that aren't part of the new layout. It is off by default, and only the owner
@@ -107,8 +143,9 @@ See [all features](FEATURES.md) and the [command list](COMMANDS.md).
 New members get an Unverified role the moment they join and can only open the rules,
 verification and support channels. When they finish your steps (accept the rules, pick
 roles, answer Discord's onboarding questions if you want), they get the Verified role
-and the rest of the server. Nobody is let in by a timer, and staff can verify or
-unverify anyone from Discord or the dashboard.
+and the rest of the server. You can add a **question** or an **image captcha** to the
+steps. Nobody is let in by a timer, and staff can verify or unverify anyone from Discord
+or the dashboard.
 
 Every channel gets a purpose (staff-only, 18+, read-only, normal chat), and **See the
 server as a role** shows, channel by channel, what someone holding any set of roles can
@@ -121,13 +158,20 @@ do, with a fix for anything that doesn't match.
 Warnings, timeouts, kicks and bans with automatic punishment steps, cases, appeals,
 message logging, anti-raid and a starboard. **Lockdown** stops members posting, reacting
 and speaking everywhere at once during a raid, and **Unlock** puts every channel back
-exactly as it was, even after a restart.
+exactly as it was, even after a restart. A **panic button** does it in one press from the
+dashboard or `/lockdown panic-start`, and opens an incident for staff.
+
+Staff can keep **moderator notes**, edit a case's reason without losing the earlier
+wording, download cases and notes as CSV, see what each moderator did over a period,
+and send role, channel, voice, invite, nickname and avatar changes to log channels.
 
 ![Moderation settings with Lockdown](images/moderation.jpg)
 
-Auto-mod rules filter words, links, invites, spam and mass mentions, and **Try a rule
-safely** tests a sample message without acting on it. A **Translator** rule rewrites
-words instead of blocking them, and never punishes anyone.
+Auto-mod rules filter words, links, invites, spam and mass mentions. **Safety rules** add
+scam and phishing links, attachments, emoji spam, distorted (Zalgo) text and your own
+text patterns, each limited to the channels and roles you choose. **Try a rule safely**
+tests a sample message without acting on it. A **Translator** rule rewrites words
+instead of blocking them, and never punishes anyone.
 
 ![Auto-mod rules](images/automod.jpg)
 
@@ -180,19 +224,24 @@ your own web address (`/join`) always leads to the current server and follows a 
 
 ### Levels, a full coin economy and giveaways
 
-Message and voice XP, level rewards (roles, coins or items), XP multipliers, rank cards
-and leaderboards. Voice XP is earned only for real activity: not muted or deafened, with
+Message and voice XP, level rewards (roles, coins or items), XP multipliers, rank cards,
+profile cards and leaderboards for XP, messages, voice time, coins, trivia, fish and
+more, by week, month or season, with a public web page and a profile page members open by
+signing in with Discord. Voice XP is earned only for real activity: not muted or deafened, with
 someone else in the room. Lowering a member's XP takes their level reward roles back.
 
 ![Levels & XP](images/levels.jpg)
 
-A whole play-money game: daily, weekly and monthly rewards, work and crime, banks and
-robbing, role income, a game shop, a member-to-member market, crafting, farming,
-fishing, hunting, digging and mining, adventures, heists, pets, quests, achievements,
-trivia, lotteries, predictions and casino-style games. The games pay back about 95% of
-what is bet over time, and you can cap bets and daily losses. Lotteries pay the winner 90%
-of the pot and burn the rest, predictions can close at a set time or be cancelled with every
-bet refunded, and `/highlow` shows a number first and pays by the real odds.
+A whole play-money game: daily, weekly and monthly rewards, jobs, work and crime, banks
+with interest and loans, robbing, role income, a game shop, a member-to-member market with
+auctions and trades, crafting, farming with animals, fishing with an aquarium, hunting,
+digging, mining, chopping and foraging, adventures, heists, pets, quests, achievements,
+prestige, trivia, lotteries, predictions and casino-style games, including roulette,
+crash, races and duels. The games pay back about 95% of what is bet over time, and you can
+cap bets and daily losses. Lotteries pay the winner 90% of the pot and burn the rest,
+predictions can close at a set time or be cancelled with every bet refunded, and
+`/casino highlow` is a cash-out ladder: each right call climbs a rung, up to ×12, and
+members can stop and cash out on any rung.
 
 ![The Economy page](images/economy.jpg)
 
@@ -200,6 +249,22 @@ Giveaways with a button to enter, optional role and level requirements, and priz
 can be products from your store.
 
 ![Giveaways](images/giveaways.jpg)
+
+### Seasons, clans, cards and a world to play in
+
+**Seasons** give your server a rhythm: each has its own battle pass with free and premium
+tiers, quests, a daily login calendar and a badge, and four ready-made seasons are
+included. Around them sit **pets** that evolve and go on expeditions, **clans** with their
+own role, private channel, bank, quests and wars, **collectible cards** with sets and
+trades, an **RPG** with four classes, gear, a skill tree, dungeons and an arena,
+**fictional stocks and crypto** whose prices follow your server's activity, and **houses
+and businesses** that earn income and defend against robbers. All of it is play money
+and play progress, never for sale.
+
+Members can also play together: multiplayer **blackjack and Texas Hold'em**, **bingo**,
+**tic-tac-toe, connect four and chess**, **hangman, Wordle and word chain**, a **music
+quiz** in voice, 2 to 4 player **party adventures**, three-role **crew heists**, and a
+**weekly boss** the whole server fights.
 
 ### An assistant that knows your server
 
@@ -223,7 +288,10 @@ questions: you see one line about the outage instead.
 
 Ticket panels with buttons or a dropdown, private threads, ticket types with their own
 intake questions, claim and unclaim buttons, reopening, reminders, auto-close, feedback and
-transcripts. If nobody holds a staff role yet, the server owner and administrators are
+transcripts. Tickets have a **priority**, staff can use **saved replies** and **move** a
+ticket to another type, each type can have a **first response target** with reminders and
+escalation, and a **stats page** shows ratings, response and resolution times, and
+what each staff member handled. If nobody holds a staff role yet, the server owner and administrators are
 brought into the ticket and told, so a ticket never goes unseen. Staff are told
 when a member with an open ticket leaves the server, and the member is added back to
 the ticket if they return. When a buyer opens
@@ -237,8 +305,10 @@ Discord.
 
 Sell digital products from `/store`: programs that check the buyer's Discord account,
 downloadable files, roles and channels, service tickets, subscriptions and free
-products. A product can have a stock limit and a limit per member. Buyers pay through **your own PayPal**, or **your own way** (crypto, Cash App,
-a bank transfer) and you confirm the payment. Every product passes a Sandbox test
+products. A product can have a stock limit and a limit per member, and can show how many
+are left. Plans can have subscription limits and supporter tiers, and products can be
+bundled. Buyers pay through **your own PayPal**, **your own Stripe** (optional), or **your
+own way** (crypto, Cash App, a bank transfer) and you confirm the payment. Every product passes a Sandbox test
 purchase before it can go on sale. Buyers get a branded customer portal for their
 programs, downloads and orders. A buyer who left the server before delivery gets their
 order when they come back, and a PayPal dispute keeps access in place until PayPal
@@ -266,15 +336,36 @@ messages and DMs, roles, threads, tickets, granting a product and moderation.
 Music in your voice channels from YouTube, SoundCloud, Bandcamp and Twitch, with a DJ
 role, vote-to-skip, queue limits, audio filters and auto-leave. `/autoplay` keeps related
 songs coming when the queue runs out, `/previous` plays the last song again and `/skipto`
-jumps ahead.
+jumps ahead. `/music lyrics` shows lyrics, `/music search` lets members pick from a list,
+`/music 24-7` keeps the bot in voice, and `/music playlist` saves server and personal
+playlists.
 
 ![Music](images/music.jpg)
+
+### Community, feeds and extras
+
+**Suggestions** with voting and a staff review flow, anonymous **confessions**,
+**birthdays** with a role and a calendar, **reminders, tags, to-do lists and sticky
+notes**, social commands such as hugs, 8-ball and rep points, and **starboards** with tiers
+and a monthly best post. **Feeds and alerts** post new videos, streams, posts, RSS items
+and anime episodes from Twitch, YouTube, Kick, TikTok, Reddit, Bluesky and X, plus
+**free-game alerts** for Epic and Steam. **Extras** add text to speech, a soundboard,
+meme and quote cards, counting and word-chain channels, seasonal events, signed outbound
+webhooks and a read-only public API.
+
+### Six languages
+
+Members can use SomniBot in **English, Spanish, Portuguese, French, German or Russian**.
+You choose one language for the whole server or let each member pick with `/language`.
 
 ### Your morning briefing
 
 The **Daily digest** sends you one message a day about everything since the last one:
 new members, sales, tickets, requests, failed actions, moderation, bot and music health,
-and anything that needs you. Urgent alerts and money alerts still reach you at once.
+and anything that needs you. A **weekly trends report** can be added, and **alert routes**
+send each level of alert to the staff channel and roles you choose. **Member insights**
+shows retention, busy hours, top channels and early signs that members are drifting away.
+Urgent alerts and money alerts still reach you at once.
 
 ![Daily digest](images/digest.jpg)
 
@@ -309,7 +400,9 @@ installer that brings everything it needs; the AppImage is for other Linux.
   shows the real reason and what to do about it: your bot token was refused, the bot
   can't reach Discord or the database, or it keeps stopping. At start the bot waits for
   its database and retries Discord instead of giving up. While SomniBot is stopped, Home
-  has a **Start** button right in its status card.
+  has a **Start** button right in its status card. A **Health** page says what is
+  working and what needs attention, and **Save support bundle** writes a text file with
+  the log and status, secrets removed, on your own computer. Nothing is uploaded.
 - **It looks after itself.** Ticket, role and rules panels are posted again if someone
   deletes them. If a channel that a setting uses is deleted, you get a plain alert, and
   **Sync → Restore** brings the channel back in its old place and points every setting
@@ -327,7 +420,8 @@ installer that brings everything it needs; the AppImage is for other Linux.
   own. A short failure, such as no internet for a moment, is tried again at the next look.
   Every update keeps a copy of your database from just before it, and **Settings → Backups**
   lists those copies with a **Restore** button for each. Saved backups are read back to
-  check they are good. If you're sent a version
+  check they are good. The Launcher's own settings inside a backup are encrypted, and an
+  extra copy of each backup can go to your own Nextcloud. If you're sent a version
   by hand, put its files in one folder and press **Use update files from this PC** on the
   Updates page. The full guide comes with the Launcher, readable offline.
 - **No ports to manage.** Nothing in SomniBot uses a fixed port. The Launcher picks free
