@@ -15,6 +15,13 @@ names.
 
 - **Through your own PayPal account**: card and PayPal payments, and subscriptions.
   The money goes to you; SomniBot connects to your own PayPal apps.
+- **Through your own Stripe account (optional)**: card payments and subscriptions through
+  Stripe Checkout. Stripe starts in **test mode**. You add its keys in the Launcher and
+  connect its webhook from the Store page, and the switch refuses to turn on until the
+  keys, your public address, the webhook and its signing secret are all in place. Going
+  live uses the same real-money confirmation as PayPal. A subscription on Stripe uses a
+  recurring price you create in Stripe. Retries of the same Stripe event never create a
+  second order.
 - **Your own way**: for payments PayPal can't take (crypto, Cash App, a bank
   transfer…), a product can be **paid by hand**. Buyers see your payment instructions
   privately, pay you, and add their transaction ID. You get a **Payment to confirm**
@@ -28,7 +35,8 @@ names.
 - **Free**: free products are claimed instead of bought, once per customer or
   repeatedly.
 
-A store that sells only free products and products paid by hand needs no PayPal at all.
+Each product picks its own way to be paid: PayPal, by hand or Stripe. A store that sells
+only free products and products paid by hand needs no PayPal or Stripe at all.
 
 ## What you can sell
 
@@ -49,13 +57,21 @@ A store that sells only free products and products paid by hand needs no PayPal 
 - **Service tickets**: a private ticket opened with every purchase.
 - **Game items** given with a purchase.
 - **Subscriptions**: plans billed every so many days, weeks, months or years, with free
-  trials, through PayPal.
+  trials, through PayPal (or Stripe).
 - An optional **access period** (for example 30 days), after which roles and channels,
   and with them access to a program, stop working.
 - Optional **limits** on one-time products: how many can be sold in total, and how many
   one member may buy. A buyer who hits a limit sees "Sold out" or "You already bought the
   most allowed", and nobody is charged. A unit comes back if an order is refunded,
-  rejected or expires.
+  rejected or expires. A product can also show **how many are left** on `/store`.
+- **Subscription limits**: cap how many active subscribers a plan can have in total, and
+  how many subscriptions one member can hold. A full plan shows as full.
+- **Bundles**: a product can include other products. The buyer gets all of them together,
+  exactly as they were when the bundle was saved, or none. Subscriptions and game items
+  can't be put in a bundle.
+- **Supporter tiers**: give subscription plans a tier name and rank to build a ladder of
+  supporter levels. Moving between tiers changes what a buyer gets from then on and never
+  rewrites access they already have.
 
 ![The New product editor](images/store-new-product.jpg)
 
@@ -117,10 +133,16 @@ A request never moves money by itself: it reaches you at once and you decide.
 - Refunds made directly in PayPal are handled the same way. A PayPal dispute marks the
   order **Disputed** and alerts you, but the buyer keeps access until PayPal actually
   takes the money back.
+- On Stripe, a full refund or a cancelled subscription ends access, and a partial refund
+  keeps access and lowers your net revenue and the buyer's lifetime spend.
 - A failed delivery shows on its order, with **Retry delivery**.
 - A buyer who left the server before their order was delivered gets it when they come
   back.
-- You can also refund from Discord, inside the buyer's ticket.
+- You can also refund from Discord, inside the buyer's ticket. For a paid service order,
+  staff can set where the work stands (not started, in progress, waiting on the buyer or
+  delivered), with a note, and the buyer is told. Staff can also **bill the buyer an extra
+  amount** from the ticket: they confirm first, and the buyer gets the invoice in the
+  ticket and by DM.
 
 ## Keeping track
 
@@ -133,7 +155,10 @@ A request never moves money by itself: it reaches you at once and you decide.
 - **Requests**: refund and help requests from the portal.
 - **Fraud controls**: suspicious purchases SomniBot noticed, and the rules it uses to
   notice them.
-- **Analytics**: how your products sell.
+- **Analytics**: payments and refunds for the last 30 days, **monthly recurring revenue**
+  by currency, **subscription churn**, a **funnel** for each product (viewed, checkout
+  started, paid, delivered and refunded) and each buyer's **lifetime spend after
+  refunds**. Different currencies, and test and live money, are never added together.
 - **Promotions**: coupon codes for a percentage or a fixed amount off one-time products,
   with minimum purchase, maximum uses, start and end dates, and first-purchase-only (an
   earlier order that was refunded or disputed still counts as a purchase).
