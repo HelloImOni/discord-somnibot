@@ -24,6 +24,8 @@ The screenshots on this page come from a real SomniBot install with sample names
 - [Play-money stocks](#play-money-stocks)
 - [Housing and businesses](#housing-and-businesses)
 - [Multiplayer games, party adventures and boss raids](#multiplayer-games-party-adventures-and-boss-raids)
+- [Real-time games (Discord Activities)](#real-time-games-discord-activities)
+- [Fair Play](#fair-play)
 - [Giveaways, polls and predictions](#giveaways-polls-and-predictions)
 - [The assistant](#the-assistant)
 - [Tickets](#tickets)
@@ -33,6 +35,7 @@ The screenshots on this page come from a real SomniBot install with sample names
 - [Extras and integrations](#extras-and-integrations)
 - [Automations](#automations)
 - [Channels and messages](#channels-and-messages)
+- [Every behaviour is a setting](#every-behaviour-is-a-setting)
 - [Staying in control](#staying-in-control)
 - [Owner alerts and the daily digest](#owner-alerts-and-the-daily-digest)
 - [Search, reports and insights](#search-reports-and-insights)
@@ -333,6 +336,8 @@ still running.
   a curve keep it.
 - **Level-up announcements** with a rank card in your colour.
 - **Level rewards**: a Discord role, coins or a game item at any level.
+- **Level unlocks**: keep a feature closed until members reach a level you choose, with
+  an unlock message of your own (see [Community tools](#community-tools)).
 - A server **leaderboard** that lists only members still in the server, with the same
   place on `/rank`. Members use `/rank` and `/leaderboard`; staff adjust XP with `/xp`.
   Lowering a member's XP takes back the level reward roles they no longer qualify for,
@@ -354,7 +359,9 @@ still running.
 
 ## The coin economy
 
-A full play-money game, with its own pages for each part:
+A full play-money game, with its own pages for each part. Every game has **Game mode**
+choices (game only, play the game, quick by default, quick only, or off), so you decide
+whether members play a real mini game with buttons or take the one-tap version:
 
 - **Earning**: daily, weekly and monthly rewards (`/claim daily`, `/claim weekly`,
   `/claim monthly`) with streak bonuses that top out after about 25 in a row;
@@ -364,7 +371,10 @@ A full play-money game, with its own pages for each part:
   `/earn job`.
 - **Banking**: wallet and bank, deposits and withdrawals, paying other members (`/bank`),
   robbing, and passive mode. The bank has a limit that members can raise with upgrades,
-  pays interest and lends: `/bank loan` borrows play money and pays a loan back. A
+  pays interest and lends: `/bank loan` borrows play money (a fee, a limit and a share of
+  your earnings that repays it) and pays a loan back. `/bank history` shows a member their
+  own coin history, newest first, in their language and only to them; the customer portal
+  has the same on a wallet page. A
   robbery steals at most 10,000, and a failed crime or a caught robber pays a fine from
   the wallet first, then the bank.
 - **Gathering and making**: hunting, digging, mining, chopping wood and foraging
@@ -392,9 +402,10 @@ A full play-money game, with its own pages for each part:
   instead); quests given at random each day and week, only for the games you have on;
   achievements with badges and rewards; prestige; trivia; lotteries and predictions.
   [Pets](#pets), [heists, party adventures and boss raids](#multiplayer-games-party-adventures-and-boss-raids),
+  [real-time games inside Discord](#real-time-games-discord-activities),
   [clans](#clans), [cards](#collectible-cards), the [RPG](#rpg-and-dungeons),
   [stocks](#play-money-stocks) and [properties](#housing-and-businesses) have their own
-  sections below.
+  sections below. [Fair Play](#fair-play) watches the economy for scripted play.
 - **Games**: coinflip, slots, dice, blackjack, scratch cards, guess the number,
   rock-paper-scissors and high-low, plus **roulette**, **crash**, **pet races** and
   member-versus-member **duels** (`/casino`). Slots come in five reel themes, which change
@@ -451,14 +462,26 @@ Members raise pets with `/pet`: buy one, feed it, play with it, train it and ren
 
 - **Care**: a pet gets hungry and sad over time. You set what feeding and training cost,
   how fast they fall and when a pet counts as sad. A sick pet's perks pause.
-- **Battles**: members battle each other's pets. The entry fee is the pot and the winner
-  takes it, so battles never create coins. The same two pets can't fight again until a wait
-  you choose has passed.
+- **Live battles**: `/pet battle` sends a challenge card to the other member, who accepts
+  or declines. Both put in the same stake, and each round **both** members pick a move
+  (Strike, Guard, Burst, or a special move their pet's type, style or gear unlocks) before
+  a timer runs out; if someone does not answer, the bot picks for them. The winner takes
+  the pot, a draw gives both stakes back, and no coins are created by a battle. Nothing is
+  taken until the challenged member accepts. The same two pets can't fight again until a
+  wait you choose has passed.
+- **Pet types**: six rarer ones (Fox, Owl, Bear, Dragon, Phoenix and Celestial) join the
+  rest. Each built-in type has a small ability that works while the pet is not sick, and a
+  switch turns every ability off for a purely cosmetic pet system. Pets have traits,
+  lessons for drills, parks for fetch and a dozen more foods.
 - **Growing up**: a high-level pet can **evolve** for permanent stat gains, and a
   top-level pet can **prestige**, starting again at level 1 for a permanent bonus.
 - **Two pet slots**: members switch between them.
-- **Expeditions**: send a pet out for loot, then collect what it found.
+- **Expeditions**: send a pet out for a reward item you choose, then collect what it found;
+  a pet is never stuck on a trip.
 - A **pet egg** item hatches a pet.
+- **Yours to edit**: the **Pet types** editor sets each type's name, emoji, description,
+  adoption price and which types its attacks are strong against, and the feeding and
+  training costs, battle fee and expedition length are settings.
 
 ## Clans
 
@@ -497,17 +520,40 @@ can't be turned into money or store credit. Members use `/shop cards`.
 
 `/rpg` is a play-money RPG. Rewards are never for sale.
 
-- **Four classes**: Vanguard, Ranger, Arcanist and Warden, each with different power,
-  guard and vitality.
-- **Gear** in three slots (weapon, armor and relic), and a **skill tree** with three
-  branches: Assault, Guard and Utility.
-- **Dungeons** that reuse your adventure stories and choices. Runs use dungeon energy,
-  daily runs and cooldowns, and can be resumed.
-- **Arena**: members challenge each other for play-money rewards, with no real-money
-  stakes.
+- **Six classes, each with its own kit**: Vanguard (tank), Ranger (poison, bleeding and
+  aimed shots), Arcanist (burst spells), Warden (healer and support), Summoner (spirits
+  that fight beside you) and Trickster (dodges and tricks). Every class has two abilities
+  from the start and six more to unlock in its own skill tree, plus shared branches.
+- **You choose a class for every run.** `/rpg dungeon start`, a Discord Activity dungeon
+  or raid, a party adventure and an arena match each open a card with your server's
+  classes. Pick one in a tap and start. The class you pick decides everything inside that
+  run, and nothing is spent before you start. The class on a member's **profile** is the
+  one they last won a run with, and it decides things outside runs, such as the rank
+  card chip, casino perks and class-only options in `/earn work`, `/earn crime` and heists.
+- **Optional class roles**: a cosmetic Discord role per class, in the class colour with
+  its emoji, kept in step with the class on each member's profile. Off until you switch it
+  on, and the bot only ever takes back a role it gave.
+- **A showcase profile card** (`/rpg profile`) with an emblem and colour for the class,
+  level, power, guard and vitality, gear, skills, the arena record, dungeons cleared and a
+  gallery of every class the member has won with.
+- **Turn-based fights** against 54 monsters and 12 bosses with phases, twelve statuses,
+  weaknesses and resistances, fight items such as bombs and potions, and gear that can
+  carry its own abilities.
+- **Gear** in three slots (weapon, armor and relic), and `/rpg salvage` turns spare copies
+  into a small fixed payout.
+- **Dungeons** that reuse your adventure stories and choices. They come in Easy, Normal,
+  Hard and Legendary, use dungeon energy, daily runs and cooldowns, and can be resumed; a
+  lost run pays nothing.
+- **Arena**: members challenge each other in a duel in one of eight venues that each
+  change the numbers, for play-money rewards, with no real-money stakes.
 - **World boss**: dungeon and arena results also hit the shared weekly boss (see
   [boss raids](#multiplayer-games-party-adventures-and-boss-raids)).
-- You switch the parts on or off, and set energy, limits and rewards, on **RPG**.
+- **Yours to edit**: classes, gear and skills are lists you can change on the RPG page
+  (each marked Stock, Changed by you or Yours, with **Restore stock**), and a save shows to
+  members within seconds. You switch the parts on or off, and set energy, limits and
+  rewards, there too.
+- **Depth never changes the pay.** A cleared run pays the same flat reward whatever the
+  member picked, rolls are made by the bot, and RPG rewards never touch real money.
 
 ## Play-money stocks
 
@@ -566,6 +612,83 @@ or reach into real-money commerce.
   and when it falls the reward is shared by contribution (`/raid status`, `/raid
   leaderboard`, `/raid claim`).
 
+## Real-time games (Discord Activities)
+
+Seven games run live inside Discord as an Activity, in your own server, on desktop and
+phone: the **boss raid arena**, the **dungeon run**, the **derby grandstand**, **party
+adventures**, a **blackjack table**, a **Texas Hold'em table** and **bingo night**.
+Members start one with `/arcade play`, or with a **Play it live** button on a message
+(under `/raid status`, for example). `/arcade quick` is the one-tap version of the raid
+and the dungeon.
+
+- **The dungeon is seen from inside**: first-person walls, enemies that warn you before they
+  strike, a minimap, aiming controls, rooms with hazards, shrines, fountains and chests,
+  and four bosses. The hero is the member's RPG fighter, so class, gear and level show
+  in the run.
+- **The boss raid is a pixel arena** where every member is a hero drawn after their RPG
+  class, up to 25 in one battle, and the boss stands four times as tall. Each of the
+  eight weekly bosses fights in its own way, with its own moves and one signature move.
+  A boss that is beaten can come back stronger, with more health and a bigger reward
+  pool, until the week ends.
+- **The derby** is drawn on a canvas with a place rosette on each racer. **Blackjack,
+  Hold'em and bingo** use cards, chips and bingo balls drawn from the game's art, and
+  **party adventures** have a backdrop for the story's region.
+- **Made for phones and bad connections.** Touch controls appear only on touch devices,
+  every notice is one bar with a **Got it** button, a speaker button mutes every game's
+  sounds, and a dropped connection comes back by itself without asking the member to sign
+  in again.
+- **Fair by design.** An Activity pays exactly what the quick buttons and commands pay,
+  and follows the daily full-reward amounts. Speed never pays. Playing well adds a small,
+  capped bonus, and a script that never misses earns what a good player earns.
+- **You choose.** One switch per game, all on to start with, and a list of the channels
+  where members may play them. The weekly boss has its own settings: channel, start day,
+  health, reward pool, and whether and how much stronger it returns.
+- **Set up once.** Every SomniBot install is its own Discord application, so you switch
+  Activities on for yours, once, in the Discord Developer Portal. The Launcher checks it,
+  shows the steps and says what is still missing.
+
+## Fair Play
+
+Play-money games attract scripts, so the coin economy has its own watchdog. **Economy →
+Fair play** is for the server's owner only (admins and every other dashboard role never
+see it), and it only **reports**. It never pauses, erases or punishes anyone by itself.
+
+- **Look for scripted play** is off until you switch it on. SomniBot then compares how
+  each member plays with the rest of your server and writes you a report when it finds a
+  clear pattern. A report always needs at least two different kinds of evidence, and you
+  choose how sure SomniBot must be before it reports.
+- **What it looks for**, in plain words: back within seconds of every reset; the same
+  thing, the same way, every time; pressing the same spot whatever the button says;
+  choices that do not change when the wording does; linked accounts; volume far above the
+  server's normal; pressing buttons faster or more evenly than a person can; and choosing
+  right far more often than people do, hour after hour. Each kind is marked Strong, Clear
+  or a weaker sign, and a folded part of the report shows the measurements and charts
+  behind it.
+- **Reports reach you** on the page and, if you want, as a private message with the
+  choices as buttons, never in a staff channel. A **weekly economy review** says where
+  coins came from and whether they are piling up in a few accounts. If your AI service is
+  set up it can word a report and give a second opinion; both are labelled as the AI's,
+  and the numbers behind them are always measured by code.
+- **You decide, one report at a time.** **Pause economy and games** stops only that
+  member's economy and games (chat, voice, music and tickets carry on) and can be undone
+  with **Unpause**. **Erase their activity** lists exactly what will be cleared and lets
+  you tick what goes. **Ignore** closes the report. Your decisions teach the model, and
+  **Reset learning** makes it forget them.
+- **The main defence is the daily full-reward amount.** Each member gets a number of
+  full-reward tries a day on each activity. After that a try pays less, finds nothing
+  rare and stops counting for quests, achievements, leaderboards and records. However
+  well a script plays, it earns no more than a person who plays for a while each day.
+  You set the amounts on each activity's own page.
+- **Button looks** change the wording, order and colour of the buttons on game cards from
+  one card to the next, so a script that clicks a fixed spot or reads a fixed word
+  fails. **Gentle** is the default (same plain words, only the order moves), **Strong**
+  changes wording, emoji and colour on every card, and **Off** keeps buttons fixed. Red is
+  kept for cancel and risky buttons. You can ask your AI service for more wording and
+  approve each line before it is used.
+- **An honest limit:** someone who has an AI read their screen still understands a button
+  called "Send it". That is why the daily amounts matter most and why reports are for
+  you to judge.
+
 ## Giveaways, polls and predictions
 
 - **Giveaways** with an entry button, any number of winners, optional role and level
@@ -580,11 +703,14 @@ or reach into real-money commerce.
   can set a time after which no more bets are taken, can't bet on their own prediction, and
   can cancel it, which refunds every bet in full. The house keeps 5% of the winnings (never
   of the stake), and you set the biggest bet.
-- **Lottery**: the winner gets 90% of the pot and the other 10% is burned.
-- **Trivia**: only the first three right answers in a round are paid, a member can win
-  only 600 coins a day from trivia, and streak bonuses top out after 10 in a row. Staff
+- **Lottery**: a share of every pot, which you set, is burned and the rest is paid out. You
+  can add a second and third prize, and a drawing with too few tickets waits a few rounds
+  before it is drawn.
+- **Trivia**: rounds of a length you choose, with easy, medium and hard questions paying
+  different amounts, only the first three right answers in a round paid, a daily limit on
+  what a member can win, and a streak bonus that stops growing at a length you set. Staff
   can start a **daily question** or a ten-round **trivia night** and members see the
-  scoreboard (`/casino trivia`). The built-in questions cover many topics, including music,
+  scoreboard (`/casino trivia`). The built-in questions come in six languages and cover many topics, including music,
   movies and TV, video games, anime, sports, food, animals, mythology and space, and you
   can write your own questions on **Trivia**.
 
@@ -706,14 +832,21 @@ Play from **YouTube, SoundCloud, Bandcamp and Twitch** in your voice channels.
   ahead to a song in the queue; passing over someone else's song needs the same listener
   vote as `/skip`.
 - **Lyrics**: `/music lyrics` shows the lyrics of the song that is playing, from the
-  provider you set up in the Launcher. You can switch lyrics off.
+  provider you set up in the Launcher, following the song line by line when it has timed
+  lyrics. You can switch lyrics off.
 - **Search and pick**: `/music search` lists matching songs and lets the member choose
   one. You decide how many choices appear, from 3 to 10.
-- **24/7 mode**: `/music 24-7` keeps the bot in the voice channel between songs and after
-  the channel empties, until it is switched off. Members with the DJ role (or admins) can
-  change it.
-- **Playlists**: save the current queue as a **server** or **personal** playlist, add one
-  to the queue later, list them and delete them (`/music playlist`).
+- **24/7 mode**: choose a voice channel and the bot stays in it between songs and after
+  the channel empties, until it is switched off. After an update, a restart or a dropped
+  Discord connection it goes back by itself. An optional server playlist plays whenever
+  nothing is queued, and songs members ask for play first. If a moderator disconnects the
+  bot by hand, the music stops and the bot stays out. Members with the DJ role (or
+  admins) can switch it with `/music 24-7`. A separate **Pause when the channel is empty**
+  switch works with or without it.
+- **Playlists**: `/music playlist` saves the current queue as a **server** or **personal**
+  playlist, adds one to the queue later, lists them and deletes them. Personal playlists
+  are visible only to their owner and are covered by `/mydata` and `/forgetme`; changing a
+  server playlist needs the DJ role.
 - **Music quiz**: a host-run game in voice where members name the song (see
   [multiplayer games](#multiplayer-games-party-adventures-and-boss-raids)).
 - Songs that have already played no longer use up queue places, and the player keeps the
@@ -732,10 +865,12 @@ Small features that make a server feel lived in. Each has its own page and switc
   each one before it is posted.
 - **Confessions** (`/confess`, off until you turn it on): members post anonymously. Staff
   review each one first in a staff review channel, or you let them post straight away.
-- **Birthdays** (`/birthday`): members share the month and day, never the year. On the
-  day, the server can announce it, give a birthday role and a gift of play money, and a
-  **calendar** on the dashboard shows who is next. The server's time zone decides when a
-  birthday starts and ends, and a birthday can trigger an automation.
+- **Birthdays** (`/birthday`): members share the month and day with `/birthday set`, never
+  the year, and every answer is private. On the day, the server can announce it in a
+  channel, give a birthday role and a gift of play money at the hour of the morning you
+  choose, and a **calendar** on the dashboard shows who is next. Each member is celebrated
+  in their own morning, and members can pick their own time zone with `/birthday
+  timezone`. A birthday can trigger an automation.
 - **Social and fun**: look someone up (`/info`), play 8-ball, choose, ship or rate
   (`/fun`), hug, pat, kiss, slap, cuddle or bonk with an anime GIF (`/action`), marry
   another member (`/marry`) and thank each other with rep points (`/rep`). There is
@@ -743,9 +878,24 @@ Small features that make a server feel lived in. Each has its own page and switc
 - **Utilities**: reminders that repeat (`/remind`), an away note (`/afk`), time zones
   (`/time`), saved snippets called tags (`/tag`), a private to-do list (`/todo`) and
   sticky notes that stay at the bottom of a channel (`/sticky`).
-- **Starboards**: send different emoji to separate boards, each with its own channel.
-  Posts can be promoted through tiers as they get more reactions, and a monthly best
-  post can be published.
+- **Starboards**: send different emoji to separate boards, each with its own channel and
+  milestones. Posts can be promoted through tiers as they get more reactions, a post
+  follows its reactions up and down and follows edits and deletes, and a monthly best
+  post can be published. You choose channels that never reach a board, and a message
+  members cannot read where it was written is never copied. `/starboard top`, `members`
+  and `member` rank the most-starred messages and members, per board and per period,
+  privately.
+- **Level unlocks**: on the Levels page you list a feature and the level it needs. A member
+  below that level gets one private line saying which level opens it; reaching it is
+  announced with the level-up, with your own unlock message or a stock line. A feature you
+  don't list stays open to everyone.
+- **A server time zone**: one setting defines what a "day" is for streaks, birthdays,
+  member anniversaries, the Joins Today counter, recurring events and the starboard's
+  monthly best. Birthdays, event series and automations can keep a zone of their own, and
+  members can set theirs with `/time set`.
+- **Reaction GIFs** (off until you switch them on): a small GIF on the bot's replies, from
+  a free GIF service or from your own links, with a switch for each part of the bot and a
+  choice between every time and only big moments.
 
 ## Feeds and free-game alerts
 
@@ -771,7 +921,9 @@ one is limited to the server you pick.
 
 - **Voice**: text to speech (`/extras voice tts`), a soundboard of clips you choose
   (`/extras voice sound`) and a voice music quiz. They never cut in on music that is
-  playing or queued.
+  playing or queued. Each part has its own switch, with a language, a voice, a longest
+  clip and a wait between sounds for you to set. The text read aloud is sent to a
+  text-to-speech service, and `/privacy` tells members so.
 - **Image fun**: wanted and jail avatar frames and filters, meme templates you manage and
   quote cards made from a real message. **AI images** are off by default and need an
   OpenAI-compatible service that you set up in the Launcher; they have a safety filter, a
@@ -829,6 +981,27 @@ GitHub can send updates to.
   emoji and the standard ones.
 - **Reaction roles**: members give themselves roles with reactions or buttons.
 
+## Every behaviour is a setting
+
+SomniBot is built so that how it behaves is something you set, not something you accept.
+Switches and numbers sit on the dashboard page of the feature they belong to, and the
+page shows what each one starts as. A few examples from this page alone:
+
+- **Games**: each game family has its own Game mode, the daily full-reward amounts, bet
+  limits and a daily loss limit, and every Activity has its own switch and channel list.
+- **RPG and pets**: energy, dungeons per day, arena wait, rewards, the boss's damage share,
+  class roles, and editable classes, gear, skills and pet types.
+- **Fair Play**: whether it looks at all, how sure it must be, who is told and how.
+- **Music**: which controls need a DJ, volume and queue limits, which sources are on, 24/7
+  mode, and the quiz, spoken text and soundboard each on their own switch.
+- **Store**: the ways to pay by hand, what a new product starts with, how long an unpaid
+  order waits, whether a Sandbox check is required, gifting and purchase announcements.
+- **Community**: level unlocks, birthdays, starboards, the server time zone and reaction
+  GIFs.
+
+After every save a badge says what the running bot did with it, and **Admin changes** lists
+each change with who made it and an undo button where one is possible.
+
 ## Staying in control
 
 - **Save badges**: after every save, a badge says what the running bot did with it.
@@ -841,8 +1014,10 @@ GitHub can send updates to.
   settings, emoji, stickers, soundboard sounds, bans and which roles each member has.
   SomniBot saves one before each big change, once a day by itself (you can change how
   often, or switch it off) and shortly after roles or channels change, and saves nothing
-  when nothing has changed. You can also save one yourself at any time. When something
-  looks like a mass change, the bot keeps the last good snapshot safe. Any snapshot can be
+  when nothing has changed. You can also save one yourself at any time, with a note. When
+  something looks like a mass change, the bot keeps the last good snapshot safe. Your own
+  snapshots are kept (the newest 30), automatic ones for 14 days plus the newest 10, and
+  pinned or kept-safe ones for good. Any snapshot can be
   **downloaded** to a file and **restored from a file** later; the file is checked before
   it loads, and a preview shows what would change before anything does.
 - **Full restore**: **Restore** compares a snapshot with your server first, and nothing
@@ -853,7 +1028,13 @@ GitHub can send updates to.
   were lifted (never for members staff pardoned since), and remove what wasn't there when the snapshot was taken, which lists
   exactly what it would delete and needs a second confirmation. Reaction roles, ticket
   panels, level rewards, store roles and every other setting that used something
-  re-created are pointed at the new one. A restore can be undone from **Admin changes**.
+  re-created are pointed at the new one. A restore can be undone from **Admin changes**,
+  and **Last restore** shows the latest one with a **Put back** button. Discord makes
+  announcement channels only in Community servers, so in other servers a re-created one
+  comes back as a text channel and the restore says so. When it finishes, SomniBot compares
+  the server with the snapshot again for every part you chose to put back, and says **The
+  server matches the snapshot again** only when nothing differs and every part could be
+  checked.
 - **Backups**: saved to this PC, a USB stick or an external drive, on demand or
   automatically. A backup holds every snapshot with the rest of SomniBot's data, plus the
   Launcher's own settings and keys, so a new PC restores in one step. The settings and keys
@@ -879,11 +1060,27 @@ GitHub can send updates to.
   exists, the bot invites every member to the new one by DM, and the invite names the
   server they already know. It also posts that invite in an announcement in the old
   server (on by default). Members can also add the app to their Discord account in
-  one click from the verify panel, `/help` or `/privacy`, so a move can still reach them by
-  DM if the server is ever deleted. A permanent "find us again" link on your own web address
+  one click from the verify panel, `/help` or `/privacy` (**Stay with us if the server
+  moves**, a button you can switch off), so a move can still reach them by DM if the
+  server is ever deleted. A permanent "find us again" link on your own web address
   (`/join`) always leads to the current server and follows a move. It also works to make a
   copy while your old server still exists; apart from that announcement, nothing in the old
   one is changed.
+- **Member restore**: members who pressed **Stay with us if the server moves** can be added
+  to another server one by one, with no invitation to accept, whenever you start a run.
+  Only the owner can open it, and you choose who to add: everyone who allowed it, members
+  with certain roles, or members you pick. It can also run by itself: add everyone to a
+  backup server if your server is deleted, and add everyone when SomniBot moves to a new
+  server (on by default). Members can take their permission back at any time from
+  `/privacy`, and `/forgetme` deletes it. A separate, silent Discord application (the
+  vault) can hold the permissions, so they survive even if Discord ever bans your bot.
+- **Allowed servers and client setups**: SomniBot runs only in your own servers and in
+  servers you allow; anywhere else it stays idle and answers with one private line. For a
+  server that belongs to someone else, **Client setups** gives you a one-time link for
+  their Discord account, a way to build their server from a snapshot of one of yours, a
+  switch that hides the commands from their members while you set up, and a choice of how
+  to finish: leave and delete everything, leave and keep the data, or hand the server
+  over to their own SomniBot as one encrypted file.
 - **Members**: everyone, with a timeline per member (joins and leaves, the member gate,
   role changes the bot made, purchases, refunds, tickets, cases, appeals, level-ups and
   game money,
@@ -930,13 +1127,18 @@ SomniBot also looks after itself where it can:
 - The bot stays responsive under heavy load: the assistant's search runs in its own worker,
   so it doesn't hold up the rest of the bot.
 - The Launcher warns when the computer's free disk space drops under 5 GB, and again under
-  1 GB, before a full disk can stop the database. It can start with Windows and keeps
-  running in the tray when its window is closed, so the disk watch and automatic backups
-  keep working. It installs Tailscale, Docker and any Linux parts it needs by itself, keeps
-  the PC awake while SomniBot runs, and runs backups and updates by themselves. It looks
-  for a new version about once an hour, retries a short failure (such as no internet for a
-  moment) at the next look, and switches back to the version before if a new one fails its
-  health check.
+  1 GB, before a full disk can stop the database. At the end of first-run setup it asks
+  you once whether to **start with the PC** and, on Windows, whether to **keep running in
+  the tray** when its window is closed (both are suggested on a PC and off on a server).
+  Both can be changed later in Settings → Launcher, and they matter because the disk watch
+  and the automatic backups only run while the Launcher is open. It installs Tailscale,
+  Docker and any Linux parts it needs by itself, keeps the PC awake while SomniBot runs,
+  and runs backups by themselves.
+- **Updates come through your seller's Discord server.** The seller shares the update files
+  (and a new Launcher installer, when there is one) there. You press **Use update files
+  from this PC**, and the Launcher checks them, backs up your data first, installs the
+  new version and switches back to the version before by itself if it fails its health
+  check. A short failure, such as no internet for a moment, is tried again.
 - Every update keeps a copy of your database from just before it. **Settings → Backups**
   lists these copies, and **Restore** puts one back after saving your current data first.
   Backups are read back after they are saved, so a damaged one is caught at once. A
