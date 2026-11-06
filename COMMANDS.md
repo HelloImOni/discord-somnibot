@@ -2,16 +2,20 @@
 
 [← Back to the overview](README.md) · [Features](FEATURES.md) · [The store](STORE.md)
 
-SomniBot has **76 built-in slash commands** and **8 right-click commands**. A few more are
-age-restricted and stay switched off until a server's owner turns them on. Switching a
+SomniBot has **84 built-in slash commands** and **8 right-click commands**. Switching a
 feature off in the dashboard also hides its commands, and `/help` shows each member only
 the commands they can use. Each command name counts once; subcommands and server-specific
 custom commands are not added to this total.
 
+Four of the 84 are the age-restricted picture commands of **After Dark images**. They
+only work in age-restricted channels for members who hold your 18+ role, and they are
+not listed below.
+
 Discord allows 100 slash commands per server, so related commands are grouped under one
 name. For example, work is `/earn work`, the daily reward is `/claim daily`, and the game
 shop is `/shop view`. The tables below show the commands the way members type them.
-Anything in brackets is a subcommand.
+Anything in brackets is a subcommand. If you remember the old names, see
+[where things went](#where-things-went).
 
 ## Getting started
 
@@ -21,6 +25,8 @@ Anything in brackets is a subcommand.
 | `/ask` | Ask the server's assistant a question in plain words |
 | `/tutorial` | Start or resume the server tutorial |
 | `/setup` | Show where to manage installation and server setup |
+| `/dashboard` | Open the web dashboard (owner and administrators only) |
+| `/status` | Check whether the bot is working normally |
 | `/language` | Choose the language SomniBot uses for you, or Automatic to follow Discord |
 
 ## Member gate and moderation
@@ -55,7 +61,7 @@ incident report for staff; `/lockdown panic-undo` puts everything back and close
 | Command | What it does |
 |---|---|
 | `/ticket` | Close the ticket you're in (close) |
-| `/ticket-staff` | Staff tools for the ticket you're in (claim, unclaim, reopen, add, remove, transcript, buyer, status, bill, reply, priority, move) |
+| `/ticket-staff` | Staff tools for the ticket you're in (claim, unclaim, reopen, add, remove, transcript, buyer, status, bill, reply, priority, assign, rename, move) |
 
 `/ticket-staff reply` inserts a saved reply, `priority` sets how urgent the ticket is (low,
 normal, high or urgent) and `move` moves it to another ticket type on the same panel.
@@ -67,9 +73,10 @@ normal, high or urgent) and `move` moves it to another ticket type on the same p
 | `/rank` | View or customize rank cards (view, customize) |
 | `/leaderboard` | See the server leaderboards: XP, messages, voice time, coins, trivia, fish, achievements, quests, wealth and more, for all time, a week, a month or a season |
 | `/xp` | Admin XP management commands (add, remove, set, reset) |
-| `/profile` | Your profile card, badges and season progress (view, title, bio, customize, fields, badges) |
+| `/profile` | Your profile card, badges and season progress (view, title, bio, customize, fields, badges, collections) |
 | `/profile season` | Your season pass (view, tiers, quests, claim, daily, history) |
-| `/birthday` | Share your birthday and see the next ones in this server (set, clear, view, upcoming) |
+| `/starboard` | See the most-starred messages and members of this server (top, members, member) |
+| `/birthday` | Share your birthday and see the next ones in this server (set, timezone, hide, clear, view, upcoming) |
 
 ## Coin economy (play money)
 
@@ -81,8 +88,8 @@ Everything here uses play money, never real money.
 |---|---|
 | `/earn` | Earn play money, rob a member or set passive mode (work, crime, beg, search, job, rob, passive) |
 | `/claim` | Claim your rewards and role income, or check your timers (daily, weekly, monthly, income, timers) |
-| `/bank` | Move play money between your wallet, bank and other members (deposit, withdraw, info, loan, pay) |
-| `/balance` | See your play-money wallet and bank |
+| `/bank` | Move play money between your wallet, bank and other members, or see your wallet history (deposit, withdraw, info, loan, pay, history) |
+| `/balance` | See your play-money wallet and bank, plus any open loan and your net worth |
 | `/economy-leaderboard` | See the richest members (play money) |
 | `/prestige` | Reset your wallet and bank to 0 for a permanent earning bonus |
 | `/economy-admin` | Staff: give or take play money and items (give-money, take-money, give-item, take-item) |
@@ -93,10 +100,10 @@ Everything here uses play money, never real money.
 |---|---|
 | `/shop` | Browse the shop, buy and sell, and manage assets (view, buy, sell, prestige) |
 | `/inventory` | See the items you own |
-| `/use` | Use an item: open a lootbox, heal on an adventure, and more |
+| `/use` | Use an item: open a lootbox, heal on an adventure, hatch a pet egg and more |
 | `/craft` | Craft items and browse recipes (item, recipes, boosters) |
-| `/gather` | Hunt, dig, mine, chop or forage, see your skills and visit the museum (hunt, dig, mine, chop, forage, skills, museum) |
-| `/market` | Buy and sell items with other members (list, browse, buy, my-listings, cancel, auction, auctions, bid, auction-cancel, trade, wanted-post, wanted, wanted-fill, wanted-cancel, price) |
+| `/gather` | Hunt, dig, mine, chop or forage, see your skills and visit the museum (hunt, dig, mine, chop, forage, skills, museum, log) |
+| `/market` | Buy and sell items with other members (list, browse, buy, my-listings, cancel, auction, auctions, bid, auction-cancel, trade, wanted-post, wanted, wanted-fill, wanted-cancel, price, stall) |
 
 **Stocks, properties and cards**
 
@@ -110,32 +117,32 @@ Everything here uses play money, never real money.
 
 | Command | What it does |
 |---|---|
-| `/farm` | Grow crops and raise farm animals (view, plant, water, harvest, fertilize, upgrade, cook, eat, adopt, barn, feed, collect) |
-| `/fish` | Go fishing (cast, sell, collection, leaderboard, records, conditions, aquarium, display, remove) |
-| `/pet` | Raise a pet: feed it, play, train and battle other members' pets; a battle's entry fee is the pot and the winner takes it (view, buy, feed, play, train, rename, battle, prestige, evolve, switch, expedition) |
-| `/quests` | View and manage your quests (view, claim) |
+| `/farm` | Grow crops and raise farm animals (view, plant, water, harvest, fertilize, upgrade, cook, eat, adopt, barn, feed, collect, autosell, log) |
+| `/fish` | Go fishing (cast, sell, collection, leaderboard, records, conditions, autosell, aquarium, display, remove) |
+| `/pet` | Raise a pet: feed it, play, train and battle other members' pets; a battle's entry fee is the pot and the winner takes it (view, buy, feed, play, train, rename, battle, prestige, evolve, switch, collection, expedition) |
+| `/quests` | View and manage your quests (view, claim, history) |
 | `/badges` | View all achievements and your progress |
 
 **Adventures, heists, clans and the RPG**
 
 | Command | What it does |
 |---|---|
-| `/adventure` | Go on a story adventure for play money and loot, alone or with a party of 2 to 4 (start, party-list, party-create, party-join, party-scene, party-begin, party-vote, party-resolve) |
+| `/adventure` | Go on a story adventure for play money and loot, alone or with a party of 2 to 4 (start, log, party-list, party-create, party-join, party-class, party-scene, party-begin, party-vote, party-resolve) |
 | `/heist` | Plan and execute heists with your crew (start, join, status, targets, crew-start, crew-role, crew-join, crew-status, crew-cancel, crew-effort, crew-advance) |
 | `/raid` | Fight the server's weekly boss (status, leaderboard, claim) |
-| `/clan` | Create, join and grow a member clan (create, view, list, join, quests, channel, disband, plus member, bank and war groups) |
-| `/rpg` | Play the server RPG (profile, class, skill, equip, plus dungeon, arena and boss groups) |
+| `/clan` | Create, join and grow a member clan (create, view, list, join, quests, rally, places, channel, disband, plus member, bank and war groups) |
+| `/rpg` | Play the server RPG (profile, class, skill, equip, bestiary, collection, salvage, plus dungeon, arena and boss groups) |
 
 `/clan member` covers invite, accept, leave, kick, promote, demote and transfer.
 `/clan bank` covers view, deposit and withdraw. `/clan war` covers challenge, accept,
 decline, status and leaderboard. `/rpg dungeon` has start and resume, `/rpg arena` has
 challenge, and `/rpg boss` has status and claim.
 
-## Games
+## Games and Activities
 
 | Command | What it does |
 |---|---|
-| `/casino` | Play-money games, trivia and the lottery (roulette, crash, race, duel, coinflip, slots, rps, dice, blackjack, highlow, scratch, guess) |
+| `/casino` | Play-money games, trivia and the lottery (roulette, crash, race, duel, perks, paytable, records, coinflip, slots, rps, dice, blackjack, highlow, scratch, guess, trivia, lottery) |
 | `/casino coinflip` | Flip a coin: double or nothing |
 | `/casino slots` | Spin the slots: three of a kind pays 12× to 150×, a pair gives half your bet back, and you can pick a reel theme |
 | `/casino dice` | Roll two dice against the house: higher total wins, a tie gives half your bet back |
@@ -151,16 +158,17 @@ challenge, and `/rpg boss` has status and claim.
 | `/casino trivia` | Trivia rounds, daily questions and trivia nights (start, daily, night, join, scoreboard) |
 | `/casino lottery` | Buy lottery tickets or view the current drawing (buy, view) |
 | `/games` | Multiplayer and board games: blackjack tables, Texas Hold'em, bingo, tic-tac-toe, connect four, chess, hangman, Wordle, word chain, a guess race and a music quiz (create, join, move, status, music-prepare, music-round, music-answer) |
+| `/arcade` | Play real-time games inside Discord: a boss raid arena, a dungeon run, a derby, party adventures, blackjack, Texas Hold'em and bingo (play, quick) |
 | `/party` | Party games: truth or dare, would you rather, never have I ever (truth, dare, tod, wyr, nhie) |
 
 ## Community
 
 | Command | What it does |
 |---|---|
-| `/giveaway` | Manage giveaways (start, end, reroll, pause, resume, list) |
-| `/poll` | Create and manage polls (create, close) |
+| `/giveaway` | Manage giveaways (start, end, reroll, pause, resume, cancel, list) |
+| `/poll` | Create and manage polls (create, close, and saved poll templates) |
 | `/predict` | Bet play money on what will happen (create, bet, resolve, cancel) |
-| `/voice` | Control your temporary voice channel (lock, unlock, limit, name, permit, deny, ban, claim) |
+| `/voice` | Control your temporary voice channel (lock, unlock, limit, name, permit, deny, ban, claim, handover) |
 | `/suggest` | Suggest an idea for this server |
 | `/confess` | Post a confession anonymously (the reply is private) |
 | `/extras` | Voice, pictures and channel games (voice tts, sound and quiz; image avatar, quote, meme and generate; channel status; event status, quests and claim) |
@@ -169,7 +177,7 @@ challenge, and `/rpg boss` has status and claim.
 
 | Command | What it does |
 |---|---|
-| `/info` | Look up a member, a picture or this server (user, avatar, server) |
+| `/info` | Look up a member, a picture or this server (user, avatar, server, invites) |
 | `/fun` | Little games: 8-ball, choose, ship and rate |
 | `/action` | Hug, pat, kiss, slap, cuddle or bonk someone with an anime GIF |
 | `/marry` | Marry another member, or end it (propose, divorce, status) |
@@ -209,6 +217,22 @@ their names say.
 | `/privacy` | What this bot keeps about you, and how to get a copy or erase it |
 | `/mydata` | Export all your data from this server as a JSON file |
 | `/forgetme` | Erase or anonymize your account data from this server (irreversible) |
+
+## Where things went
+
+| If you remember | Type |
+|---|---|
+| `/work`, `/crime`, `/beg`, `/search`, `/rob`, `/passive` | `/earn work`, `/earn crime`, `/earn beg`, `/earn search`, `/earn rob`, `/earn passive` |
+| `/daily`, `/weekly`, `/monthly`, `/collect-income`, `/timers` | `/claim daily`, `/claim weekly`, `/claim monthly`, `/claim income`, `/claim timers` |
+| `/deposit`, `/withdraw`, `/pay` | `/bank deposit`, `/bank withdraw`, `/bank pay` |
+| `/shop`, `/buy`, `/sell` | `/shop view`, `/shop buy`, `/shop sell` |
+| `/hunt`, `/dig`, `/mine` | `/gather hunt`, `/gather dig`, `/gather mine` |
+| `/craft`, `/recipes` | `/craft item`, `/craft recipes` |
+| `/coinflip`, `/slots`, `/dice`, `/blackjack`, `/highlow`, `/scratch`, `/guess`, `/rps` | the same names after `/casino` |
+| `/trivia`, `/lottery` | `/casino trivia`, `/casino lottery` |
+| `/queue`, `/np`, `/volume`, `/loop`, `/pause`, `/stop` and the other music commands | the same names after `/music` (`/play` and `/skip` still work on their own) |
+| `/title`, `/bio` | `/profile title`, `/profile bio` |
+| `/season` | `/profile season` |
 
 ## Commands on your own account
 

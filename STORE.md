@@ -23,20 +23,43 @@ names.
   recurring price you create in Stripe. Retries of the same Stripe event never create a
   second order.
 - **Your own way**: for payments PayPal can't take (crypto, Cash App, a bank
-  transfer…), a product can be **paid by hand**. Buyers see your payment instructions
-  privately, pay you, and add their transaction ID. You get a **Payment to confirm**
-  alert, press **Mark paid**, and the bot delivers the order exactly as for a PayPal
-  sale. Unpaid orders close on their own after the number of days you set.
+  transfer…), a product can be **paid by hand**. You write each way to pay **once**, in
+  the Store settings under **Payments** (for example Cash App and Bitcoin, each with its
+  instructions), and every hand-paid product picks the methods it offers. The dashboard
+  suggests a Cash App and a Bitcoin method to start from. Buyers choose a method, see
+  its instructions privately, pay you, and add their payment details: a Cash App buyer
+  gives their $Cashtag and the payment ID, a Bitcoin buyer the transaction ID. You get a
+  **Payment to confirm** alert and press **Mark paid** (or **Reject**, with a reason the
+  buyer reads) either on Store → Orders or with the buttons on the alert in Discord. Mark
+  paid asks for the proof that fits the method, and the bot then delivers the order
+  exactly as for a PayPal sale. The server owner and staff with the order permission can
+  do this, but nobody can mark their own order paid: the server owner or another staff
+  member confirms it.
+- **How long an unpaid order waits** is yours to set, under **New product defaults** in
+  the Store settings. A new product starts as you choose there; by default it is paid by
+  hand, needs a payment reference and gives the buyer 3 days to pay. An order whose buyer
+  never adds payment details closes on its own after those days. Once a buyer has added
+  details, the order stays open for the review time you set (14 days to start with) so
+  you can check the money. If the money turns up after an order closed, **Mark paid**
+  reopens it when the product can still be sold.
   If a buyer's transaction ID is also on another order, that order and its alert say so
-  and name the other order, so one payment can't quietly count twice. Write your payment
-  instructions once per product: `$PRICE` and `{order}` are filled in with each order's
-  own total (after any coupon) and order number. When you record a refund you made by
-  hand, the buyer gets a message about it too.
+  and name the other order, so one payment can't quietly count twice. `{amount}`,
+  `$PRICE` and `{order}` in the instructions are filled in with each order's own total
+  (after any coupon) and order number. When you record a refund you made by hand, the
+  buyer gets a message about it too.
+- **Recurring, by hand**: a hand-paid product can't be a subscription (nothing is ever
+  charged automatically). To sell something recurring, make it a one-time product with
+  an **access period** and **Repeat buying extends access**. Buyers renew by hand: they
+  get a reminder the number of days you set before access ends (3 by default, 0 for no
+  reminder) and press **Renew**.
 - **Free**: free products are claimed instead of bought, once per customer or
   repeatedly.
 
 Each product picks its own way to be paid: PayPal, by hand or Stripe. A store that sells
-only free products and products paid by hand needs no PayPal or Stripe at all.
+only free products and products paid by hand needs no PayPal or Stripe at all. While
+**Accept PayPal payments** is off, the Store page hides every PayPal setting behind one
+line ("PayPal is off. Switch on Accept PayPal payments to set it up.") and they come back
+when you switch it on.
 
 ## What you can sell
 
@@ -57,7 +80,8 @@ only free products and products paid by hand needs no PayPal or Stripe at all.
 - **Service tickets**: a private ticket opened with every purchase.
 - **Game items** given with a purchase.
 - **Subscriptions**: plans billed every so many days, weeks, months or years, with free
-  trials, through PayPal (or Stripe).
+  trials, through PayPal (or Stripe). (Something recurring that is paid by hand is a
+  timed product that renews when bought again, see above.)
 - An optional **access period** (for example 30 days), after which roles and channels,
   and with them access to a program, stop working.
 - Optional **limits** on one-time products: how many can be sold in total, and how many
@@ -84,7 +108,8 @@ unpaid hand-paid order can add a code to it: the order is replaced by one at the
 price, and the old one is closed.
 
 With **Gifting** on, a **Gift** button lets a buyer pick another member of the server
-to give a product to (not for products you take payment for by hand). With **Announce
+to give a product to, for products paid through PayPal and for products paid by hand
+(the buyer pays, the recipient gets the product when you mark it paid). With **Announce
 purchases** on, the bot posts "someone just bought..." in a channel you choose. If
 that post can't be sent (the channel was deleted, or the bot lost permission to post
 there), you get one alert that says what to fix, and it closes itself once a post goes
@@ -93,14 +118,16 @@ through.
 Everyone who owns something can get your **Customer role**, and loses it when they no
 longer own anything. Use it for customer-only channels.
 
-## Nothing goes on sale untested
+## Test before you sell
 
-Every product passes a **Sandbox check** before it can go on sale. You make a test
-purchase with test money (or claim it, or mark a by-hand order paid), check what arrived
-(the receipt DM, the roles, each file, or your program signed in with the Discord
-account that bought it), take it back, and SomniBot reads the
-real records to confirm every step happened. Change a product's price, roles, files or
-delivery later and it needs a new test.
+The **Sandbox check** is your choice: **Require a Sandbox check before a product goes on
+sale** is a switch in the Store settings, and it is off until you turn it on. With it on,
+you make a test purchase with test money (or claim it, or mark a by-hand order paid),
+check what arrived (the receipt DM, the roles, each file, or your program signed in with
+the Discord account that bought it), take it back, and SomniBot reads the real records to
+confirm every step happened. A product only goes on sale after that, and changing its
+price, roles, files or delivery later needs a new test. With the switch off, a product
+goes on sale as soon as you switch it on.
 
 Going live with real money is a deliberate switch, and while the store is in Sandbox,
 the customer portal and receipts say so.

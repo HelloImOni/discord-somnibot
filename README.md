@@ -5,7 +5,7 @@
 <h1 align="center">SomniBot for Discord</h1>
 
 <p align="center">
-  <b>One Discord bot for your whole server: member gate, moderation with anti-nuke protection, automatic server snapshots, levels, a coin economy with seasons, pets, clans and games, giveaways, tickets, an assistant that answers your members, music, automations, and a real-money store with Discord-based licensing for programs and a customer portal.</b><br>
+  <b>One Discord bot for your whole server: member gate, moderation with anti-nuke protection, automatic server snapshots and full restore, levels, a coin economy with seasons, pets, clans, an RPG and real-time games inside Discord, Fair Play, giveaways, tickets, an assistant that answers your members, 24/7 music, automations, and a real-money store with Discord-based licensing for programs and a customer portal.</b><br>
   All of it is run from one web dashboard, under your own bot's name and brand.
 </p>
 
@@ -25,9 +25,9 @@
 > downloads or install files. The screenshots come from a real SomniBot install, with
 > sample data and sample product names.
 
-## What's new in 1.1.60
+## What's new in 1.1.62
 
-**Current version: 1.1.60.** Highlights since the last showcase update:
+**Current version: 1.1.62.** Highlights since the last showcase update:
 
 - **Seasons and battle passes.** Each season has its own pass with free and premium
   tiers, quests, a daily login calendar and a badge, and four ready-made seasons come
@@ -38,6 +38,20 @@
 - **Games to play together.** Multiplayer blackjack and Texas Hold'em, bingo, chess,
   connect four, hangman, Wordle and more, a music quiz in voice, party adventures, crew
   heists and a weekly boss raid for the whole server.
+- **Games that run live inside Discord.** Seven games open as a Discord Activity: a boss
+  raid arena, a first-person dungeon run, a derby, party adventures, blackjack, Texas
+  Hold'em and bingo night.
+- **A deeper RPG and live pet battles.** Six classes, chosen for every run, and pets that
+  battle in live rounds where both members pick a move.
+- **Fair Play.** A report for the owner when someone seems to be playing by script, and a
+  daily full-reward amount so a script earns no more than a person.
+- **Every behaviour is a setting.** Game modes, reward amounts, bet limits, DJ controls,
+  payment waiting times and level unlocks are all yours to set.
+- **A store you pay your own way.** Write Cash App, Bitcoin or any other way to pay once,
+  confirm payments with **Mark paid** or **Reject** on the dashboard or in Discord, and
+  decide whether a Sandbox test is required.
+- **Updates through your seller's Discord server.** The Launcher installs the update
+  files you are given, with a backup first and a switch back if it fails.
 - **Better tickets.** Priority, saved replies, moving a ticket to another type, first
   response targets with reminders, and a stats page.
 - **Stronger moderation.** Moderator notes, case reasons that keep their history, CSV
@@ -68,6 +82,10 @@
   Real-money store, Server, Moderation, Community, Channels & messages, Coin economy,
   Automation, Problems & history and System. A search box (Ctrl K) finds any page,
   setting, command, member or channel.
+- **Every behaviour is a setting.** How the bot acts is something you set, not something
+  you accept: each game's mode, daily reward amounts, bet limits, which music controls need
+  a DJ, how long an unpaid order waits, which level opens which feature. The dashboard
+  shows what each setting starts as.
 - **You always know what happened.** After every save, a badge says what the running bot
   did with it: Saved, Applying…, Applied, Not applied (with the reason), or "Bot offline,
   applies when it starts". **Admin changes** lists changes made from the dashboard and by
@@ -221,6 +239,8 @@ server they already know. It also posts that invite in an announcement in the ol
 the verify panel, `/help` or `/privacy`, so a move can still reach them by DM if the
 server is ever deleted. A permanent "find us again" link on
 your own web address (`/join`) always leads to the current server and follows a move.
+**Member restore** can also add the members who allowed it to another server for you, one
+by one, with no invitation to accept.
 
 ### Levels, a full coin economy and giveaways
 
@@ -238,8 +258,8 @@ auctions and trades, crafting, farming with animals, fishing with an aquarium, h
 digging, mining, chopping and foraging, adventures, heists, pets, quests, achievements,
 prestige, trivia, lotteries, predictions and casino-style games, including roulette,
 crash, races and duels. The games pay back about 95% of what is bet over time, and you can
-cap bets and daily losses. Lotteries pay the winner 90% of the pot and burn the rest,
-predictions can close at a set time or be cancelled with every bet refunded, and
+cap bets and daily losses. Lotteries burn a share of the pot (you set it) and pay the rest
+out as prizes, predictions can close at a set time or be cancelled with every bet refunded, and
 `/casino highlow` is a cash-out ladder: each right call climbs a rung, up to ×12, and
 members can stop and cash out on any rung.
 
@@ -256,7 +276,7 @@ can be products from your store.
 tiers, quests, a daily login calendar and a badge, and four ready-made seasons are
 included. Around them sit **pets** that evolve and go on expeditions, **clans** with their
 own role, private channel, bank, quests and wars, **collectible cards** with sets and
-trades, an **RPG** with four classes, gear, a skill tree, dungeons and an arena,
+trades, an **RPG** with six classes, gear, skill trees, dungeons and an arena,
 **fictional stocks and crypto** whose prices follow your server's activity, and **houses
 and businesses** that earn income and defend against robbers. All of it is play money
 and play progress, never for sale.
@@ -265,6 +285,44 @@ Members can also play together: multiplayer **blackjack and Texas Hold'em**, **b
 **tic-tac-toe, connect four and chess**, **hangman, Wordle and word chain**, a **music
 quiz** in voice, 2 to 4 player **party adventures**, three-role **crew heists**, and a
 **weekly boss** the whole server fights.
+
+### Games that run live inside Discord
+
+Seven games open as a Discord Activity in your own server, on desktop and phone: a **boss
+raid arena** where every member is a hero drawn after their RPG class, a first-person
+**dungeon run**, a **derby grandstand**, **party adventures**, a **blackjack table**, a
+**Texas Hold'em table** and **bingo night**. Members open them with `/arcade play` or a
+**Play it live** button, and `/arcade quick` is the one-tap version. They pay exactly what
+the quick commands pay, and speed never pays. You switch each game on or off and choose
+the channels where they can be played. You switch Activities on once, for your own
+Discord application, and the Launcher checks it and shows the steps.
+
+### An RPG, pets and Fair Play
+
+**The RPG** has six classes (Vanguard, Ranger, Arcanist, Warden, Summoner and Trickster),
+each with its own abilities and skill tree, turn-based fights against 54 monsters and 12
+bosses, dungeons in four difficulties, an arena and gear with abilities of its own. **A
+class is chosen for every run**: one tap on a class card before a dungeon, a raid, a party
+adventure or an arena match, and the class a member last won with is the one on their
+profile. You can give each class a Discord role, and edit the classes, gear and skills.
+
+**Pets** are raised, trained and sent on expeditions, and they battle live: the other member
+accepts the challenge, both put in the same stake, and every round both pick a move
+before a timer runs out.
+
+**Fair Play**, for the server's owner only, watches the economy for scripted play and
+writes a report with the evidence in plain words. It never acts by itself: you choose to
+pause that member's economy and games, erase their activity, or ignore the report. The
+main defence is a daily full-reward amount for each activity, so a script earns no more
+than a person who plays for a while each day. Read more in [FEATURES.md](FEATURES.md#fair-play).
+
+### A community that grows with levels
+
+**Level unlocks** keep a feature closed until members reach the level you choose.
+**Birthdays** are celebrated in each member's own morning, with a role, a message and a
+gift if you want. **Starboards** can run several boards, `/bank history` shows a member
+their own wallet history, and one **server time zone** decides what a day is for streaks,
+birthdays and recurring events.
 
 ### An assistant that knows your server
 
@@ -308,8 +366,11 @@ downloadable files, roles and channels, service tickets, subscriptions and free
 products. A product can have a stock limit and a limit per member, and can show how many
 are left. Plans can have subscription limits and supporter tiers, and products can be
 bundled. Buyers pay through **your own PayPal**, **your own Stripe** (optional), or **your
-own way** (crypto, Cash App, a bank transfer) and you confirm the payment. Every product passes a Sandbox test
-purchase before it can go on sale. Buyers get a branded customer portal for their
+own way**: write Cash App, Bitcoin or any other way to pay once, and confirm each payment
+with **Mark paid** or **Reject**, on the dashboard or with the buttons on the alert in
+Discord. A hand-paid product can be renewed by hand, and gifts work with PayPal and
+hand-paid products. You can require a Sandbox test purchase before a product goes on
+sale. Buyers get a branded customer portal for their
 programs, downloads and orders. A buyer who left the server before delivery gets their
 order when they come back, and a PayPal dispute keeps access in place until PayPal
 actually takes the money back.
@@ -334,11 +395,11 @@ messages and DMs, roles, threads, tickets, granting a product and moderation.
 ### Music
 
 Music in your voice channels from YouTube, SoundCloud, Bandcamp and Twitch, with a DJ
-role, vote-to-skip, queue limits, audio filters and auto-leave. `/autoplay` keeps related
-songs coming when the queue runs out, `/previous` plays the last song again and `/skipto`
-jumps ahead. `/music lyrics` shows lyrics, `/music search` lets members pick from a list,
-`/music 24-7` keeps the bot in voice, and `/music playlist` saves server and personal
-playlists.
+role, vote-to-skip, queue limits, audio filters and auto-leave. **24/7 mode** keeps the
+bot in a channel and brings it back after a restart, **playlists** can be personal or
+shared by the server, and there are lyrics, a search pick list and **music quizzes** where
+members name the songs. Autoplay keeps related songs coming when the queue runs out, and
+`/music previous` and `/music skipto` move around the queue.
 
 ![Music](images/music.jpg)
 
@@ -412,18 +473,17 @@ installer that brings everything it needs; the AppImage is for other Linux.
   the deleted-channel checks. SomniBot also repairs common problems by itself, such as a
   Discord switch it needs being turned off or the public address breaking, and tells you
   plainly about anything it can't fix.
-- **Backups and updates on their own.** The Launcher backs up the database before every
-  install and update, and backups run by themselves too. It looks for a new version about
-  once an hour. Updates install by themselves: checks, the download, the backup and
-  database changes all happen before anything running is touched. If the new version
-  doesn't pass its health check, the Launcher switches back to the version before on its
-  own. A short failure, such as no internet for a moment, is tried again at the next look.
-  Every update keeps a copy of your database from just before it, and **Settings → Backups**
+- **Backups and updates that protect you.** The Launcher backs up the database before
+  every install and update, and backups run by themselves too. New versions come through
+  your seller's Discord server: the seller shares the update files there, you press **Use
+  update files from this PC** on the Updates page, and checks, the backup and database
+  changes all happen before anything running is touched. If the new version doesn't pass
+  its health check, the Launcher switches back to the version before on its own. A new
+  Launcher installer comes the same way. Every update keeps a copy of your database from just before it, and **Settings → Backups**
   lists those copies with a **Restore** button for each. Saved backups are read back to
   check they are good. The Launcher's own settings inside a backup are encrypted, and an
-  extra copy of each backup can go to your own Nextcloud. If you're sent a version
-  by hand, put its files in one folder and press **Use update files from this PC** on the
-  Updates page. The full guide comes with the Launcher, readable offline.
+  extra copy of each backup can go to your own Nextcloud. The full guide comes with the
+  Launcher, readable offline.
 - **No ports to manage.** Nothing in SomniBot uses a fixed port. The Launcher picks free
   ones, and if another program takes one later it moves SomniBot to a free port by
   itself and says so on Home. If your PC's Tailscale name changes, it follows the new
@@ -435,9 +495,11 @@ installer that brings everything it needs; the AppImage is for other Linux.
   Launcher's own settings and keys, so a new PC restores in one step.
 - **Warned before the disk fills.** The Launcher watches free space where SomniBot runs.
   Under 5 GB free, Home shows a warning and you get a desktop notice; under 1 GB the
-  warning turns red. A full disk stops the database, so you hear about it first. The
-  Launcher can start with Windows and keeps running in the tray when its window is closed,
-  so the disk watch and automatic backups keep working.
+  warning turns red. A full disk stops the database, so you hear about it first. At the end
+  of first-run setup the Launcher asks you once whether to start with the PC and, on
+  Windows, whether to keep running in the tray when its window is closed. Both are worth
+  saying yes to on a PC, because the disk watch and automatic backups only run while the
+  Launcher is open, and you can change the answers in Settings.
 - **Your database, your choice.** A Supabase project, your own Supabase, or a database
   the Launcher runs for you on the same machine.
 - **Reachable from anywhere.** The Launcher gives the dashboard a public web address
