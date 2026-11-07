@@ -37,7 +37,8 @@
   stocks and crypto, houses and businesses, jobs, loans, auctions and more.
 - **Games to play together.** Multiplayer blackjack and Texas Hold'em, bingo, chess,
   connect four, hangman, Wordle and more, a music quiz in voice, party adventures, crew
-  heists and a weekly boss raid for the whole server.
+  heists and a weekly boss raid for the whole server. Every table is played from one card
+  with buttons: join, start, move, resign. Nobody types a session ID.
 - **Games that run live inside Discord.** Seven games open as a Discord Activity: a boss
   raid arena, a first-person dungeon run, a derby, party adventures, blackjack, Texas
   Hold'em and bingo night.
@@ -284,7 +285,10 @@ and play progress, never for sale.
 Members can also play together: multiplayer **blackjack and Texas Hold'em**, **bingo**,
 **tic-tac-toe, connect four and chess**, **hangman, Wordle and word chain**, a **music
 quiz** in voice, 2 to 4 player **party adventures**, three-role **crew heists**, and a
-**weekly boss** the whole server fights.
+**weekly boss** the whole server fights. Each table lives on one public card that updates in
+place: members press **Join** and **Start**, make their moves with buttons or a short form,
+and the card names the winner when it ends. Clan invitations, clan war challenges and card
+trade offers arrive in members' DMs with **Accept** and **Decline** buttons.
 
 ### Games that run live inside Discord
 
