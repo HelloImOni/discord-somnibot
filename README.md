@@ -25,9 +25,41 @@
 > downloads or install files. The screenshots come from a real SomniBot install, with
 > sample data and sample product names.
 
-## What's new in 1.1.62
+## What's new in 1.1.67
 
-**Current version: 1.1.62.** Highlights since the last showcase update:
+**Current version: 1.1.67.** Highlights since the last showcase update:
+
+- **Pictures everywhere.** The lists and cards members browse (shop, inventory, market,
+  stocks, store, cards, property, fish, farm, museum, crafting, pets, quests, season
+  tiers, clans, leaderboards, badges and every collection log) show a small picture for
+  each entry. Long lists show 8 entries to a page with Back and Next buttons and a real
+  "Page 2 of 5".
+- **GIFs that match what is happening.** A fishing catch shows anime fishing, a harvest
+  anime farming, a card pull a pull, and pets get neko and kitsune art. Your own GIFs,
+  tagged with a scene, come first, then KLIPY and GIPHY searches (you add their keys in
+  the Launcher), then free anime reaction services for moods such as hugs and dances.
+  When nothing fits, the card shows the item's own picture instead of an unrelated GIF,
+  and notices and refusals carry no GIF.
+- **You choose who sees the replies.** A new **Who sees replies** page decides, feature
+  by feature, whether a result is posted for everyone or only for the member. Refusals,
+  money details and settings always stay private, and public cards leave out wallet
+  amounts.
+- **Extras that work out of the box.** `/extras image meme` has 13 memes the bot draws
+  itself, `/extras voice sound` plays Discord's own soundboard sounds and your server's
+  soundboard, and AI images work without a paid key (a free provider is built in).
+- **Only staff can create invites** (on by default). A new invite from a member is
+  removed and logged, and invites members made earlier are listed with a Remove button.
+- **Smaller touches for members.** `/pet release` frees a pet slot, `/casino coinflip`
+  lets you call heads or tails, and party adventures, crew heists, predictions and polls
+  have buttons for joining, voting, betting and closing instead of typed IDs.
+- **Clearer for owners.** The voice log shows each person's account age and when they
+  joined, the Money problems card names the reason, order, buyer and amount in plain
+  words, Settings and `/setup` show Cash App and Bitcoin next to PayPal, a one-click card
+  moves a server that still runs on UTC to your own time zone, every alert page shows
+  where each kind of alert goes right now, and the dashboard shows your bot's own name
+  and picture.
+
+Also new in 1.1.62:
 
 - **Seasons and battle passes.** Each season has its own pass with free and premium
   tiers, quests, a daily login calendar and a badge, and four ready-made seasons come
@@ -455,7 +487,7 @@ SomniBot is self-hosted: it runs on a server (VPS) or on your own PC, and your d
 in your own database. You sign in and make the choices that are yours; the rest of the
 setup is done for you. The **SomniBot Launcher** (Windows and Linux) installs it, along
 with Tailscale, Docker and any Linux parts it needs, checks everything it needs from
-Discord, the database, your web address and PayPal, starts and stops it, updates it, and
+Discord, the database, your web address and PayPal (if you use it), starts and stops it, updates it, and
 rolls back to the version before. Ubuntu and Debian owners get a normal `.deb`
 installer that brings everything it needs; the AppImage is for other Linux.
 
