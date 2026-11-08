@@ -25,9 +25,9 @@
 > downloads or install files. The screenshots come from a real SomniBot install, with
 > sample data and sample product names.
 
-## What's new in 1.1.71
+## What's new in 1.1.73
 
-**Current version: 1.1.71.** Highlights since the last showcase update:
+**Current version: 1.1.73.** Highlights since the last showcase update:
 
 - **Pictures everywhere.** The lists and cards members browse (shop, inventory, market,
   stocks, store, cards, property, fish, farm, museum, crafting, pets, quests, season
