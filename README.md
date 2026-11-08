@@ -25,9 +25,9 @@
 > downloads or install files. The screenshots come from a real SomniBot install, with
 > sample data and sample product names.
 
-## What's new in 1.1.67
+## What's new in 1.1.71
 
-**Current version: 1.1.67.** Highlights since the last showcase update:
+**Current version: 1.1.71.** Highlights since the last showcase update:
 
 - **Pictures everywhere.** The lists and cards members browse (shop, inventory, market,
   stocks, store, cards, property, fish, farm, museum, crafting, pets, quests, season
@@ -58,6 +58,11 @@
   moves a server that still runs on UTC to your own time zone, every alert page shows
   where each kind of alert goes right now, and the dashboard shows your bot's own name
   and picture.
+- **Every day follows your server's clock.** Streaks, daily limits, quests, trivia,
+  schedules, analytics and Double XP all count days in the server's own time zone.
+- **18+ channels follow the 18+ role.** Saving the 18+ role opens the age-restricted
+  channels to it at once (with Undo), and the 18+ button tells a member honestly whether
+  the channels are open to them yet.
 
 Also new in 1.1.62:
 
