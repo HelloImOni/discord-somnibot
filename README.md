@@ -25,9 +25,9 @@
 > downloads or install files. The screenshots come from a real SomniBot install, with
 > sample data and sample product names.
 
-## What's new in 1.1.73
+## What's new in 1.1.75
 
-**Current version: 1.1.73.** Highlights since the last showcase update:
+**Current version: 1.1.75.** Highlights since the last showcase update:
 
 - **Pictures everywhere.** The lists and cards members browse (shop, inventory, market,
   stocks, store, cards, property, fish, farm, museum, crafting, pets, quests, season
@@ -58,6 +58,9 @@
   moves a server that still runs on UTC to your own time zone, every alert page shows
   where each kind of alert goes right now, and the dashboard shows your bot's own name
   and picture.
+- **Launcher buttons always answer.** Every button that opens a page says where it
+  opened and shows the link with a Copy button. A PC with no browser gets the link to
+  open on any device instead of a false "Opened", and a check that cannot run says why.
 - **Every day follows your server's clock.** Streaks, daily limits, quests, trivia,
   schedules, analytics and Double XP all count days in the server's own time zone.
 - **18+ channels follow the 18+ role.** Saving the 18+ role opens the age-restricted
