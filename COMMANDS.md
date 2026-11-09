@@ -24,7 +24,7 @@ Anything in brackets is a subcommand. If you remember the old names, see
 | `/help` | See the commands you can use here |
 | `/ask` | Ask the server's assistant a question in plain words |
 | `/tutorial` | Start or resume the server tutorial |
-| `/setup` | Show where to manage installation and server setup |
+| `/setup` | Show where to manage installation, server setup and the ways your store takes payments |
 | `/dashboard` | Open the web dashboard (owner and administrators only) |
 | `/status` | Check whether the bot is working normally |
 | `/language` | Choose the language SomniBot uses for you, or Automatic to follow Discord |
@@ -109,9 +109,9 @@ Everything here uses play money, never real money.
 
 | Command | What it does |
 |---|---|
-| `/shop stocks` | Trade fictional stocks and crypto with play money (market, buy, sell, portfolio, leaderboard, recover) |
-| `/shop property` | Buy, improve and collect income from houses and businesses (catalog, portfolio, decorations, buy, claim, upgrade, decorate) |
-| `/shop cards` | Roll, claim and trade collectible cards, for play only (roll, claim, collection, sets, trade, trades, accept, decline) |
+| `/shop stocks` | Trade fictional stocks and crypto with play money (market, buy, sell, portfolio, history, leaderboard, recover) |
+| `/shop property` | Buy, improve and collect income from houses and businesses (catalog, view, portfolio, decorations, buy, claim, upgrade, decorate, sell, rename) |
+| `/shop cards` | Roll, claim and trade collectible cards, for play only (roll, claim, collection, sets, trade, trades, accept, decline, release) |
 
 **Farming, fishing, pets and quests**
 
@@ -119,7 +119,7 @@ Everything here uses play money, never real money.
 |---|---|
 | `/farm` | Grow crops and raise farm animals (view, plant, water, harvest, fertilize, upgrade, cook, eat, adopt, barn, feed, collect, autosell, log) |
 | `/fish` | Go fishing (cast, sell, collection, leaderboard, records, conditions, autosell, aquarium, display, remove) |
-| `/pet` | Raise a pet: feed it, play, train and battle other members' pets; a battle's entry fee is the pot and the winner takes it (view, buy, feed, play, train, rename, battle, prestige, evolve, switch, collection, expedition) |
+| `/pet` | Raise a pet: feed it, play, train and battle other members' pets; a battle's entry fee is the pot and the winner takes it (view, buy, feed, play, train, rename, battle, prestige, evolve, switch, release, collection, expedition) |
 | `/quests` | View and manage your quests (view, claim, history) |
 | `/badges` | View all achievements and your progress |
 
@@ -135,7 +135,7 @@ Everything here uses play money, never real money.
 
 `/clan member` covers invite, accept, leave, kick, promote, demote and transfer.
 `/clan bank` covers view, deposit and withdraw. `/clan war` covers challenge, accept,
-decline, status and leaderboard. `/rpg dungeon` has start and resume, `/rpg arena` has
+decline, cancel, status and leaderboard. `/rpg dungeon` has start and resume, `/rpg arena` has
 challenge, and `/rpg boss` has status and claim.
 
 ## Games and Activities
@@ -143,7 +143,7 @@ challenge, and `/rpg boss` has status and claim.
 | Command | What it does |
 |---|---|
 | `/casino` | Play-money games, trivia and the lottery (roulette, crash, race, duel, perks, paytable, records, coinflip, slots, rps, dice, blackjack, highlow, scratch, guess, trivia, lottery) |
-| `/casino coinflip` | Flip a coin: double or nothing |
+| `/casino coinflip` | Flip a coin: call heads or tails (or leave it out and the coin is called for you), double or nothing |
 | `/casino slots` | Spin the slots: three of a kind pays 12× to 150×, a pair gives half your bet back, and you can pick a reel theme |
 | `/casino dice` | Roll two dice against the house: higher total wins, a tie gives half your bet back |
 | `/casino blackjack` | Play blackjack: a blackjack pays 3:2, the dealer wins ties on 17 or 18, and you can split |
@@ -155,8 +155,8 @@ challenge, and `/rpg boss` has status and claim.
 | `/casino crash` | Watch the multiplier climb and cash out before it crashes |
 | `/casino race` | Back one of five racers: the favourite pays little, the long shot pays a lot |
 | `/casino duel` | Challenge a member to an equal-bet duel decided by a fair coin |
-| `/casino trivia` | Trivia rounds, daily questions and trivia nights (start, daily, night, join, scoreboard) |
-| `/casino lottery` | Buy lottery tickets or view the current drawing (buy, view) |
+| `/casino trivia` | Trivia rounds, daily questions and trivia nights (start, daily, night, join, scoreboard, stats) |
+| `/casino lottery` | Buy lottery tickets, view the current drawing or see your keepsakes (buy, view, keepsakes) |
 | `/games` | Multiplayer and board games: blackjack tables, Texas Hold'em, bingo, tic-tac-toe, connect four, chess, hangman, Wordle, word chain, a guess race and a music quiz (create, join, move, status, music-prepare, music-round, music-answer) |
 | `/arcade` | Play real-time games inside Discord: a boss raid arena, a dungeon run, a derby, party adventures, blackjack, Texas Hold'em and bingo (play, quick) |
 | `/party` | Party games: truth or dare, would you rather, never have I ever (truth, dare, tod, wyr, nhie) |
@@ -171,7 +171,9 @@ challenge, and `/rpg boss` has status and claim.
 | `/voice` | Control your temporary voice channel (lock, unlock, limit, name, permit, deny, ban, claim, handover) |
 | `/suggest` | Suggest an idea for this server |
 | `/confess` | Post a confession anonymously (the reply is private) |
-| `/extras` | Voice, pictures and channel games (voice tts, sound and quiz; image avatar, quote, meme and generate; channel status; event status, quests and claim) |
+| `/extras` | Voice, pictures and channel games (voice tts, sound and quiz; image avatar, quote, meme and generate; channel status; event status, quests, claim, shop and buy) |
+| `/extras image meme` | Make a meme from one of the server's templates; 13 come ready, drawn by the bot |
+| `/extras voice sound` | Play a soundboard sound in your voice channel: Discord's own sounds, the server's soundboard or a clip the staff added |
 
 ## Social and everyday tools
 

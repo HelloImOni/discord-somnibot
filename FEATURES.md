@@ -69,9 +69,15 @@ A **live preview** shows your saved messages in your brand. The dashboard is for
 your team only: the bot's messages to members never mention it. Members use the
 customer portal for purchases and a separate verification page for Linked roles.
 
+The dashboard itself shows your bot's own name and picture in its corner and browser
+tab, not the SomniBot logo.
+
 Discord message cards (Components V2) combine branded text, pictures, sections and
 buttons across store receipts, verification, moderation, community, economy and
-music messages. Saved classic message templates keep their format until edited;
+music messages. Lists and cards that show things (the shop, inventory, market, stocks,
+store, cards, property, fish, farm, museum, crafting, pets, quests, season tiers, clans,
+leaderboards, badges and every collection log) show a small picture for each entry. Long
+lists show 8 entries to a page with Back and Next buttons and a real "Page 2 of 5". Saved classic message templates keep their format until edited;
 Discord's native polls use Discord's own voting interface.
 
 ## Setting up your server
@@ -263,7 +269,8 @@ welcome and one goodbye per 30 minutes, not one each time.
 - **More logs**: pick a channel for each kind of event (role changes, channel changes,
   voice joins, leaves and moves, invite changes, nickname changes and avatar changes),
   plus a channel for incident reports. Each is optional, and an event with no channel
-  sends no log.
+  sends no log. A voice join also shows how old the person's account is and when they
+  joined the server.
 - **Anti-raid** (off until you turn it on): watches for a flood of joins, acts, and can lift
   its raid bans afterwards. It never removes the server owner, administrators, bots or
   members who are already boosting. Before you turn it on, a box lists exactly who it
@@ -292,6 +299,11 @@ welcome and one goodbye per 30 minutes, not one each time.
   puts everything back.
 - **Invites**: who invites whom, how many joined, stayed or left, and pause, reopen,
   delete or make invites from the dashboard.
+- **Only staff can create invites** (on by default, **Moderation → Invites**): an invite
+  a member makes is removed and logged, and the member is told by DM. Staff roles keep
+  the right, and invites members made earlier are listed with a **Remove** button. While
+  it is on, Server setup leaves the invite permission off members' roles. Nobody is
+  warned, kicked or banned for it.
 
 ![Moderation settings](images/moderation.jpg)
 
@@ -406,7 +418,7 @@ whether members play a real mini game with buttons or take the one-tap version:
   [clans](#clans), [cards](#collectible-cards), the [RPG](#rpg-and-dungeons),
   [stocks](#play-money-stocks) and [properties](#housing-and-businesses) have their own
   sections below. [Fair Play](#fair-play) watches the economy for scripted play.
-- **Games**: coinflip, slots, dice, blackjack, scratch cards, guess the number,
+- **Games**: coinflip (call heads or tails), slots, dice, blackjack, scratch cards, guess the number,
   rock-paper-scissors and high-low, plus **roulette**, **crash**, **pet races** and
   member-versus-member **duels** (`/casino`). Slots come in five reel themes, which change
   the look and never the odds, and blackjack lets you split. Bets start at 10 coins. In
@@ -475,7 +487,8 @@ Members raise pets with `/pet`: buy one, feed it, play with it, train it and ren
   lessons for drills, parks for fetch and a dozen more foods.
 - **Growing up**: a high-level pet can **evolve** for permanent stat gains, and a
   top-level pet can **prestige**, starting again at level 1 for a permanent bonus.
-- **Two pet slots**: members switch between them.
+- **Two pet slots**: members switch between them, and `/pet release` lets one go, after
+  a confirm step, to free a slot (so the pet collection can be finished).
 - **Expeditions**: send a pet out for a reward item you choose, then collect what it found;
   a pet is never stuck on a trip.
 - A **pet egg** item hatches a pet.
@@ -496,8 +509,8 @@ Members start and grow their own clans with `/clan`.
   can cap it.
 - **Clan quests** each day, set by you or taken from the stock ones, and clan levels that
   grow with them.
-- **Clan wars**: challenge another clan, accept or decline, follow the standings on a war
-  leaderboard. You choose how long a war lasts.
+- **Clan wars**: challenge another clan, accept or decline (or take your challenge back),
+  follow the standings on a war leaderboard. You choose how long a war lasts.
 - A clan can be disbanded once its bank is empty.
 
 ## Collectible cards
@@ -512,6 +525,7 @@ can't be turned into money or store credit. Members use `/shop cards`.
   bonuses for finishing a set.
 - **Trades**: offer one of your cards for another member's. Cards stay put until the other
   member accepts, and both change hands together.
+- **Release**: give a card back to the pool with `/shop cards release`.
 - You manage sets and cards on **Collectible cards**. Stock sets come with the bot and
   your edits stay yours. Every picture you add needs a public web address, its source, its
   licence and its credit.
@@ -564,8 +578,8 @@ in it is real, and nothing can be deposited, withdrawn or turned into real money
   price at regular ticks. You choose how often, how far a price can move in one tick and
   how strongly activity and events push it.
 - **Trading**: see the market, buy and sell shares, and check your portfolio with its
-  cost and gain. A sale that wouldn't fit under a member's wallet and bank limits is
-  refused before any shares move.
+  cost and gain, and look back at your recent buys and sells (`history`). A sale that
+  wouldn't fit under a member's wallet and bank limits is refused before any shares move.
 - **You run the market**: create stocks and crypto with a symbol, name, price, floor and
   ceiling, and a signal (chat, voice, events or economy). Halt an asset to pause orders;
   delist it for good with a final price, and holders cash out with `/shop stocks recover`.
@@ -583,6 +597,8 @@ in it is real, and nothing can be deposited, withdrawn or turned into real money
   business is full.
 - **Upgrades and decorations**: improve a property, and add decorations and security
   items such as a security camera or a reinforced safe.
+- **Look, rename, sell**: see one property in full (what it earns, protects and costs
+  next), give it a name of your own, or sell it back for part of what you put into it.
 - **Defence**: the strongest property a member owns can cut what a successful robbery or
   heist takes. Defence wears down over time.
 - A limit on how many properties one member can own.
@@ -696,21 +712,24 @@ see it), and it only **reports**. It never pauses, erases or punishes anyone by 
   product from your store, delivered as an order like any purchase. The draw only picks
   people who are still in the server, aren't bots and still hold the required role.
   Staff can start, end, reroll, pause, resume and list giveaways from Discord.
-- **Polls**: members make them with `/poll`. **Use Discord's poll** uses Discord's
+- **Polls**: members make them with `/poll`; the creator or staff can close one with a
+  **Close poll** button on the post. **Use Discord's poll** uses Discord's
   native voting interface, with a duration and multiple-answer choice; the dashboard
   reads the final counts when the poll ends.
 - **Predictions**: members bet play money on what will happen, with `/predict`. The creator
   can set a time after which no more bets are taken, can't bet on their own prediction, and
-  can cancel it, which refunds every bet in full. The house keeps 5% of the winnings (never
-  of the stake), and you set the biggest bet.
+  can cancel it, which refunds every bet in full. Members bet with a button for each
+  outcome that asks how much. The house keeps 5% of the winnings (never of the stake),
+  and you set the biggest bet.
 - **Lottery**: a share of every pot, which you set, is burned and the rest is paid out. You
   can add a second and third prize, and a drawing with too few tickets waits a few rounds
-  before it is drawn.
+  before it is drawn. `/casino lottery keepsakes` shows the keepsakes a member has won and
+  the ones still to win.
 - **Trivia**: rounds of a length you choose, with easy, medium and hard questions paying
   different amounts, only the first three right answers in a round paid, a daily limit on
   what a member can win, and a streak bonus that stops growing at a length you set. Staff
   can start a **daily question** or a ten-round **trivia night** and members see the
-  scoreboard (`/casino trivia`). The built-in questions come in six languages and cover many topics, including music,
+  scoreboard and their own stats (`/casino trivia`). The built-in questions come in six languages and cover many topics, including music,
   movies and TV, video games, anime, sports, food, animals, mythology and space, and you
   can write your own questions on **Trivia**.
 
@@ -760,7 +779,8 @@ see it), and it only **reports**. It never pauses, erases or punishes anyone by 
   answer so you can write your own answer.
 - **When the AI service has a bad moment**, the assistant waits when the service says how
   long and asks again, and asks again after a server error. A server-wide limit of 40
-  questions a minute keeps one busy hour from using up your allowance. Questions that
+  questions a minute keeps one busy hour from using up your allowance. If the service is
+  still busy, the member is told when to ask again. Questions that
   failed because the service was down or not set up don't fill your list of unanswered
   questions: one line tells you when the outage was and how many members were affected.
 - It runs on **your own free key** from Google AI Studio (the most room), Cloudflare Workers
@@ -892,10 +912,18 @@ Small features that make a server feel lived in. Each has its own page and switc
 - **A server time zone**: one setting defines what a "day" is for streaks, birthdays,
   member anniversaries, the Joins Today counter, recurring events and the starboard's
   monthly best. Birthdays, event series and automations can keep a zone of their own, and
-  members can set theirs with `/time set`.
-- **Reaction GIFs** (off until you switch them on): a small GIF on the bot's replies, from
-  a free GIF service or from your own links, with a switch for each part of the bot and a
-  choice between every time and only big moments.
+  members can set theirs with `/time set`. A server that still runs on UTC gets a
+  one-click card on Home and Settings that moves it to your own time zone everywhere
+  (streaks, dailies, quests, trivia and the digest).
+- **Reaction GIFs** (off until you switch them on): a small anime GIF that shows what is
+  happening on the card: a fishing catch shows anime fishing, a harvest anime farming, a
+  card pull a pull, and pets get neko and kitsune art. For each scene the bot looks at
+  your own GIFs first (tag each one with its scene on **Reaction GIFs**), then KLIPY and
+  GIPHY searches (add their keys in the Launcher's Media services), then free anime
+  reaction services for moods such as hugs and dances. When nothing fits, the card shows
+  the item's own picture instead of an unrelated GIF, and notices and refusals carry no
+  GIF. You get a switch for each part of the bot and a choice between every time and only
+  big moments.
 
 ## Feeds and free-game alerts
 
@@ -919,20 +947,24 @@ interval and an on and off switch.
 **Extras and integrations** holds the optional extras. Each has its own switch, and every
 one is limited to the server you pick.
 
-- **Voice**: text to speech (`/extras voice tts`), a soundboard of clips you choose
-  (`/extras voice sound`) and a voice music quiz. They never cut in on music that is
-  playing or queued. Each part has its own switch, with a language, a voice, a longest
+- **Voice**: text to speech (`/extras voice tts`), a soundboard (`/extras voice sound`)
+  and a voice music quiz. The soundboard plays Discord's own soundboard sounds and your
+  server's soundboard, and the staff can add clips of their own. Spoken text and clips
+  never cut in on music that is playing or queued. Each part has its own switch, with a language, a voice, a longest
   clip and a wait between sounds for you to set. The text read aloud is sent to a
   text-to-speech service, and `/privacy` tells members so.
-- **Image fun**: wanted and jail avatar frames and filters, meme templates you manage and
-  quote cards made from a real message. **AI images** are off by default and need an
-  OpenAI-compatible service that you set up in the Launcher; they have a safety filter, a
-  per-member cooldown and an hourly limit.
+- **Image fun**: wanted and jail avatar frames and filters, meme templates and
+  quote cards made from a real message. `/extras image meme` works out of the box with 13
+  memes the bot draws itself, and you can switch templates off and add your own.
+  **AI images** are off until you switch them on, then work without a paid key because a
+  free image service is built in; a Cloudflare or OpenAI-compatible service you set up in
+  the Launcher replaces it. They have a safety filter, blocked words, a per-member
+  cooldown and an hourly limit.
 - **Channel games**: counting (with saves for mistakes), word chain, one-word story and
   emoji-only channels, with `/extras channel status` for the streak.
 - **Seasonal events**: scheduled Halloween, winter and server-birthday events with themed
   items, quests and an event currency of their own, which is not coins and can't be
-  turned into money (`/extras event`).
+  turned into money (`/extras event status`, `quests`, `claim`, `shop` and `buy`).
 - **Outbound webhooks**: send joins, completed purchases and level-ups to your own
   address. Each request is signed so your receiver can check it came from SomniBot.
 - **Public API**: read-only keys, locked to your server, that let your own website read
@@ -998,6 +1030,11 @@ page shows what each one starts as. A few examples from this page alone:
   order waits, whether a Sandbox check is required, gifting and purchase announcements.
 - **Community**: level unlocks, birthdays, starboards, the server time zone and reaction
   GIFs.
+
+- **Replies**: on **Who sees replies** you decide, feature by feature, whether a result is
+  posted for everyone or only for the member. Game results, adventures, clan pages and
+  quote cards are public to start with; refusals, money details and settings always stay
+  private, and public cards leave out wallet amounts.
 
 After every save a badge says what the running bot did with it, and **Admin changes** lists
 each change with who made it and an undo button where one is possible.
@@ -1160,7 +1197,8 @@ whether quiet days still get a short note. A **weekly trends report** can be add
 the day you choose to the same place.
 
 **Alert routes** let you choose, for each level of seriousness, a staff-only channel, roles
-to ping and whether the owner also gets the alert by DM.
+to ping and whether the owner also gets the alert by DM. Every page that decides where
+alerts go shows where each kind of alert goes right now.
 
 ![Daily digest](images/digest.jpg)
 

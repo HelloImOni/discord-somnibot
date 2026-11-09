@@ -56,7 +56,9 @@ names.
   repeatedly.
 
 Each product picks its own way to be paid: PayPal, by hand or Stripe. A store that sells
-only free products and products paid by hand needs no PayPal or Stripe at all. While
+only free products and products paid by hand needs no PayPal or Stripe at all. PayPal is
+optional: the hand-paid methods such as Cash App and Bitcoin are written on the Store
+page, PayPal and Stripe are connected in the Launcher, and `/setup` points to both. While
 **Accept PayPal payments** is off, the Store page hides every PayPal setting behind one
 line ("PayPal is off. Switch on Accept PayPal payments to set it up.") and they come back
 when you switch it on.
@@ -182,6 +184,8 @@ A request never moves money by itself: it reaches you at once and you decide.
 - **Requests**: refund and help requests from the portal.
 - **Fraud controls**: suspicious purchases SomniBot noticed, and the rules it uses to
   notice them.
+- **Money problems**: a card on the Store page that names the reason, the order, the
+  buyer and the amount in plain words.
 - **Analytics**: payments and refunds for the last 30 days, **monthly recurring revenue**
   by currency, **subscription churn**, a **funnel** for each product (viewed, checkout
   started, paid, delivered and refunded) and each buyer's **lifetime spend after
@@ -191,6 +195,8 @@ A request never moves money by itself: it reaches you at once and you decide.
   earlier order that was refunded or disputed still counts as a purchase).
 - **Discord store**: link premium roles you sell through Discord's own store to your
   server.
+- **Licensing**: each program and what it really delivers (Discord access, a ticket or
+  items, or files), with a warning when a download product has no files yet.
 - **SDK**: describe your program and SomniBot writes the instructions a developer, or an
   AI coding assistant, follows to add the Discord check to the program you already have:
   four files covering the Discord sign-in, the role check, PC activation and every
