@@ -25,9 +25,80 @@
 > downloads or install files. The screenshots come from a real SomniBot install, with
 > sample data and sample product names.
 
-## What's new in 1.1.75
+## What's new in 1.1.76
 
-**Current version: 1.1.75.** Highlights since the last showcase update:
+**Current version: 1.1.76.** Highlights since the last showcase update:
+
+- **A class in every activity.** The derby, blackjack, Texas Hold'em and bingo ask for a
+  class too, your class shows on your seat or lane, and a win makes it yours.
+- **GIFs on every card.** Daily claims, fishing, work, level-ups, dungeon clears, trivia
+  questions, game starts, refusals, errors and moderation actions all get an anime GIF
+  that matches the moment, with or without a KLIPY or GIPHY key. Pets get neko, kitsune
+  and kemonomimi art, and the bot remembers the GIFs it fetched so it needs fewer
+  requests over time.
+- **Giveaway lists with pictures.** `/giveaway list` shows 8 to a page with Back and
+  Next, and every giveaway card has a picture. After Pause or Resume the card comes back
+  with the next buttons.
+- **Safer 18+ results.** /hentai leaves out furry, animal, AI-made and (outside its futa
+  category) futanari posts; /porn, /nsfw real and /nsfw random leave out gay clips unless
+  searched.
+- **Music quiz and invites.** The quiz song form requires as many songs as the quiz
+  needs. While "Only staff can create invites" is on (the default), the bot removes every
+  invite members made earlier on its own and logs each one.
+- **Fairer, clearer earning.** `/earn beg` names the person you asked and never repeats
+  itself; when the day's full-reward plays are used up, a result says nothing was paid and
+  when full reward is back; a missed `/earn work` order moves on at once; the casino perk
+  line only lists perks that can pay.
+- **Activities that feel right.** A quick tap of Space or J always strikes in the
+  dungeon, each table uses one chip colour set by its stake, and the hints say exactly
+  what happens (no fixed "five players", how to make a class yours, who shares a raid
+  reward).
+- **Text and language fixes.** 38 truth-or-dare questions filed as dares are now real
+  dares in all six languages; the Portuguese `/language` confirmation is fully
+  Portuguese and Spanish, French, Portuguese and Russian write language names correctly;
+  all English text uses American spelling (existing servers get it through the stock
+  content update, and your own edits are kept); owner texts say "the bot" instead of the
+  product name, and the retreat share and market fee texts read the server's real
+  settings. Daily trivia and trivia night post in the set channel and at the set time,
+  including today's round when you change them during the day.
+- **Class roles and giveaways behave.** A server that already has a role with a class's
+  name uses it instead of getting a second one; a role above the bot's own role is never
+  duplicated and the RPG page says to move the bot's role up; a class role another bot
+  made is never deleted.
+- **Clearer for owners.** Alerts the bot closes by itself are marked that way; the
+  property protection line names your own RPG Guard; the dashboard Home no longer asks
+  where the bot reports when warnings already reach you by DM; member restore hides empty
+  tiles; a new event series starts in the page's time zone; slash commands that Discord
+  rate-limits are published again by themselves, and the dashboard says when; the bot no
+  longer tries to read a server it left on purpose; the guides are up to date.
+- **Client setups and handing over.** After Leave, Delete the kept data or Hide commands,
+  the card waits for the bot and shows the result without a page reload, and "Show
+  password" is no longer offered once shown. A handed-over server keeps its bot stopped
+  until you press Start, asks no false "replace" questions, and Start creates and starts
+  the bot (or restarts one that is already running). A package made with the vault
+  really carries it, and its card says so. "Stop and hand over" stops only the bot,
+  leaves no copy of its token behind and keeps the old dashboard running, and "Hand over
+  the vault" works before or after it. The member restore guide describes Start as it
+  works.
+- **A lock and a Sync button for every area.** Channels and categories, roles, @everyone
+  permissions, permission overrides, emoji, stickers, sounds, server settings, AutoMod,
+  onboarding and the bot's profile each have their own lock. Locked, Discord is kept
+  matching what you saved; unlocked, the bot changes nothing in Discord and the saved
+  list follows Discord. Sync saves what Discord has now. Emoji, stickers and sounds start
+  unlocked, so things your admins add in the Discord app stay.
+- **Smaller fixes.** A game shift in `/earn work` reads "sorted the orders of your shift"
+  without a second "Shift done" line; season pass claims list the same item once with its
+  total; servers the bot sits in but does not serve get none of its timed jobs; dashboard
+  sign-in says whether the Discord secret is wrong, Discord is unreachable or it refused.
+- **Launcher.** Settings > Media services says where to get GIPHY and KLIPY keys;
+  Settings > Vault opens the Discord Developer Portal and says which page each value is
+  on, and its check says "saved and ready" when nothing new was typed; "I have a server
+  package" works on a new computer and the Get SomniBot step refuses files older than the
+  package; "Install a keyring for me" asks no system password when the keyring is already
+  there and "Hand over the vault" shows only when a vault is saved; Docker Desktop is
+  started again when it quits while the Launcher is open. Release checks are faster.
+
+Also since the last showcase update:
 
 - **Pictures everywhere.** The lists and cards members browse (shop, inventory, market,
   stocks, store, cards, property, fish, farm, museum, crafting, pets, quests, season
@@ -38,8 +109,7 @@
   anime farming, a card pull a pull, and pets get neko and kitsune art. Your own GIFs,
   tagged with a scene, come first, then KLIPY and GIPHY searches (you add their keys in
   the Launcher), then free anime reaction services for moods such as hugs and dances.
-  When nothing fits, the card shows the item's own picture instead of an unrelated GIF,
-  and notices and refusals carry no GIF.
+  When nothing fits, the card shows the item's own picture instead of an unrelated GIF.
 - **You choose who sees the replies.** A new **Who sees replies** page decides, feature
   by feature, whether a result is posted for everyone or only for the member. Refusals,
   money details and settings always stay private, and public cards leave out wallet
@@ -66,50 +136,6 @@
 - **18+ channels follow the 18+ role.** Saving the 18+ role opens the age-restricted
   channels to it at once (with Undo), and the 18+ button tells a member honestly whether
   the channels are open to them yet.
-
-Also new in 1.1.62:
-
-- **Seasons and battle passes.** Each season has its own pass with free and premium
-  tiers, quests, a daily login calendar and a badge, and four ready-made seasons come
-  with every server.
-- **A much bigger play-money world.** Pets that evolve and go on expeditions, clans with
-  a shared bank and wars, collectible cards, an RPG with classes and dungeons, fictional
-  stocks and crypto, houses and businesses, jobs, loans, auctions and more.
-- **Games to play together.** Multiplayer blackjack and Texas Hold'em, bingo, chess,
-  connect four, hangman, Wordle and more, a music quiz in voice, party adventures, crew
-  heists and a weekly boss raid for the whole server. Every table is played from one card
-  with buttons: join, start, move, resign. Nobody types a session ID.
-- **Games that run live inside Discord.** Seven games open as a Discord Activity: a boss
-  raid arena, a first-person dungeon run, a derby, party adventures, blackjack, Texas
-  Hold'em and bingo night.
-- **A deeper RPG and live pet battles.** Six classes, chosen for every run, and pets that
-  battle in live rounds where both members pick a move.
-- **Fair Play.** A report for the owner when someone seems to be playing by script, and a
-  daily full-reward amount so a script earns no more than a person.
-- **Every behaviour is a setting.** Game modes, reward amounts, bet limits, DJ controls,
-  payment waiting times and level unlocks are all yours to set.
-- **A store you pay your own way.** Write Cash App, Bitcoin or any other way to pay once,
-  confirm payments with **Mark paid** or **Reject** on the dashboard or in Discord, and
-  decide whether a Sandbox test is required.
-- **Updates through your seller's Discord server.** The Launcher installs the update
-  files you are given, with a backup first and a switch back if it fails.
-- **Better tickets.** Priority, saved replies, moving a ticket to another type, first
-  response targets with reminders, and a stats page.
-- **Stronger moderation.** Moderator notes, case reasons that keep their history, CSV
-  downloads, moderator activity, more log channels, a panic button, a question or captcha
-  step on the member gate, and new auto-mod safety rules for scam links, attachments,
-  emoji, distorted text and your own patterns.
-- **Faster setup.** Eight ready-made starter layouts in Server setup, and a search box
-  (Ctrl K) that finds any page, setting, command, member or channel.
-- **More for communities.** Social feeds, free-game alerts, suggestions, confessions,
-  birthdays, utilities, tiered starboards, and music with lyrics, search, playlists and a
-  24/7 mode.
-- **Six languages**: English, Spanish, Portuguese, French, German and Russian.
-- **A broader store.** Optional Stripe payments, stock counts, subscription limits,
-  bundles, supporter tiers and richer analytics.
-- **Owner tools.** Weekly reports, alert routes, member insights and an owner handbook,
-  plus a Launcher with a Health page, encrypted settings in backups, an optional
-  Nextcloud copy and a support bundle you save yourself.
 
 ## Why SomniBot
 
@@ -481,6 +507,16 @@ their timeline: joins and leaves, the member gate, role changes the bot made, pu
 refunds, tickets, moderation cases and appeals, and level-ups.
 
 ![Members](images/members.jpg)
+
+### Servers for clients
+
+SomniBot runs only in your own servers and in servers you allow; anywhere else it stays
+idle and answers with one private line. For a server that belongs to someone else,
+**Client setups** gives you a one-time link for their Discord account, a way to build their
+server from a snapshot of one of yours, and a switch that hides the commands from their
+members while you set up. You finish each one on its own: leave and delete everything,
+leave and keep the data, or hand the server over to their own SomniBot as one encrypted
+file.
 
 ### Your team
 
