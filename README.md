@@ -25,12 +25,13 @@
 > downloads or install files. The screenshots come from a real SomniBot install, with
 > sample data and sample product names.
 
-## What's new in 1.1.76
+## What's new in 1.1.77
 
-**Current version: 1.1.76.** Highlights since the last showcase update:
+**Current version: 1.1.77.** Highlights since the last showcase update:
 
-- **A class in every activity.** The derby, blackjack, Texas Hold'em and bingo ask for a
-  class too, your class shows on your seat or lane, and a win makes it yours.
+- **Classes where they matter.** The raid, the dungeon and the party adventure ask for
+  your RPG class at the start of every run and use it; the derby and the tables stay
+  plain card and racing games (1.1.77).
 - **GIFs on every card.** Daily claims, fishing, work, level-ups, dungeon clears, trivia
   questions, game starts, refusals, errors and moderation actions all get an anime GIF
   that matches the moment, with or without a KLIPY or GIPHY key. Pets get neko, kitsune
